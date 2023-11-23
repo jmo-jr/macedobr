@@ -1,0 +1,44 @@
+.hero {
+    height: 100vh;
+    background: url('img/hero-image.png') no-repeat center;
+    background-size: cover;
+}
+
+.about {
+    height: 100vh;
+}
+
+.services {
+    background: url('img/service-bg.png') no-repeat center;
+    background-size: cover;
+}
+
+.navbar.bg-mbr {
+    background-color: #009742;
+    color: white;
+}
+
+.nav-link {
+    color: white !important;
+}
+
+.benefits {
+    background-color: #0D3D22;
+}
+
+.experience {
+    height: 120vh;
+    background: url('img/experience-bg.png') no-repeat center;
+    background-size: cover;
+}
+
+.contact {
+    height: 400px;
+    background: url('img/contact-bg.png') no-repeat center;
+    background-size: cover;
+}
+
+footer {
+    background-color: #009742;
+    color: white;
+}
