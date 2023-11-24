@@ -12,6 +12,8 @@ p {
   color: var(--darkgreen);
 }
 
+.hidden-content { display: none }
+
 .default-header {
     position: fixed;
     width: 100%;
@@ -88,9 +90,9 @@ img {
   border-bottom: solid 2px #FFCB0A;
 }
 
-.button.yellow {
+.button {
     display: block;
-    background-color: var(--yellow);
+    background-color: lightgreen;
     width: 150px;
     padding: 8px;
     color: var(--darkgreen);
@@ -99,6 +101,11 @@ img {
     font-weight: 600;
     text-align: center;
     margin-left: 75px;
+    border: none;
+}
+
+.yellow-bg {
+  background-color: var(--yellow);
 }
 
 .big-intro {
@@ -136,12 +143,19 @@ img {
 }
 
 .big-title {
-    font-size: 30px;
-    text-transform: uppercase;
-    font-weight: 900;
-    color: white;
-    text-align: center;
     margin-bottom: 24px;
+    font-size: 40px;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.text-white {
+  color: white;
+}
+
+.text-darkgreen {
+  color: var(--darkgreen)
 }
 
 .service-block_grid {
@@ -158,11 +172,11 @@ img {
 .service-icon {padding: 10px;}
 
 .service-name {
+    padding: 10px;
     background-color: var(--yellow);
     color: var(--darkgreen);
     font-weight: 900;
     font-size: 24px;
-    padding: 10px;
 }
 
 .service-description {
@@ -192,11 +206,11 @@ img {
 }
 
 .small-title {
-    color: #B3CB39;
-    font-weight: 900;
     display: flex;
     align-items: center;
     gap: 4px;
+    color: #B3CB39;
+    font-weight: 900;
 }
 
 .number {
@@ -224,22 +238,54 @@ img {
     width: 75%;
 }
 
-
 .experience {
-    height: 120vh;
+    height: calc(100vh - 70px);
     padding: 30px 0;
     background: url('img/experience-bg.png') no-repeat center;
     background-size: cover;
 }
 
+.clients {
+    padding: 30px 0;
+}
+
 .contact {
   padding: 30px 0;
-    height: 400px;
-    background: url('img/contact-bg.png') no-repeat center;
-    background-size: cover;
+  background: url('img/contact-bg.png') no-repeat center;
+  background-size: cover;
+}
+
+form {
+  width: 75%;
+  margin: 0 auto;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  background-color: transparent;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: solid 1px white;
+  color: white;
+}
+
+.emails {
+    color: white;
+    width: 75%;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.email {
+    border-left: solid 2px var(--yellow);
+    padding: 0 12px;
 }
 
 footer {
     background-color: var(--green);
     color: white;
+    padding: 12px;
+    font-size: 14px;
 }
