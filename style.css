@@ -1,44 +1,245 @@
+:root {
+  --yellow: #FFCB0A;
+  --green: #009742;
+  --darkgreen: #0D3D22;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+p {
+  color: var(--darkgreen);
+}
+
+.default-header {
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+
+.navbar.bg-mbr {
+    background-color: var(--green);
+    color: white;
+    border-top: solid 24px var(--darkgreen);
+    padding: 0;
+}
+
+.nav-link {
+    color: white !important;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 300;
+    padding: 12px 16px !important;
+
+    &.active {
+      background-color: var(--darkgreen);
+    }
+}
+
 .hero {
     height: 100vh;
     background: url('img/hero-image.png') no-repeat center;
     background-size: cover;
 }
 
+.big-logo {
+    width: 300px;
+    position: absolute;
+    top: 63px;
+    right: 0;
+}
+
+img {
+    width: 100%;
+}
+
+.hero .container {
+    position: relative;
+    height: 100%;
+}
+
+.intro {
+    position: absolute;
+    bottom: 60px;
+    right: 0;
+}
+
+.intro-box {
+    text-align: right;
+    font-size: 1rem;
+    font-weight: 300;
+    padding: 16px;
+
+    & p {
+      color: white;
+    }
+}
+
+.box-border {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 220px;
+  padding: 16px;
+  border-top: solid 2px #FFCB0A;
+  border-right: solid 2px #FFCB0A;
+  border-bottom: solid 2px #FFCB0A;
+}
+
+.button.yellow {
+    display: block;
+    background-color: var(--yellow);
+    width: 150px;
+    padding: 8px;
+    color: var(--darkgreen);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-align: center;
+    margin-left: 75px;
+}
+
+.big-intro {
+    color: var(--yellow);
+    font-size: 22px;
+    font-weight: normal;
+}
+
+.intro-box p {
+    margin: 0;
+    font-weight: 300;
+}
+
+.hilite-intro {
+    color: var(--yellow);
+    font-weight: normal;
+}
+
+.normal-title {
+    color: #B3CB39;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
 .about {
-    height: 100vh;
+    padding: 30px 0;
 }
 
 .services {
-    background: url('img/service-bg.png') no-repeat center;
-    background-size: cover;
+  /* height: 430px; */
+  padding-top: 30px;
+  background: url('img/service-bg.png') no-repeat center;
+  background-size: cover;
 }
 
-.navbar.bg-mbr {
-    background-color: #009742;
+.big-title {
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: 900;
     color: white;
+    text-align: center;
+    margin-bottom: 24px;
 }
 
-.nav-link {
-    color: white !important;
+.service-block_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.service-block {
+    background-color: white;
+    text-align: center;
+}
+
+.service-icon {padding: 10px;}
+
+.service-name {
+    background-color: var(--yellow);
+    color: var(--darkgreen);
+    font-weight: 900;
+    font-size: 24px;
+    padding: 10px;
+}
+
+.service-description {
+    padding: 10px 16px;
 }
 
 .benefits {
-    background-color: #0D3D22;
+  padding: 40px 0 24px;
+  background-color: var(--darkgreen);
 }
+
+.benefits .container {
+    position: relative;
+}
+
+.medium-title {
+    color: var(--yellow);
+    text-align: center;
+    font-size: 32px;
+}
+
+.char-box_grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    align-items: start;
+}
+
+.small-title {
+    color: #B3CB39;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.number {
+    font-size: 35px;
+}
+
+.title {
+    font-size: 16px !important;
+    line-height: 1.1;
+}
+
+.char-description {
+    color: white;
+    font-size: 16px !important;
+    font-weight: 300;
+}
+
+.box-borders {
+    border-left: solid 2px var(--yellow);
+    border-bottom: solid 2px var(--yellow);
+    position: absolute;
+    left: -8px;
+    top: 40px;
+    height: 167px;
+    width: 75%;
+}
+
 
 .experience {
     height: 120vh;
+    padding: 30px 0;
     background: url('img/experience-bg.png') no-repeat center;
     background-size: cover;
 }
 
 .contact {
+  padding: 30px 0;
     height: 400px;
     background: url('img/contact-bg.png') no-repeat center;
     background-size: cover;
 }
 
 footer {
-    background-color: #009742;
+    background-color: var(--green);
     color: white;
 }
