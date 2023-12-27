@@ -1,0 +1,369 @@
+:root {
+  --yellow: #FFCB0A;
+  --green: #009742;
+  --darkgreen: #0D3D22;
+}
+
+body { font-family: 'Roboto', sans-serif }
+
+p { color: var(--darkgreen) }
+
+img { width: 100% }
+
+/* GERAIS */
+
+.hidden-content { display: none }
+
+.align-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.normal-title {
+  color: #B3CB39;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.big-title {
+  margin-bottom: 24px;
+  font-size: 40px;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.medium-title {
+  margin-bottom: 20px;
+  color: var(--yellow);
+  font-size: 32px;
+  text-align: center;
+}
+
+.small-title {
+  display: flex;
+  /* align-items: center; */
+  gap: 4px;
+  color: #B3CB39;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.text-white {
+  color: white;
+}
+
+.text-darkgreen {
+  color: var(--darkgreen)
+}
+
+.button {
+    display: block;
+    background-color: lightgrey;
+    width: 150px;
+    padding: 8px;
+    color: var(--darkgreen);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-align: center;
+    border: none;
+}
+
+.yellow-bg {
+  background-color: var(--yellow);
+}
+
+/* MOBILE */
+
+@media screen and (max-width:500px) {
+  .hero {
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+
+    .box-border { height: calc(100% - 38px) !important }
+  }
+
+  .big-logo {
+      left: calc(50% - 150px) !important;
+      top: 56px !important;
+  }
+
+  .intro-box br {
+    display: none !important;
+  }
+
+  .service-block_grid {
+      display: block !important;
+      margin: 0 30px 20px !important;
+  }
+
+  .services {
+      height: auto !important;
+
+      .service-block {
+        margin-bottom: 40px !important;
+      }
+  }
+
+  .char-box_grid {
+      display: block !important;
+      padding: 20px 30px !important;
+  }
+
+  .about {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .benefits .box-borders {
+    top: unset !important;
+    left: 20px !important;
+    bottom: 19px !important;
+    height: 80% !important;
+    width: 90% !important;
+  }
+
+  .experience {
+      height: 300px !important;
+  }
+
+  input, textarea {
+      margin-bottom: 20px !important;
+  }
+
+  .email {
+      margin-bottom: 20px !important;
+  }
+}
+
+/* DESKTOP */
+
+.default-header {
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+
+  .navbar.bg-mbr {
+      background-color: var(--green);
+      color: white;
+      border-top: solid 24px var(--darkgreen);
+      padding: 0;
+  }
+
+  .nav-link {
+      color: white !important;
+      text-transform: uppercase;
+      font-size: 15px;
+      font-weight: 300;
+      padding: 12px 16px !important;
+      scroll-behavior: smooth;
+
+      &.active {
+        background-color: var(--darkgreen);
+      }
+  }
+}
+
+.hero {
+  height: 100vh;
+  background: url('img/hero-image.png') no-repeat center;
+  background-size: cover;
+
+  .container {
+      position: relative;
+      height: 100%;
+  }
+  
+  .big-logo {
+      width: 300px;
+      position: absolute;
+      top: 63px;
+      right: 0;
+  }
+
+  .intro {
+    position: absolute;
+    bottom: 60px;
+    right: 0;
+
+    .big-intro {
+      color: var(--yellow);
+      font-size: 22px;
+      font-weight: normal;
+    }
+
+    .intro-box {
+      text-align: right;
+      font-size: 1rem;
+      font-weight: 300;
+      padding: 16px;
+
+      & p {
+        color: white;
+        margin: 0;
+        font-weight: 300;
+      }
+    }
+
+    .hilite-intro {
+      color: var(--yellow);
+      font-weight: normal;
+    }
+  }
+
+  .box-border {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 220px;
+    padding: 16px;
+    border-top: solid 2px #FFCB0A;
+    border-right: solid 2px #FFCB0A;
+    border-bottom: solid 2px #FFCB0A;
+  }
+}
+
+.about {
+    padding: 30px 0;
+}
+
+.services {
+  position: relative;
+  z-index: 1;
+  height: 550px;
+  padding-top: 30px;
+  background: url('img/service-bg.png') no-repeat center;
+  background-size: cover;
+
+  .service-block_grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 60px;
+  }
+
+  .service-block {
+      background-color: white;
+      text-align: center;
+  }
+
+  .service-icon {
+    width: 80px;
+    padding: 10px;
+  }
+
+  .service-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 110px;
+    padding: 10px;
+    background-color: var(--yellow);
+    color: var(--darkgreen);
+    font-weight: 900;
+    font-size: 24px;
+  }
+
+  .service-description {
+      padding: 10px 30px;
+  }
+}
+
+.benefits {
+  padding: 60px 0 24px;
+  background-color: var(--darkgreen);
+
+  .container {
+      position: relative;
+  }
+
+  .char-box_grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      align-items: start;
+  }
+  
+  .number {
+      font-size: 38px;
+  }
+
+  .title {
+      font-size: 16px !important;
+      line-height: 1.1;
+  }
+
+  .char-description {
+      color: white;
+      font-size: 14px !important;
+      font-weight: 300;
+  }
+
+  .char-box_column:not(:last-child) .char-description {
+    width: 83%;
+  }
+
+  .box-borders {
+      border-left: solid 2px var(--yellow);
+      border-bottom: solid 2px var(--yellow);
+      position: absolute;
+      left: -8px;
+      top: 40px;
+      height: 167px;
+      width: 75%;
+  }
+}
+
+.experience {
+    height: calc(100vh - 70px);
+    padding: 30px 0;
+    background: url('img/experience-bg.png') no-repeat center;
+    background-size: cover;
+}
+
+.clients {
+    padding: 30px 0;
+}
+
+.contact {
+  padding: 30px 0;
+  background: url('img/contact-bg.png') no-repeat center;
+  background-size: cover;
+
+  & form {
+    width: 75%;
+    margin: 0 auto;
+  }
+
+  & input, textarea {
+    width: 100%;
+    padding: 12px;
+    background-color: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: solid 1px white;
+    color: white;
+  }
+
+  .emails {
+      color: white;
+      width: 75%;
+      margin: 0 auto;
+      margin-top: 30px;
+
+    .email {
+        border-left: solid 2px var(--yellow);
+        padding: 0 12px;
+    }
+  }
+}
+
+footer {
+    background-color: var(--green);
+    color: white;
+    padding: 12px;
+    font-size: 14px;
+}
