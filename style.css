@@ -115,9 +115,15 @@ body {
 
 /* SECTIONS */
 
-section {
+.panel {
+    display: none;
     height: 100vh;
     padding: 128px 50px 40px;
+    transition: all 1s ease;
+
+    &.visible {
+      display: block;
+    }
 }
 
 .headlines {

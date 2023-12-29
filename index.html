@@ -12,6 +12,7 @@
 </head>
 <body>
     <div class="wrapper">
+
       <div class="body-glyphs glyph-dots top-dots"></div>
       <div class="body-glyphs glyph-dots bottom-dots"></div>
       <div class="body-glyphs glyph-plus"></div>
@@ -34,11 +35,11 @@
 
                   <div class="collapse navbar-collapse" id="mainNav">
                       <div class="navbar-nav">
-                          <a class="nav-link active" aria-current="page" href="#home">Home</a>
-                          <a class="nav-link" aria-current="page" href="#sobre">Quem somos</a>
-                          <a class="nav-link" aria-current="page" href="#parcerias">Parcerias</a>
-                          <a class="nav-link" aria-current="page" href="#atuacao">Atuação</a>
-                          <a class="nav-link" aria-current="page" href="#contato">Fale Conosco</a>
+                          <a id="home-link" class="nav-link active" aria-current="page" href="#home" data-panel="home">Home</a>
+                          <a id="quem-link" class="nav-link" aria-current="page" href="#sobre" data-panel="home">Quem somos</a>
+                          <a id="parcerias-link" class="nav-link" aria-current="page" href="#parcerias" data-panel="home">Parcerias</a>
+                          <a id="atuacao-link" class="nav-link" aria-current="page" href="#atuacao" data-panel="atuacao">Atuação</a>
+                          <a id="fale-link" class="nav-link" aria-current="page" href="#contato" data-panel="home">Fale Conosco</a>
                       </div>
                   </div>
 
@@ -50,7 +51,7 @@
           </nav>
       </header>
 
-      <section id="home" class="home">
+      <section id="home" class="panel">
           <div class="container">
 
             <div class="d-flex justify-content-around align-items-center">
@@ -72,17 +73,65 @@
           </div>
       </section>
 
-      <footer class="default-footer">
+      <section id="atuacao" class="panel visible">
           <div class="container">
+
+            <div class="d-flex justify-content-around">
+              <h3 class="subtitle">Atuação</h3>
               
-              <div class="triple-glyph"></div>
+              <div class="video-container">
+                <div class="video-frame">
+                  <img src="assets/video-home.png" alt="Placeholder do video">
+                </div>
+              </div>
+
+              <div class="headlines">
+                <!-- <h2 class="main-title">Atuação</h2> -->
+                <nav class="tabs">
+                  <ul class="nav">
+                    <li>Infraestrutura</li>
+                    <li>Educação</li>
+                    <li>Gestão</li>
+                    <li>Tecnologias</li>
+                  </ul>
+                </nav>
+                <div class="banner-glyph"></div>
+                <p class="headline">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                <div class="dots-glyph"></div>
+              </div>
+            </div>
 
           </div>
-      </footer>
+      </section>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://getbootstrap.com/docs/4.1/assets/js/vendor/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        
+        var navLinks = document.querySelectorAll('.nav-link');
+        
+        navLinks.forEach(function(navLink) {
+          navLink.addEventListener('click', function() {
+            
+            var panelId = navLink.getAttribute('data-panel');
+
+            var allPanels = document.querySelectorAll('.panel');
+
+            allPanels.forEach(function(panel) {
+              panel.classList.remove('visible');
+            });
+            
+            var targetElement = document.getElementById(panelId);
+            
+            if (targetElement) {
+              targetElement.classList.add('visible');
+            }
+          });
+        });
+      });
+    </script>
 </body>
 </html>
