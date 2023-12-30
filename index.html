@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body id="body" class="home">
     <div class="wrapper">
 
       <div class="body-glyphs glyph-dots top-dots"></div>
@@ -51,7 +51,7 @@
           </nav>
       </header>
 
-      <section id="home" class="panel">
+      <section id="home" class="panel visible">
           <div class="container">
 
             <div class="d-flex justify-content-around align-items-center">
@@ -73,31 +73,51 @@
           </div>
       </section>
 
-      <section id="atuacao" class="panel visible">
+      <section id="atuacao" class="panel">
           <div class="container">
 
             <div class="d-flex justify-content-around">
-              <h3 class="subtitle">Atuação</h3>
+
+              <div class="title-container">
+                <h3 class="subtitle">Atuação</h3>
+              </div>
               
               <div class="video-container">
                 <div class="video-frame">
-                  <img src="assets/video-home.png" alt="Placeholder do video">
+                  <img src="assets/video-atuacao.png" alt="Placeholder do video">
                 </div>
               </div>
 
               <div class="headlines">
-                <!-- <h2 class="main-title">Atuação</h2> -->
-                <nav class="tabs">
-                  <ul class="nav">
-                    <li>Infraestrutura</li>
-                    <li>Educação</li>
-                    <li>Gestão</li>
-                    <li>Tecnologias</li>
-                  </ul>
-                </nav>
-                <div class="banner-glyph"></div>
-                <p class="headline">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                <div class="dots-glyph"></div>
+                
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Infraestrutura</button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Educação</button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Gestão</button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="ti-tab" data-bs-toggle="tab" data-bs-target="#ti" type="button" role="tab" aria-controls="ti" aria-selected="false">Tecnologias</button>
+                  </li>
+                </ul>
+
+                <div class="tab-content" id="myTabContent">
+                  <div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    ...
+                  </div>
+                  <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                    <div class="banner-glyph"></div>
+                    <p class="headline">Desenvolvemos programas integrados voltados para a modernização da educação
+                    e o acesso às novas tecnologias, abrangendo todas as faixas etárias. Nossa iniciativa visa inclusivas, capacitando indivíduos de todas proporcionar oportunidades educacionais as idades para enfrentar os desafios do mundo contemporâneo.</p>
+                  </div>
+                  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+                  <div class="tab-pane fade" id="ti" role="tabpanel" aria-labelledby="ti-tab">...</div>
+                </div>
+
               </div>
             </div>
 
@@ -111,14 +131,17 @@
     <script>
       document.addEventListener('DOMContentLoaded', function() {
         
-        var navLinks = document.querySelectorAll('.nav-link');
+        var navLinks = document.querySelectorAll('a.nav-link');
         
         navLinks.forEach(function(navLink) {
           navLink.addEventListener('click', function() {
             
             var panelId = navLink.getAttribute('data-panel');
-
             var allPanels = document.querySelectorAll('.panel');
+
+            var docBody = document.getElementById('body')
+            docBody.classList.add(panelId);
+            // precisa remover a que está
 
             allPanels.forEach(function(panel) {
               panel.classList.remove('visible');
