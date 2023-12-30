@@ -1,0 +1,49 @@
+@keyframes upDown {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(0); }
+}
+
+@keyframes downUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+@keyframes left2Right {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes right2Left {
+  from { transform: translateX(100%); }
+  to { transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes rotate300 {
+  from { transform: rotateZ(300deg); }
+  to { transform: rotateZ(0); }
+}
+
+@keyframes showUpRotate {
+  from { transform: scale(0) rotateZ(300deg); }
+  to { transform: scale(1) rotateZ(0); }
+}
+
+@keyframes swipeRight {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes popUp {
+  from { transform: scale(0) }
+  to { transform: scale(1) }
+}
