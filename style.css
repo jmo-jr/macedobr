@@ -58,7 +58,6 @@ body {
   width: 24px;
   height: 24px;
   background-image: url(assets/plus.svg);
-  transition: var(--default-transition);
 
   .home & {
     top: 144px;
@@ -69,6 +68,7 @@ body {
   .atuacao & {
     bottom: 50px;
     right: 45%;
+    animation: showUpRotate 2s ease 2s, fadeIn 4s ease 1s;
   }
 }
 
@@ -82,6 +82,8 @@ body {
     left: 0;
     animation: fadeIn 3s ease-out;
   }
+
+  .atuacao & { display: none }
 }
 
 .glyph-tr-corner {
@@ -94,17 +96,47 @@ body {
     right: 0;
     animation: fadeIn 3s ease-out;
   }
+
+  .atuacao & { 
+    top: 0;
+    right: 0;
+    animation: right2Left 3s ease-out;
+  }
 }
 
 .glyph-bl-corner {
   width: 30px;
   height: 50%;
   background-color: var(--green);
+  transition: all 2s ease;
 
   .home & {
     bottom: 0;
     left: 0;
     animation: left2Right 2s ease, fadeIn 4s;
+  }
+
+  .atuacao & {
+    bottom: 50%;
+  }
+}
+
+.triangles {
+  width: 100px;
+  height: 22px;
+  background: url(assets/triangulos.svg) no-repeat;
+  background-size: contain;
+  transition: all 2s ease-out;
+
+  .home & {
+    bottom: 0;
+    left: 40%;
+    animation: downUp 1s ease;
+  }
+
+  .atuacao & {
+    bottom: 0;
+    left: 90%;
   }
 }
 
@@ -113,6 +145,7 @@ body {
 .default-header {
     position: fixed;
     width: 100%;
+    z-index: 1000;
 }
 
 .navbar {
@@ -152,7 +185,33 @@ a.nav-link {
   }
 }
 
-.top-social > a {
+.top-social {
+  display: flex;
+  gap: 16px;
+
+  .fa-facebook,
+  .fa-instagram,
+  .fa-whatsapp {
+    display: block;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .fa-facebook { 
+    background-image: url(assets/facebook.svg);
+    animation: popUp 2s ease; 
+  }
+  .fa-instagram { 
+    background-image: url(assets/instagram.svg);
+    background-size: 60%;
+  }
+  .fa-whatsapp { 
+    background-image: url(assets/wazapp.svg);
+    background-size: 60%;
+  }
+  
+  & > a {
     display: inline-block;
     background-color: var(--green);
     width: 32px;
@@ -160,21 +219,26 @@ a.nav-link {
     border-radius: 50px;
 
     &:first-child { animation: popUp 2s ease; }
+
+    &:nth-child(2) { animation: fadeIn 4s, popUp 2s ease; }
     
     &:last-child { 
       animation: fadeIn 6s, popUp 2s ease; 
     }
-}
-
-.top-social {
-    display: flex;
-    gap: 16px;
+  }
 }
 
 /* TABS */
 
 .nav-tabs {
   border: none;
+  overflow: hidden;
+
+  .nav-item {
+    transition: all 1s ease;
+
+    .atuacao & { animation: downUp 2s ease }
+  }
 
   .nav-link {
     border: none;
@@ -190,6 +254,10 @@ a.nav-link {
 /* SECTIONS */
 
 .panel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
     display: none;
     height: 100vh;
     padding: 128px 50px 40px;
@@ -289,10 +357,14 @@ a.nav-link {
 }
 
 #atuacao {
+  transition: all 2s ease;
 
   .headlines {
     width: 50%;
     text-align: center;
+    transition: all 1s ease;
+
+    .atuacao & { animation: fadeIn 2s ease }
   }
 
   .title-container {
@@ -310,6 +382,13 @@ a.nav-link {
       line-height: 1;
       margin: 0;
       text-transform: uppercase;
+      overflow: hidden;
+
+      & > div {
+        transition: all 1s ease;
+
+        .atuacao & { animation: left2Right 2s ease }
+      }
   }
 
   .banner-glyph {
@@ -332,6 +411,9 @@ a.nav-link {
     flex-grow: 0;
     width: calc(100vh - 308px);
     height: 100%;
+    transition: all 4s ease;
+
+    .atuacao & { animation: fadeIn 2s ease }
   }
 
   div > img {
@@ -342,6 +424,18 @@ a.nav-link {
   .video-frame {
     position: relative;
     height: 100%;
+
+    .atuacao & {
+      &:before {
+        animation: right2Left 2s ease;
+      }
+    }
+
+    .atuacao & {
+      &:after {
+        animation: left2Right 2s ease;
+      }
+    }
 
     &:before, &:after {
       content: "";

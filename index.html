@@ -20,6 +20,7 @@
       <div class="body-glyphs glyph-tl-corner"></div>
       <div class="body-glyphs glyph-tr-corner"></div>
       <div class="body-glyphs glyph-bl-corner"></div>
+      <div class="body-glyphs triangles"></div>
       
       <header class="default-header">
           <nav class="navbar navbar-expand-sm navbar-light bg-mbr">
@@ -45,8 +46,9 @@
                   </div>
 
                   <div class="top-social">
-                    <a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                     <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
                 </div>
               </div>
           </nav>
@@ -82,7 +84,9 @@
             <div class="d-flex justify-content-around">
 
               <div class="title-container">
-                <h3 class="subtitle">Atuação</h3>
+                <h3 class="subtitle">
+                  <div>Atuação</div>
+                </h3>
               </div>
               
               <div class="video-container">
@@ -137,21 +141,32 @@
         var navLinks = document.querySelectorAll('a.nav-link');
         
         navLinks.forEach(function(navLink) {
+          // Ao clicar no link, torna painel visivel
           navLink.addEventListener('click', function() {
             
             var panelId = navLink.getAttribute('data-panel');
             var allPanels = document.querySelectorAll('.panel');
 
-            var docBody = document.getElementById('body')
-            docBody.classList.add(panelId);
-            // precisa remover a que está
+            //Remove class .active from all .nav-link elements
+            navLinks.forEach(eachLink => {
+              eachLink.classList.remove('active');
+            })
+            // Add class active on clicked link
+            navLink.classList.add('active');
 
+            // Atribui classe equiv. ao painel visivel
+            var docBody = document.getElementById('body');
+            docBody.className = '';
+            docBody.classList.add(panelId);
+
+            // Remove classe visible de tudo
             allPanels.forEach(function(panel) {
               panel.classList.remove('visible');
             });
             
             var targetElement = document.getElementById(panelId);
             
+            // Add classe visible somente no painel certo
             if (targetElement) {
               targetElement.classList.add('visible');
             }
