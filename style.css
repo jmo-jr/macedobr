@@ -1,3 +1,4 @@
+
 :root {
   --green: #00AD78;
   --default-transition: all 1s ease-out;
@@ -164,7 +165,7 @@ body {
   justify-content: flex-end;
   width: 120px;
   height: 128px;
-  padding: 16px;
+  padding: 10px;
   background-color: var(--green);
   animation: upDown 2s ease;
 
@@ -325,7 +326,7 @@ a.nav-link {
     animation: fadeIn 3s ease-out;
   }
 
-  div > img {
+  div > video {
     width: 100%;
     padding: 16px;
   }
