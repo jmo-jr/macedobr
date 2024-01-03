@@ -29,6 +29,7 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
+  background-color: #eae8e8;
 }
 
 /* GLIFOS */
@@ -269,6 +270,7 @@ body {
     text-transform: uppercase;
 
     &.active {
+      background-color: transparent;
       color: var(--green);
     }
   }
