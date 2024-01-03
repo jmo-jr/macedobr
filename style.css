@@ -1,3 +1,20 @@
+@font-face {
+  font-family: vg;
+  font-weight: 300;
+  src: url('fonts/Vastago\ Grotesk\ Light.otf');
+}
+
+@font-face {
+  font-family: vg;
+  font-weight: normal;
+  src: url('fonts/Vastago\ Grotesk\ Regular.otf');
+}
+
+@font-face {
+  font-family: vg;
+  font-weight: 700;
+  src: url('fonts/Vastago\ Grotesk\ SemiBold.otf');
+}
 
 :root {
   --green: #00AD78;
@@ -147,86 +164,88 @@ body {
     position: fixed;
     width: 100%;
     z-index: 1000;
-}
 
-.navbar {
-    padding: 0 60px;
-}
-
-.navbar-nav {
-  white-space: nowrap;
-  overflow: hidden;
-  animation: fadeIn 2s, swipeRight 2s ease;
-}
-
-.navbar-brand {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  width: 120px;
-  height: 128px;
-  padding: 10px;
-  background-color: var(--green);
-  animation: upDown 2s ease;
-
-  & img {
-    animation: fadeIn 8s ease;
-  }
-}
-
-a.nav-link {
-  padding-left: 20px !important;
-  padding-right: 20px !important;
-  color: #999;
-  font-size: 20px;
-  text-transform: uppercase;
-
-  &.active {
-    color: var(--green) !important;
-  }
-}
-
-.top-social {
-  display: flex;
-  gap: 16px;
-
-  .fa-facebook,
-  .fa-instagram,
-  .fa-whatsapp {
-    display: block;
-    height: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-
-  .fa-facebook { 
-    background-image: url(assets/facebook.svg);
-    animation: popUp 2s ease; 
-  }
-  .fa-instagram { 
-    background-image: url(assets/instagram.svg);
-    background-size: 60%;
-  }
-  .fa-whatsapp { 
-    background-image: url(assets/wazapp.svg);
-    background-size: 60%;
-  }
-  
-  & > a {
-    display: inline-block;
-    background-color: var(--green);
-    width: 32px;
-    height: 32px;
-    border-radius: 50px;
-
-    &:first-child { animation: popUp 2s ease; }
-
-    &:nth-child(2) { animation: fadeIn 4s, popUp 2s ease; }
-    
-    &:last-child { 
-      animation: fadeIn 6s, popUp 2s ease; 
+    .navbar {
+        padding: 0 60px;
     }
-  }
+
+    .navbar-nav {
+      font-family: vg;
+      font-weight: 300;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: fadeIn 2s, swipeRight 2s ease;
+    }
+
+    .navbar-brand {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      width: 120px;
+      height: 128px;
+      padding: 10px;
+      background-color: var(--green);
+      animation: upDown 2s ease;
+
+      & img {
+        animation: fadeIn 8s ease;
+      }
+    }
+
+    & a.nav-link {
+      padding-left: 20px !important;
+      padding-right: 20px !important;
+      color: #999;
+      font-size: 22px;
+      text-transform: uppercase;
+
+      &.active {
+        color: var(--green) !important;
+      }
+    }
+
+    .top-social {
+      display: flex;
+      gap: 16px;
+
+      .fa-facebook,
+      .fa-instagram,
+      .fa-whatsapp {
+        display: block;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+      .fa-facebook { 
+        background-image: url(assets/facebook.svg);
+        animation: popUp 2s ease; 
+      }
+      .fa-instagram { 
+        background-image: url(assets/instagram.svg);
+        background-size: 60%;
+      }
+      .fa-whatsapp { 
+        background-image: url(assets/wazapp.svg);
+        background-size: 60%;
+      }
+      
+      & > a {
+        display: inline-block;
+        background-color: var(--green);
+        width: 32px;
+        height: 32px;
+        border-radius: 50px;
+
+        &:first-child { animation: popUp 2s ease; }
+
+        &:nth-child(2) { animation: fadeIn 4s, popUp 2s ease; }
+        
+        &:last-child { 
+          animation: fadeIn 6s, popUp 2s ease; 
+        }
+      }
+    }
 }
 
 /* TABS */
@@ -243,6 +262,9 @@ a.nav-link {
 
   .nav-link {
     border: none;
+    font-family: 'vg';
+    font-weight: 300;
+    font-size: 17px;
     color: #ABA9A9;
     text-transform: uppercase;
 
@@ -290,7 +312,9 @@ a.nav-link {
   }
 
   .subtitle {
-    font-size: 24px;
+    font-family: 'vg';
+    font-weight: 600;
+    font-size: 23px;
     color: var(--green);
     text-transform: uppercase;
   }
@@ -348,11 +372,13 @@ a.nav-link {
     &:before {
       top: 0;
       left: 0;
+      animation: right2Left 2s;
     }
 
     &:after {
       bottom: 0;
       right: 0;
+      animation: left2Right 2s;
     }
   }
 }
@@ -374,16 +400,18 @@ a.nav-link {
   }
 
   .subtitle {
-      transform: rotate(-90deg);
       position: absolute;
       top: 45%;
       left: -70px;
-      color: #ABA9A9;
-      font-size: 40px;
-      line-height: 1;
       margin: 0;
+      color: #ABA9A9;
+      font-family: 'vg';
+      font-weight: 300;
+      font-size: 46px;
+      line-height: 1.2;
       text-transform: uppercase;
       overflow: hidden;
+      transform: rotate(-90deg);
 
       & > div {
         transition: all 1s ease;
