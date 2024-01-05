@@ -67,6 +67,11 @@ body {
       animation: fadeIn 3s ease-out;
     }
 
+    .quem & {
+      bottom: 8%;
+      right: 4%;
+    }
+
     .atuacao & {
       display: none;
     }
@@ -82,6 +87,11 @@ body {
     top: 144px;
     left: 45%;
     animation: showUpRotate 2s, fadeIn 4s;
+  }
+
+  .quem & {
+    bottom: 15%;
+    left: 17%;
   }
 
   .atuacao & {
@@ -135,6 +145,13 @@ body {
     animation: left2Right 2s ease, fadeIn 4s;
   }
 
+  .quem & {
+    top: 0;
+    left: 192px;
+    width: 80px;
+    height: 70vh;
+  }
+
   .atuacao & {
     bottom: 50%;
   }
@@ -151,6 +168,11 @@ body {
     bottom: 0;
     left: 40%;
     animation: downUp 1s ease;
+  }
+
+  .quem & {
+    bottom: 0;
+    left: 30%;
   }
 
   .atuacao & {
@@ -249,9 +271,25 @@ body {
     }
 }
 
+.quem {
+  .navbar-expand-sm .navbar-collapse, .top-social {
+      display: none !important;
+  }
+
+  .navbar-expand-sm .navbar-toggler {
+      display: block;
+  }
+
+  .default-header .navbar-brand {
+      background-color: transparent;
+      width: 100px;
+  }
+}
+
 /* TABS */
 
 .nav-tabs {
+  justify-content: center;
   border: none;
   overflow: hidden;
 
@@ -383,6 +421,117 @@ body {
       animation: left2Right 2s;
     }
   }
+}
+
+#quem {
+  padding-top: 80px;
+  transition: all 2s ease;
+
+  .headlines {
+    width: 100%;
+    /* margin-left: 50px; */
+    text-align: center;
+    transition: all 1s ease;
+
+    .atuacao & { animation: fadeIn 2s ease }
+  }
+
+  .title-container {
+    position: relative;
+    width: 300px;
+  }
+
+  .subtitle {
+      position: absolute;
+      top: 230px;
+      left: 0;
+      width: 320px;
+      margin: 0;
+      color: #ABA9A9;
+      font-family: 'vg';
+      font-weight: 300;
+      font-size: 46px;
+      line-height: 1.2;
+      text-transform: uppercase;
+      overflow: hidden;
+      transform: rotate(-90deg) translateY(-86px);
+
+      & > div {
+        transition: all 1s ease;
+
+        .atuacao & { animation: left2Right 2s ease }
+      }
+  }
+
+  .banner-glyph {
+    width: 38px;
+    height: 32px;
+    margin: 30px auto;
+    background: url(assets/losango.svg) no-repeat;
+    background-size: contain;
+  }
+
+  .headline {
+    width: 74%;
+    margin: 0 auto;
+    color: #999;
+    font-size: 20px;
+    line-height: 1.3;
+  }
+
+  .video-container {
+    margin-top: 40px;
+    width: auto;
+    height: auto;
+    transition: all 4s ease;
+
+    .atuacao & { animation: fadeIn 2s ease }
+  }
+
+  div > img {
+    width: 100%;
+    padding: 0 16px;
+  }
+
+  .video-frame {
+    position: relative;
+    height: 100%;
+
+    .atuacao & {
+      &:before {
+        animation: right2Left 2s ease;
+      }
+    }
+
+    .atuacao & {
+      &:after {
+        animation: left2Right 2s ease;
+      }
+    }
+
+    &:before, &:after {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 86%;
+      display: block;
+      background-color: var(--green);
+      z-index: -1;
+    }  
+
+    &:before {
+      top: 0;
+      left: 0;
+      height: 70%;
+    }
+
+    &:after {
+      top: 50%;
+      right: 0;
+      height: 24px;
+    }
+  }
+
 }
 
 #atuacao {
