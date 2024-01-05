@@ -47,3 +47,8 @@
   from { transform: scale(0) }
   to { transform: scale(1) }
 }
+
+@keyframes scaleY {
+  from { transform: scaleY(0) }
+  to { transform: scaleY(1) }
+}

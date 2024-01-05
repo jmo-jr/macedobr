@@ -65,6 +65,12 @@ body {
       display: none
     }
 
+    .parcerias & {
+      top: 100px;
+      right: 140px;
+      animation: fadeIn 3s ease-out;
+    }
+
     .atuacao & {
       display: none;
     }
@@ -81,6 +87,12 @@ body {
       bottom: 30px;
       right: 30px;
       animation: fadeIn 3s ease;
+    }
+
+    .parcerias & {
+      bottom: 50px;
+      left: 70px;
+      animation: fadeIn 3s ease-out;
     }
 
     .atuacao & {
@@ -105,6 +117,12 @@ body {
     bottom: 10%;
     left: 14%;
     animation: fadeIn 4s ease;
+  }
+
+  .parcerias & {
+    bottom: 30px;
+    right: 30px;
+    animation: showUpRotate 2s ease 2s, fadeIn 4s ease 1s;
   }
 
   .atuacao & {
@@ -151,6 +169,12 @@ body {
     animation: fadeIn 2s ease'
   }
 
+  .parcerias & {
+    top: 0;
+    right: 0;
+    animation: upDown 3s ease;
+  }
+
   .atuacao & { 
     top: 0;
     right: 0;
@@ -178,6 +202,11 @@ body {
     animation: upDown 2s ease, fadeIn 4s;
   }
 
+  .parcerias & {
+    bottom: 0;
+    animation: downUp 2s ease, fadeIn 4s;
+  }
+
   .atuacao & {
     bottom: -45%;
   }
@@ -201,6 +230,11 @@ body {
     left: 30%;
   }
 
+  .parcerias & {
+    bottom: 0;
+    left: 50%;
+  }
+
   .atuacao & {
     bottom: 0;
     left: 90%;
@@ -210,13 +244,12 @@ body {
 /* HEADER */
 
 .default-header {
-
     position: fixed;
     width: 100%;
     z-index: 1000;
 
     .navbar {
-        padding: 0 60px;
+      padding: 0 40px;
     }
 
     .navbar-nav {
@@ -231,7 +264,7 @@ body {
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      width: 120px;
+      width: 110px;
       height: 128px;
       padding: 10px;
       background-color: var(--green);
@@ -317,12 +350,22 @@ body {
       flex-direction: column;
       justify-content: flex-end;
       width: 90px;
+      animation: fadeIn 1s ease;
   }
 
   .back-btn {
       border: none;
       padding: 16px;
       background-color: transparent;
+      transition: all 1s ease;
+
+      .quem & {
+        animation: scaleY 1s ease;
+      }
+
+      .atuacao & {
+        animation: scaleY 1s ease;
+      }
   
       & > img {
         width: 30px;
@@ -332,7 +375,7 @@ body {
 
 }
 
-#body:not(.home) {
+#body:not(.home):not(.parcerias) {
   .default-header {
     display: none
   }
@@ -617,6 +660,66 @@ body {
 
 }
 
+#parcerias {
+  padding-top: 130px;
+  padding-left: 140px;
+  transition: all 2s ease;
+
+  .headlines {
+    width: 40%;
+    text-align: center;
+    transition: all 1s ease;
+    animation: fadeIn 2s ease;
+
+    & h2 {
+      color: var(--green);
+      text-transform: uppercase;
+      font-size: 40px;
+      font-weight: bold;
+    }
+  }
+
+  .banner-glyph {
+    width: 38px;
+    height: 32px;
+    margin: 10px auto;
+    background: url(assets/losango.svg) no-repeat;
+    background-size: contain;
+  }
+
+  .headline {
+    width: 400px;
+    margin: 0 auto;
+    color: #999;
+    font-size: 18px;
+    line-height: 1.2;
+    text-align: justify;
+
+    & p {
+      margin-bottom: 8px;
+    }
+  }
+
+  .logos-grid {
+    width: 60%;
+    padding: 30px;
+
+    .d-grid-6 {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 24px;
+
+      .logo-container {
+        background-color: lightgrey;
+        border-radius: 50px;
+        width: 70px;
+        height: 70px;
+      }
+    }
+  }
+
+}
+
 #atuacao {
   padding: 0 50px;
   transition: all 2s ease;
@@ -680,9 +783,9 @@ body {
 
   .video-container {
     flex-grow: 0;
-    aspect-ratio: 2 / 3.2;
-    /* width: calc(100vh - 232px); */
+    aspect-ratio: 2 / 3.23;
     height: 100vh;
+    background-color: white;
     transition: all 4s ease;
 
     .atuacao & { animation: fadeIn 2s ease }
@@ -727,7 +830,7 @@ body {
     &:before {
       top: 0;
       left: -24px;
-      height: 70%;
+      height: 500px;
     }
 
     &:after {
