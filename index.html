@@ -54,6 +54,23 @@
           </nav>
       </header>
 
+      <header class="secondary-header">
+        <nav class="nav">
+          <div class="container-fluid">
+            <a id="home-link" class="back-btn nav-link" href="#home" data-panel="home">
+              <img src="assets/menu.png" alt="Voltar para a home" title="Voltar para a Homepage">
+            </a>
+            <!-- <button class="back-btn" type="button">
+                <img src="assets/menu.png" alt="Voltar para a home" title="Voltar para a Homepage">
+            </button> -->
+            
+            <a class="navbar-brand" href="#">
+              <img src="assets/logo-mbr_br.png" alt="Associação Macedo Brasil">
+            </a>
+          </div>
+        </nav>
+      </header>
+
       <section id="home" class="panel visible">
           <div class="container">
 
@@ -109,22 +126,34 @@
 
                 <!-- Tab Content -->
                 <div class="tab-content" id="myTabContent">
-                  <div class="tab-pane fade" id="who" role="tabpanel" aria-labelledby="who-tab">
+                  <div class="tab-pane fade show active" id="who" role="tabpanel" aria-labelledby="who-tab">
                     <div class="banner-glyph"></div>
                     <p class="headline">A Associação Macedo Brasil – AMBR, entidade civil sem fins lucrativos,dedica-se a estabelecer parcerias tanto no âmbito público quanto privado. Nosso compromisso é alcançar resultados significativos nas áreas de desenvolvimento urbano, novas tecnologias, saúde, socioambientais e socioeducacionais, promovendo a melhoria contínua da qualidade de vida e do bem-estar em comunidades.</p>
                   </div>
-                  <div class="tab-pane fade show active" id="vision" role="tabpanel" aria-labelledby="vision-tab">
+                  <div class="tab-pane fade" id="vision" role="tabpanel" aria-labelledby="vision-tab">
                     <div class="banner-glyph"></div>
-                    <p class="headline">Desenvolvemos programas integrados voltados para a modernização da educação
-                    e o acesso às novas tecnologias, abrangendo todas as faixas etárias. Nossa iniciativa visa inclusivas, capacitando indivíduos de todas proporcionar oportunidades educacionais as idades para enfrentar os desafios do mundo contemporâneo.</p>
+                    <p class="headline">Unidos, somos agentes de transformação para promover a dignidade humana em seu ambiente, impulsionando o desenvolvimento social, físico e psicológico.</p>
                   </div>
-                  <div class="tab-pane fade" id="mission" role="tabpanel" aria-labelledby="mission-tab">...</div>
+                  <div class="tab-pane fade" id="mission" role="tabpanel" aria-labelledby="mission-tab">
+                    <div class="banner-glyph"></div>
+                    <div class="headline mission-variant">
+                      <p>Orientamos nossa missão com objetivos claros de fomentar o desenvolvimento humano e a sustentabilidade, fundamentados nos direitos consagrados pela Constituição Federal:</p>
+                      <div class="multi-columns">
+                        <ul>
+                          <li>Assegurar o direito à vida, liberdade, igualdade, segurança e propriedade;</li>
+                          <li>Atuar como agentes de promoção dos direitos sociais, incluindo educação, saúde, alimentação, trabalho, moradia, transporte, lazer, segurança, proteção à maternidade, infância e assistência aos desamparados; </li>
+                          <li>Facilitar o acesso à cultura, educação, ciência, tecnologia, pesquisa e inovação;</li>
+                          <li>Desenvolver soluções voltadas para a preservação do meio ambiente e o combate à poluição em todas as suas formas.</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
                 <!-- Video -->
                 <div class="video-container">
                   <div class="video-frame" style="background-color:grey">
-                    <video width="790" height="200" autoplay muted loop>
+                    <video class="video-player" autoplay muted loop>
                       <source src="assets/quemsomos.mp4" type="video/mp4">
                       Your browser does not support the video tag.
                     </video>
@@ -151,7 +180,7 @@
               
               <div class="video-container">
                 <div class="video-frame">
-                  <video width="382" height="564" autoplay muted loop>
+                  <video class="video-player" autoplay muted loop>
                     <source src="assets/educacao.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                   </video>
@@ -162,10 +191,10 @@
                 
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                   <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="infra-tab" data-bs-toggle="tab" data-bs-target="#infra" type="button" role="tab" aria-controls="infra" aria-selected="true">Infraestrutura</button>
+                    <button class="nav-link active" id="infra-tab" data-bs-toggle="tab" data-bs-target="#infra" type="button" role="tab" aria-controls="infra" aria-selected="true">Infraestrutura</button>
                   </li>
                   <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="education-tab" data-bs-toggle="tab" data-bs-target="#education" type="button" role="tab" aria-controls="education" aria-selected="false">Educação</button>
+                    <button class="nav-link" id="education-tab" data-bs-toggle="tab" data-bs-target="#education" type="button" role="tab" aria-controls="education" aria-selected="false">Educação</button>
                   </li>
                   <li class="nav-item" role="presentation">
                     <button class="nav-link" id="management-tab" data-bs-toggle="tab" data-bs-target="#management" type="button" role="tab" aria-controls="management" aria-selected="false">Gestão</button>
@@ -176,16 +205,31 @@
                 </ul>
 
                 <div class="tab-content" id="myTabContent">
-                  <div class="tab-pane fade" id="infra" role="tabpanel" aria-labelledby="infra-tab">
-                    ...
+                  <div class="tab-pane fade show active" id="infra" role="tabpanel" aria-labelledby="infra-tab">
+                    <div class="banner-glyph"></div>
+                    <p class="headline">Atuamos com planejamento e desenvolvimento de projetos que abrangem infraestrutura e desenvolvimento urbano, engenharia civil, mobilidade urbana e acessibilidade. Nossa abordagem visa construir bases sólidas para comunidades, promovendo o crescimento sustentável e a qualidade de vida.</p>
                   </div>
-                  <div class="tab-pane fade show active" id="education" role="tabpanel" aria-labelledby="education-tab">
+                  <div class="tab-pane fade" id="education" role="tabpanel" aria-labelledby="education-tab">
                     <div class="banner-glyph"></div>
                     <p class="headline">Desenvolvemos programas integrados voltados para a modernização da educação
                     e o acesso às novas tecnologias, abrangendo todas as faixas etárias. Nossa iniciativa visa inclusivas, capacitando indivíduos de todas proporcionar oportunidades educacionais as idades para enfrentar os desafios do mundo contemporâneo.</p>
                   </div>
-                  <div class="tab-pane fade" id="management" role="tabpanel" aria-labelledby="management-tab">...</div>
-                  <div class="tab-pane fade" id="ti" role="tabpanel" aria-labelledby="ti-tab">...</div>
+                  <div class="tab-pane fade" id="management" role="tabpanel" aria-labelledby="management-tab">
+                    <div class="banner-glyph"></div>
+                    <p class="headline">Oferecemos apoio técnico para fortalecer a capacidade de gestão, por meio de um conjunto de ações voltadas para promover os direitos à transparência e ao controle social da gestão pública. Nosso compromisso é potencializar práticas eficientes de administração, promovendo uma gestão pública mais transparente, participativa e comprometida com o bem-estar da comunidade.</p>
+                  </div>
+                  <div class="tab-pane fade" id="ti" role="tabpanel" aria-labelledby="ti-tab">
+                    <div class="banner-glyph"></div>
+                    <div class="headline text-justify">
+                      <p>Desenvolvemos projetos integrando ações, metodologias e sistemas informatizados para maximizar a efetividade de suas operações e alcançar resultados significativos. Ao longo de nossa história, implementamos diversas soluções tecnológicas, incluindo:</p>
+                      <ul>
+                        <li>Sistema de Monitoramento, Controle e Avaliação;</li>
+                        <li>Sistema de Gestão de Contratos;</li>
+                        <li>Sistema de Gestão Arquivística.</li>
+                      </ul>
+                      <p>Essas iniciativas refletem nosso compromisso com a inovação e a aplicação prática da tecnologia para aprimorar nossas operações e impactar positivamente as comunidades que servimos.</p>
+                    </div>
+                  </div>
                 </div>
 
               </div>

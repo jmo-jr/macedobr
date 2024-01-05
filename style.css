@@ -25,11 +25,18 @@
     gap: 60px;
 }
 
+.multi-columns {
+  display: inline-block;
+  column-count: 2;
+  text-align: justify;
+}
+
 /* BODY */
 
 body {
-  font-family: 'Montserrat', sans-serif;
   background-color: #eae8e8;
+  font-family: 'Montserrat', sans-serif;
+  overflow: hidden;
 }
 
 /* GLIFOS */
@@ -54,9 +61,12 @@ body {
       animation: fadeIn 3s ease-out;
     }
 
+    .quem & {
+      display: none
+    }
+
     .atuacao & {
-      bottom: 145px;
-      right: 27%;
+      display: none;
     }
   }
 
@@ -68,12 +78,14 @@ body {
     }
 
     .quem & {
-      bottom: 8%;
-      right: 4%;
+      bottom: 30px;
+      right: 30px;
+      animation: fadeIn 3s ease;
     }
 
     .atuacao & {
-      display: none;
+      bottom: 80px;
+      right: 24%;
     }
   }
 }
@@ -90,8 +102,9 @@ body {
   }
 
   .quem & {
-    bottom: 15%;
-    left: 17%;
+    bottom: 10%;
+    left: 14%;
+    animation: fadeIn 4s ease;
   }
 
   .atuacao & {
@@ -112,6 +125,12 @@ body {
     animation: fadeIn 3s ease-out;
   }
 
+  .quem & {
+    bottom: 0;
+    left: 0;
+    animation: fadeIn 2s ease'
+  }
+
   .atuacao & { display: none }
 }
 
@@ -126,6 +145,12 @@ body {
     animation: fadeIn 3s ease-out;
   }
 
+  .quem & {
+    top: 0;
+    right: 0;
+    animation: fadeIn 2s ease'
+  }
+
   .atuacao & { 
     top: 0;
     right: 0;
@@ -137,7 +162,7 @@ body {
   width: 30px;
   height: 50%;
   background-color: var(--green);
-  transition: all 2s ease;
+  /* transition: all 2s ease; */
 
   .home & {
     bottom: 0;
@@ -147,13 +172,14 @@ body {
 
   .quem & {
     top: 0;
-    left: 192px;
+    left: 148px;
     width: 80px;
-    height: 70vh;
+    height: 496px;
+    animation: upDown 2s ease, fadeIn 4s;
   }
 
   .atuacao & {
-    bottom: 50%;
+    bottom: -45%;
   }
 }
 
@@ -184,6 +210,7 @@ body {
 /* HEADER */
 
 .default-header {
+
     position: fixed;
     width: 100%;
     z-index: 1000;
@@ -271,27 +298,60 @@ body {
     }
 }
 
-.quem {
-  .navbar-expand-sm .navbar-collapse, .top-social {
-      display: none !important;
+.secondary-header {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  width: 100px;
+  margin: 0 24px;
+
+  .nav > .container-fluid {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+  
+  .navbar-brand {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      width: 90px;
   }
 
-  .navbar-expand-sm .navbar-toggler {
-      display: block;
-  }
-
-  .default-header .navbar-brand {
+  .back-btn {
+      border: none;
+      padding: 16px;
       background-color: transparent;
-      width: 100px;
+  
+      & > img {
+        width: 30px;
+        border: none;
+      }
+  }
+
+}
+
+#body:not(.home) {
+  .default-header {
+    display: none
+  }
+  .secondary-header {
+    display: block;
   }
 }
 
 /* TABS */
 
 .nav-tabs {
+  flex-wrap: nowrap;
   justify-content: center;
   border: none;
   overflow: hidden;
+
+  .atuacao & {
+    margin-top: 40px;
+  }
 
   .nav-item {
     transition: all 1s ease;
@@ -324,6 +384,7 @@ body {
     display: none;
     height: 100vh;
     padding: 128px 50px 40px;
+    overflow: hidden;
     transition: all 1s ease;
 
     &.visible {
@@ -424,65 +485,82 @@ body {
 }
 
 #quem {
-  padding-top: 80px;
+  padding-top: 40px;
   transition: all 2s ease;
 
   .headlines {
     width: 100%;
-    /* margin-left: 50px; */
+    margin-right: 90px;
     text-align: center;
     transition: all 1s ease;
-
-    .atuacao & { animation: fadeIn 2s ease }
+    animation: fadeIn 2s ease;
   }
 
   .title-container {
     position: relative;
-    width: 300px;
+    width: 220px;
   }
 
   .subtitle {
       position: absolute;
-      top: 230px;
-      left: 0;
-      width: 320px;
+      top: 260px;
+      left: -133px;
+      width: 305px;
       margin: 0;
       color: #ABA9A9;
       font-family: 'vg';
       font-weight: 300;
-      font-size: 46px;
+      font-size: 44px;
       line-height: 1.2;
       text-transform: uppercase;
       overflow: hidden;
-      transform: rotate(-90deg) translateY(-86px);
+      rotate: -90deg;
 
       & > div {
-        transition: all 1s ease;
-
-        .atuacao & { animation: left2Right 2s ease }
+        animation: left2Right 2s ease
       }
   }
 
   .banner-glyph {
     width: 38px;
     height: 32px;
-    margin: 30px auto;
+    margin: 24px auto;
     background: url(assets/losango.svg) no-repeat;
     background-size: contain;
   }
 
   .headline {
-    width: 74%;
+    width: 600px;
+    height: 208px;
     margin: 0 auto;
     color: #999;
     font-size: 20px;
     line-height: 1.3;
+
+    &.mission-variant {
+      width: 100%;
+      font-size: 18px;
+
+      & p {
+        margin-bottom: 8px;
+      }
+
+      & ul {
+        margin-bottom: 0;
+        padding-left: 24px;
+        font-size: 16px;
+
+        & li {
+          margin-bottom: 8px;
+        }
+      }
+    }
   }
 
   .video-container {
-    margin-top: 40px;
+    margin-top: 24px;
     width: auto;
-    height: auto;
+    height: 260px;
     transition: all 4s ease;
 
     .atuacao & { animation: fadeIn 2s ease }
@@ -496,6 +574,11 @@ body {
   .video-frame {
     position: relative;
     height: 100%;
+
+    .video-player {
+      width: 100%;
+      height: 100%;
+    }
 
     .atuacao & {
       &:before {
@@ -535,6 +618,7 @@ body {
 }
 
 #atuacao {
+  padding: 0 50px;
   transition: all 2s ease;
 
   .headlines {
@@ -547,28 +631,27 @@ body {
 
   .title-container {
     position: relative;
-    width: 16px;
+    width: 60px !important;
   }
 
   .subtitle {
-      position: absolute;
-      top: 45%;
-      left: -70px;
-      margin: 0;
-      color: #ABA9A9;
-      font-family: 'vg';
-      font-weight: 300;
-      font-size: 46px;
-      line-height: 1.2;
-      text-transform: uppercase;
-      overflow: hidden;
-      transform: rotate(-90deg);
+    margin-top: 316px;
+    margin-left: -100px;
+    width: 305px;
+    color: #ABA9A9;
+    font-family: 'vg';
+    font-weight: 300;
+    font-size: 44px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    overflow: hidden;
+    rotate: -90deg;
 
-      & > div {
-        transition: all 1s ease;
+    & > div {
+      transition: all 1s ease;
 
-        .atuacao & { animation: left2Right 2s ease }
-      }
+      .atuacao & { animation: left2Right 2s ease }
+    }
   }
 
   .banner-glyph {
@@ -585,12 +668,21 @@ body {
     color: #999;
     font-size: 20px;
     line-height: 1.3;
+
+    &.text-justify {
+      text-align: justify;
+    }
+
+    & p, ul, li {
+      margin-bottom: 8px;
+    }
   }
 
   .video-container {
     flex-grow: 0;
-    width: calc(100vh - 308px);
-    height: 100%;
+    aspect-ratio: 2 / 3.2;
+    /* width: calc(100vh - 232px); */
+    height: 100vh;
     transition: all 4s ease;
 
     .atuacao & { animation: fadeIn 2s ease }
@@ -604,6 +696,11 @@ body {
   .video-frame {
     position: relative;
     height: 100%;
+
+    .video-player {
+      width: 100%;
+      height: 100%;
+    }
 
     .atuacao & {
       &:before {
@@ -629,13 +726,13 @@ body {
 
     &:before {
       top: 0;
-      left: 0;
+      left: -24px;
       height: 70%;
     }
 
     &:after {
       top: 50%;
-      right: -8px;
+      right: -24px;
       height: 24px;
     }
   }
