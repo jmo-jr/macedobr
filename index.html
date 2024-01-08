@@ -58,11 +58,8 @@
         <nav class="nav">
           <div class="container-fluid">
             <a id="home-link" class="back-btn nav-link" href="#home" data-panel="home">
-              <img src="assets/menu.png" alt="Voltar para a home" title="Voltar para a Homepage">
+              <img src="assets/home.png" alt="Voltar para a home" title="Voltar para a Homepage">
             </a>
-            <!-- <button class="back-btn" type="button">
-                <img src="assets/menu.png" alt="Voltar para a home" title="Voltar para a Homepage">
-            </button> -->
             
             <a class="navbar-brand" href="#">
               <img src="assets/logo-mbr_vd.png" alt="Associação Macedo Brasil">
@@ -114,13 +111,13 @@
                 <!-- TABS -->
                 <ul class="nav nav-tabs" id="quemTabs" role="tablist">
                   <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="who-tab" data-bs-toggle="tab" data-bs-target="#who" type="button" role="tab" aria-controls="who" aria-selected="true">Quem Somos</button>
+                    <button class="nav-link active" id="who-tab" data-bs-toggle="tab" data-bs-target="#who" data-video="assets/quemsomos.mp4" type="button" role="tab" aria-controls="who" aria-selected="true">Quem Somos</button>
                   </li>
                   <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="vision-tab" data-bs-toggle="tab" data-bs-target="#vision" type="button" role="tab" aria-controls="vision" aria-selected="false">Nossa Visão</button>
+                    <button class="nav-link" id="vision-tab" data-bs-toggle="tab" data-bs-target="#vision" data-video="assets/visao.mp4" type="button" role="tab" aria-controls="vision" aria-selected="false">Nossa Visão</button>
                   </li>
                   <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="mission-tab" data-bs-toggle="tab" data-bs-target="#mission" type="button" role="tab" aria-controls="mission" aria-selected="false">Nossa Missão</button>
+                    <button class="nav-link" id="mission-tab" data-bs-toggle="tab" data-bs-target="#mission" data-video="assets/missao.mp4" type="button" role="tab" aria-controls="mission" aria-selected="false">Nossa Missão</button>
                   </li>
                 </ul>
 
@@ -152,9 +149,9 @@
 
                 <!-- Video -->
                 <div class="video-container">
-                  <div class="video-frame" style="background-color:grey">
-                    <video class="video-player" autoplay muted loop>
-                      <source src="" type="video/mp4">
+                  <div class="video-frame changes" style="background-color:grey">
+                    <video id="vidQuem" class="video-player" autoplay muted loop>
+                      <source src="assets/quemsomos.mp4" type="video/mp4">
                       Your browser does not support the video tag.
                     </video>
                   </div>
@@ -226,8 +223,8 @@
               </div>
               
               <div class="video-container">
-                <div class="video-frame">
-                  <video class="video-player" autoplay muted loop>
+                <div class="video-frame changes">
+                  <video id="vidAtua" class="video-player" autoplay muted loop>
                     <source src="assets/infraestrutura.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                   </video>
@@ -328,19 +325,30 @@
             }
           });
         });
+
+        // Muda videos das abas de Quem Somos
+        const quemTabLinks = document.querySelectorAll('#quemTabs .nav-link');
+
+        quemTabLinks.forEach(qtabLink => {
+          qtabLink.addEventListener('click', function() {
+            let qVideoSrc = qtabLink.getAttribute('data-video');
+            let quemPlayer = document.getElementById('vidQuem');
+            
+            quemPlayer.src = qVideoSrc;
+            quemPlayer.style.animation = "fadeIn 2s ease";
+          })
+        })
       
         // Muda videos das abas de Atuação
-        var tabLinks = document.querySelectorAll('#atuacaoTabs .nav-link');
+        const atuaTabLinks = document.querySelectorAll('#atuacaoTabs .nav-link');
 
-        tabLinks.forEach(tabLink => {
-          tabLink.addEventListener('click', function() {
-            var videoSrc = tabLink.getAttribute('data-video');
-            var allPlayers = document.querySelectorAll('#atuacao .video-player');
-
-            allPlayers.forEach(video => {
-              video.src = videoSrc;
-              video.style.animation = "fadeIn 2s ease";
-            });
+        atuaTabLinks.forEach(atabLink => {
+          atabLink.addEventListener('click', function() {
+            let aVideoSrc = atabLink.getAttribute('data-video');
+            let atuaPlayer = document.getElementById('vidAtua');
+            
+            atuaPlayer.src = aVideoSrc;
+            atuaPlayer.style.animation = "fadeIn 2s ease";
           })
         })
       });
