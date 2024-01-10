@@ -8,6 +8,11 @@
   to { transform: translateY(0); }
 }
 
+@keyframes outUp {
+  from { transform: translateY(0); }
+  to { transform: translateY(-100%); }
+}
+
 @keyframes left2Right {
   from { transform: translateX(-100%); }
   to { transform: translateX(0); }

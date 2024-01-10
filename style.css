@@ -34,7 +34,7 @@
 /* BODY */
 
 body {
-  background-color: #eae8e8;
+  background-color: #fefefe;
   font-family: 'Montserrat', sans-serif;
   overflow: hidden;
 }
@@ -369,9 +369,10 @@ body {
 .secondary-header {
   display: none;
   position: fixed;
+  width: 100%;
+  height: 43px;
+  margin: 0;
   z-index: 1000;
-  width: 100px;
-  margin: 0 24px;
 
   .nav > .container-fluid {
       display: flex;
@@ -385,26 +386,31 @@ body {
       flex-direction: column;
       justify-content: flex-end;
       width: 90px;
+      margin-top: 40px;
+      margin-left: -40px;
       animation: fadeIn 1s ease;
   }
 
   .back-btn {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      display: block;
+      padding: 8px 16px;
+      background-color: #ABA9A9;
       border: none;
-      padding: 16px;
-      background-color: transparent;
-      transition: all 1s ease;
+      color: white;
+      font-family: 'vg';
+      font-size: 18px;
 
       .quem & {
-        animation: scaleY 1s ease;
+        left: 51%;
+        animation: upDown 1s ease-out;
       }
 
       .atuacao & {
-        animation: scaleY 1s ease;
-      }
-  
-      & > img {
-        width: 30px;
-        border: none;
+        left: 70%;
+        animation: upDown 1s ease-out;
       }
   }
 
@@ -412,7 +418,12 @@ body {
 
 #body:not(.home):not(.parcerias):not(.fale) {
   .default-header {
-    display: none
+    transition: all 1s ease-in;
+    transform: translateY(-100%);
+
+    .navbar-brand {
+      visibility: hidden 
+    }
   }
   .secondary-header {
     display: block;
@@ -428,7 +439,7 @@ body {
   overflow: hidden;
 
   .atuacao & {
-    margin-top: 40px;
+    margin-top: 60px;
   }
 
   .nav-item {
@@ -568,6 +579,7 @@ body {
 
   .headlines {
     width: 100%;
+    margin-top: 16px;
     margin-right: 90px;
     text-align: center;
     transition: all 1s ease;
@@ -582,7 +594,7 @@ body {
   .subtitle {
       position: absolute;
       top: 260px;
-      left: -133px;
+      left: -124px;
       width: 305px;
       margin: 0;
       color: #ABA9A9;
@@ -602,7 +614,7 @@ body {
   .banner-glyph {
     width: 38px;
     height: 32px;
-    margin: 24px auto;
+    margin: 16px auto;
     background: url(assets/losango.svg) no-repeat;
     background-size: contain;
   }
@@ -774,7 +786,7 @@ body {
 
   .subtitle {
     margin-top: 316px;
-    margin-left: -100px;
+    margin-left: -94px;
     width: 305px;
     color: #ABA9A9;
     font-family: 'vg';
@@ -795,7 +807,7 @@ body {
   .banner-glyph {
     width: 38px;
     height: 32px;
-    margin: 50px auto;
+    margin: 40px auto;
     background: url(assets/losango.svg) no-repeat;
     background-size: contain;
   }

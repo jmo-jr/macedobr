@@ -24,7 +24,7 @@
       
       <header class="default-header">
           <nav class="navbar navbar-expand-sm navbar-light bg-mbr">
-              <div class="container-fluid">
+              <div class="container">
 
                   <a class="navbar-brand" href="#home">
                     <img src="assets/logo_ambr_br.png" alt="Associação Macedo Brasil">
@@ -46,9 +46,9 @@
                   </div>
 
                   <div class="top-social">
-                    <a href="https://instagram.com/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                    <a href="https://facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                    <a href="https://wa.me/557598011234" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+                    <a href="https://www.instagram.com/associacaomacedobrasil?igsh=MzRlODBiNWFlZA==" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=61555134284868" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    <!-- <a href="https://wa.me/55759" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a> -->
                 </div>
               </div>
           </nav>
@@ -56,10 +56,8 @@
 
       <header class="secondary-header">
         <nav class="nav">
-          <div class="container-fluid">
-            <a id="home-link" class="back-btn nav-link" href="#home" data-panel="home">
-              <img src="assets/home.png" alt="Voltar para a home" title="Voltar para a Homepage">
-            </a>
+          <div class="container">
+            <a id="home-link" class="back-btn nav-link" href="#home" data-panel="home">HOME</a>
             
             <a class="navbar-brand" href="#">
               <img src="assets/logo_ambr_cor.png" alt="Associação Macedo Brasil">
@@ -397,6 +395,23 @@
             atuaPlayer.style.animation = "fadeIn 2s ease";
           })
         })
+
+        // Mostra ou oculta o menu principal
+        const backBtn = document.getElementById('home-link')
+        const mainNav = document.getElementsByClassName('default-header')
+
+        backBtn.addEventListener('mouseenter', function() {
+          console.log('hover')
+          this.classList.add('hide');
+          mainNav.classList.add('show');
+        })
+
+        backBtn.addEventListener('mouseout', function() {
+          console.log('hover out')
+          this.classList.remove('hide');
+          mainNav.classList.remove('show');
+        })
+
       });
     </script>
 </body>
