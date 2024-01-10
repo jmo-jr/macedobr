@@ -74,6 +74,12 @@ body {
     .atuacao & {
       display: none;
     }
+
+    .fale & {
+      top: 118px;
+      right: 8%;
+      animation: fadeIn 3s ease-out;
+    }
   }
 
   &.bottom-dots {
@@ -98,6 +104,12 @@ body {
     .atuacao & {
       bottom: 80px;
       right: 24%;
+    }
+
+    .fale & {
+      bottom: 80px;
+      left: 5%;
+      animation: fadeIn 3s ease-out;
     }
   }
 }
@@ -128,6 +140,12 @@ body {
   .atuacao & {
     bottom: 50px;
     right: 45%;
+    animation: showUpRotate 2s ease 2s, fadeIn 4s ease 1s;
+  }
+
+  .fale & {
+    bottom: 10px;
+    right: 10px;
     animation: showUpRotate 2s ease 2s, fadeIn 4s ease 1s;
   }
 }
@@ -180,6 +198,12 @@ body {
     right: 0;
     animation: right2Left 3s ease-out;
   }
+
+  .fale & {
+    top: 0;
+    right: 0;
+    animation: fadeIn 3s ease-out;
+  }
 }
 
 .glyph-bl-corner {
@@ -210,6 +234,12 @@ body {
   .atuacao & {
     bottom: -45%;
   }
+
+  .fale & {
+    bottom: 0;
+    left: 0;
+    animation: downUp 1s ease, fadeIn 4s;
+  }
 }
 
 .triangles {
@@ -238,6 +268,11 @@ body {
   .atuacao & {
     bottom: 0;
     left: 90%;
+  }
+
+  .fale & {
+    bottom: 0;
+    left: 60%;
   }
 }
 
@@ -375,7 +410,7 @@ body {
 
 }
 
-#body:not(.home):not(.parcerias) {
+#body:not(.home):not(.parcerias):not(.fale) {
   .default-header {
     display: none
   }
@@ -840,4 +875,75 @@ body {
     }
   }
 
+}
+
+#fale {
+  padding-left: 0;
+  padding-right: 0;
+
+  .img-container {
+    position: absolute;
+    bottom: 0;
+    left: 100px;
+    width: 332px;
+    height: calc(100vh - 118px);
+    background: url(assets/faleconosco.png) no-repeat;
+    background-size: contain;
+  }
+
+  & h2 {
+    position: relative;
+    margin-bottom: 24px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 10px;
+      right: 30%;
+      width: 27px;
+      height: 22px;
+      background: url(assets/losango_br.svg) no-repeat center;
+      background-size: contain;
+    }
+  }
+
+  .form-container {
+    width: calc(100% - 347px);
+    margin-top: 40px;
+    padding: 20px 110px;
+    background: url(assets/bg_fale.png) no-repeat left center;
+  }
+
+  .form-label {
+      line-height: 1;
+      margin-bottom: 5px;
+      color: white;
+  }
+
+  .form-control {
+      background-color: rgba(255, 255, 255, 0);
+      border-radius: 0;
+      border-width: 2px;
+  }
+
+  button.btn {
+      text-transform: uppercase;
+      border-radius: 0;
+      width: 120px;
+  }
+
+  .contacts {
+    margin-top: 40px;
+  }
+
+  .contact {
+    border-left: solid 4px white;
+    padding: 0 12px;
+    text-transform: uppercase;
+    color: white;
+  }
 }
