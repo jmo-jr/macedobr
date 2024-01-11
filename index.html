@@ -397,20 +397,20 @@
         })
 
         // Mostra ou oculta o menu principal
-        const backBtn = document.getElementById('home-link')
-        const mainNav = document.getElementsByClassName('default-header')
+        const backBtn = $('#home-link')
+        const mainNav = $('.default-header')
 
-        backBtn.addEventListener('mouseenter', function() {
-          console.log('hover')
-          this.classList.add('hide');
-          mainNav.classList.add('show');
-        })
-
-        backBtn.addEventListener('mouseout', function() {
-          console.log('hover out')
-          this.classList.remove('hide');
-          mainNav.classList.remove('show');
-        })
+        backBtn
+          .on('mouseover', function() {
+            console.log('hover')
+            $(this).addClass('hide');
+            mainNav.addClass('show');
+          })
+          .on('mouseout', function() {
+            console.log('hover out')
+            $(this).removeClass('hide');
+            mainNav.removeClass('show');
+          })
 
       });
     </script>
