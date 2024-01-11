@@ -25,6 +25,10 @@
     gap: 60px;
 }
 
+.container {
+  height: 100%
+}
+
 .multi-columns {
   display: inline-block;
   column-count: 2;
@@ -219,6 +223,7 @@ body {
   }
 
   .quem & {
+    display: none;
     top: 0;
     left: 148px;
     width: 80px;
@@ -536,7 +541,7 @@ body {
   .video-container {
     flex-grow: 0;
     width: 50%;
-    height: 100%;
+    height: 80%;
     animation: fadeIn 3s ease-out;
   }
 
@@ -578,6 +583,9 @@ body {
   transition: all 2s ease;
 
   .headlines {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     width: 100%;
     margin-top: 16px;
     margin-right: 90px;
@@ -586,9 +594,24 @@ body {
     animation: fadeIn 2s ease;
   }
 
+  #quemTabContent {
+    flex: 0 1 30%;
+  }
+
   .title-container {
     position: relative;
     width: 220px;
+
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: -40px;
+      left: 71px;
+      width: 80px;
+      height: 490px;
+      background-color: var(--green);
+    }
   }
 
   .subtitle {
@@ -896,16 +919,21 @@ body {
   .img-container {
     position: absolute;
     bottom: 0;
-    left: 100px;
-    width: 332px;
-    height: calc(100vh - 118px);
+    left: 10%;
+    width: 26%;
+    height: calc(100vh - 128px);
     background: url(assets/faleconosco.png) no-repeat;
     background-size: contain;
+
+    @media screen and (min-width:1440px) {
+      left: 14%;
+    }
   }
 
   & h2 {
     position: relative;
-    margin-bottom: 24px;
+    width: 216px;
+    margin: 0 auto 24px;
     color: white;
     font-weight: bold;
     text-align: center;
@@ -915,7 +943,7 @@ body {
       display: block;
       position: absolute;
       top: 10px;
-      right: 30%;
+      right: -40px;
       width: 27px;
       height: 22px;
       background: url(assets/losango_br.svg) no-repeat center;
@@ -924,10 +952,15 @@ body {
   }
 
   .form-container {
-    width: calc(100% - 347px);
-    margin-top: 40px;
-    padding: 20px 110px;
+    width: calc(100% - 392px);
+    height: 470px;
+    padding: 20px 114px;
     background: url(assets/bg_fale.png) no-repeat left center;
+
+    @media screen and (min-width: 1440px) {
+      width: calc(100% - 610px);
+      padding: 20px 200px;
+    }
   }
 
   .form-label {
