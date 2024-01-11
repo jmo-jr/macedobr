@@ -284,100 +284,127 @@ body {
 /* HEADER */
 
 .default-header {
-    position: fixed;
-    width: 100%;
-    z-index: 1000;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
 
-    .navbar {
-      padding: 0 40px;
+  .navbar {
+    padding: 0 40px;
+  }
+
+  .navbar-nav {
+    font-family: vg;
+    font-weight: 300;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: fadeIn 2s, swipeRight 2s ease;
+  }
+
+  .navbar-brand {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 110px;
+    height: 128px;
+    padding: 10px;
+    background-color: var(--green);
+    animation: upDown 2s ease;
+
+    & img {
+      animation: fadeIn 8s ease;
+    }
+  }
+
+  & a.nav-link {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    color: #999;
+    font-size: 22px;
+    text-transform: uppercase;
+
+    &.active {
+      color: var(--green) !important;
+    }
+  }
+
+  .top-social {
+    display: flex;
+    gap: 16px;
+
+    .fa-facebook,
+    .fa-instagram,
+    .fa-whatsapp {
+      display: block;
+      height: 100%;
+      background-repeat: no-repeat;
+      background-position: center;
     }
 
-    .navbar-nav {
-      font-family: vg;
-      font-weight: 300;
-      white-space: nowrap;
-      overflow: hidden;
-      animation: fadeIn 2s, swipeRight 2s ease;
+    .fa-facebook { 
+      background-image: url(assets/facebook.svg);
+      animation: popUp 2s ease; 
     }
-
-    .navbar-brand {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      width: 110px;
-      height: 128px;
-      padding: 10px;
+    .fa-instagram { 
+      background-image: url(assets/instagram.svg);
+      background-size: 60%;
+    }
+    .fa-whatsapp { 
+      background-image: url(assets/wazapp.svg);
+      background-size: 60%;
+    }
+    
+    & > a {
+      display: inline-block;
       background-color: var(--green);
-      animation: upDown 2s ease;
+      width: 32px;
+      height: 32px;
+      border-radius: 50px;
 
-      & img {
-        animation: fadeIn 8s ease;
-      }
-    }
+      &:first-child { animation: popUp 2s ease; }
 
-    & a.nav-link {
-      padding-left: 20px !important;
-      padding-right: 20px !important;
-      color: #999;
-      font-size: 22px;
-      text-transform: uppercase;
-
-      &.active {
-        color: var(--green) !important;
-      }
-    }
-
-    .top-social {
-      display: flex;
-      gap: 16px;
-
-      .fa-facebook,
-      .fa-instagram,
-      .fa-whatsapp {
-        display: block;
-        height: 100%;
-        background-repeat: no-repeat;
-        background-position: center;
-      }
-
-      .fa-facebook { 
-        background-image: url(assets/facebook.svg);
-        animation: popUp 2s ease; 
-      }
-      .fa-instagram { 
-        background-image: url(assets/instagram.svg);
-        background-size: 60%;
-      }
-      .fa-whatsapp { 
-        background-image: url(assets/wazapp.svg);
-        background-size: 60%;
-      }
+      &:nth-child(2) { animation: fadeIn 4s, popUp 2s ease; }
       
-      & > a {
-        display: inline-block;
-        background-color: var(--green);
-        width: 32px;
-        height: 32px;
-        border-radius: 50px;
-
-        &:first-child { animation: popUp 2s ease; }
-
-        &:nth-child(2) { animation: fadeIn 4s, popUp 2s ease; }
-        
-        &:last-child { 
-          animation: fadeIn 6s, popUp 2s ease; 
-        }
+      &:last-child { 
+        animation: fadeIn 6s, popUp 2s ease; 
       }
     }
+  }
+
+  .back-btn {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    display: none;
+    padding: 8px 16px;
+    background-color: #ABA9A9;
+    border: none;
+    color: white;
+    font-family: 'vg';
+    font-size: 18px;
+
+    .quem & {
+      display: block;
+    }
+
+    .atuacao & {
+      display: block;
+    }
+  }
+
+  &:hover {
+    transform: translateY(0);
+  }
 }
 
 .secondary-header {
   display: none;
-  position: fixed;
+  position: absolute;
+  top: 0;
   width: 100%;
   height: 43px;
   margin: 0;
-  z-index: 1000;
+  z-index: 999;
 
   .nav > .container-fluid {
       display: flex;
@@ -394,29 +421,6 @@ body {
       margin-top: 40px;
       margin-left: -40px;
       animation: fadeIn 1s ease;
-  }
-
-  .back-btn {
-      position: absolute;
-      top: 0;
-      left: 50%;
-      display: block;
-      padding: 8px 16px;
-      background-color: #ABA9A9;
-      border: none;
-      color: white;
-      font-family: 'vg';
-      font-size: 18px;
-
-      .quem & {
-        left: 51%;
-        animation: upDown 1s ease-out;
-      }
-
-      .atuacao & {
-        left: 70%;
-        animation: upDown 1s ease-out;
-      }
   }
 
 }
