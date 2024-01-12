@@ -400,14 +400,14 @@ body {
     }
   }
 
-  &:hover {
+  /* &:hover {
     transform: translateY(0) !important;
 
     .back-btn { 
       opacity: 0;
       animation: fadeOut 1s ease;
     }
-  }
+  } */
 }
 
 .secondary-header {
