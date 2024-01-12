@@ -37,11 +37,11 @@
 
                   <div class="collapse navbar-collapse justify-content-center" id="mainNav">
                       <div class="navbar-nav">
-                          <a id="home-link" class="nav-link active" aria-current="page" href="#home" data-panel="home">Home</a>
-                          <a id="quem-link" class="nav-link" aria-current="page" href="#quem" data-panel="quem">Quem somos</a>
-                          <a id="parcerias-link" class="nav-link" aria-current="page" href="#parcerias" data-panel="parcerias">Parcerias</a>
-                          <a id="atuacao-link" class="nav-link" aria-current="page" href="#atuacao" data-panel="atuacao">Atuação</a>
-                          <a id="fale-link" class="nav-link" aria-current="page" href="#fale" data-panel="fale">Fale Conosco</a>
+                          <a id="home-link" class="nav-js nav-link active" aria-current="page" href="#home" data-panel="home">Home</a>
+                          <a id="quem-link" class="nav-js nav-link" aria-current="page" href="#quem" data-panel="quem">Quem somos</a>
+                          <a id="parcerias-link" class="nav-js nav-link" aria-current="page" href="#parcerias" data-panel="parcerias">Parcerias</a>
+                          <a id="atuacao-link" class="nav-js nav-link" aria-current="page" href="#atuacao" data-panel="atuacao">Atuação</a>
+                          <a id="fale-link" class="nav-js nav-link" aria-current="page" href="#fale" data-panel="fale">Fale Conosco</a>
                       </div>
                   </div>
 
@@ -53,7 +53,7 @@
               </div>
           </nav>
 
-          <a id="home-link" class="back-btn nav-link" href="#home" data-panel="home">HOME</a>
+          <a id="home-link" class="back-btn nav-link nav-js" href="#home" data-panel="home">HOME</a>
       </header>
 
       <section id="home" class="panel visible">
@@ -84,13 +84,12 @@
       </section>
 
       <section id="quem" class="panel">
-        
           <div class="container h-100">
 
             <header class="secondary-header">
               <nav class="nav">
-                <div>
-                  <a class="navbar-brand" href="#">
+                <div style="margin-left:-33px">
+                  <a class="navbar-brand nav-js" href="#home" data-panel="home">
                     <img src="assets/logo_ambr_cor.png" alt="Associação Macedo Brasil">
                   </a>
                 </div>
@@ -216,7 +215,7 @@
 
             <header class="secondary-header">
               <nav class="nav">
-                <div>
+                <div style="margin-left:-33px">
                   <a class="navbar-brand" href="#">
                     <img src="assets/logo_ambr_cor.png" alt="Associação Macedo Brasil">
                   </a>
@@ -347,7 +346,7 @@
     <script>
       document.addEventListener('DOMContentLoaded', function() {
         
-        var navLinks = document.querySelectorAll('a.nav-link');
+        var navLinks = document.querySelectorAll('.nav-js');
         
         navLinks.forEach(function(navLink) {
           // Ao clicar no link, torna painel visivel

@@ -289,11 +289,16 @@ body {
   width: 100%;
   z-index: 1000;
 
+  .quem & {
+    animation: outUp 1s ease;
+  }
+
   .navbar {
     padding: 0 40px;
   }
 
   .navbar-nav {
+    width: 100%;
     background-color: rgba(255,255,255,.8);
     font-family: vg;
     font-weight: 300;
@@ -411,14 +416,14 @@ body {
   top: 0;
   width: 100%;
   margin: 0;
-  z-index: -1;
+  z-index: 1;
   
   .navbar-brand {
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
       width: 90px;
-      margin: 30px 22px 0;
+      margin: 30px 0 0;
       animation: fadeIn 1s ease;
   }
 
@@ -593,7 +598,7 @@ body {
     flex-direction: column;
     justify-content: space-evenly;
     width: 100%;
-    margin-top: 4px;
+    margin-top: 17px;
     margin-right: 90px;
     text-align: center;
     transition: all 1s ease;
@@ -607,6 +612,7 @@ body {
   .title-container {
     position: relative;
     width: 220px;
+    animation: fadeIn 1s ease;
 
     &:after {
       content: "";
@@ -623,7 +629,7 @@ body {
   .subtitle {
       position: absolute;
       top: 260px;
-      left: -124px;
+      left: -116px;
       width: 305px;
       margin: 0;
       color: #ABA9A9;
@@ -929,6 +935,7 @@ body {
     height: calc(100vh - 128px);
     background: url(assets/faleconosco.png) no-repeat;
     background-size: contain;
+    z-index: 10;
     animation: fadeIn 1s ease, slideRight 2s ease;
 
     @media screen and (min-width:1440px) {
