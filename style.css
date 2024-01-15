@@ -965,8 +965,8 @@ body {
   }
 
   .form-container {
-    width: calc(100% - 375px);
-    height: 470px;
+    width: calc(100% - 330px);
+    height: 454px;
     padding: 20px 120px;
     background: url(assets/bg_fale.png) no-repeat left center;
     animation: fadeIn 2s ease;
