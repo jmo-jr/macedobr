@@ -310,7 +310,7 @@ body {
       padding-left: 20px !important;
       padding-right: 20px !important;
       color: #999;
-      font-size: 22px;
+      font-size: 19px;
       text-transform: uppercase;
 
       &.active {
@@ -1005,4 +1005,21 @@ body {
     text-transform: uppercase;
     color: white;
   }
+}
+
+.transparencia {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    /* display: none; */
+    height: 100vh;
+    padding: 146px 80px 40px;
+    overflow: auto;
+    transition: all 1s ease;
+		animation: slideUp 1.5s ease, fadeIn 2s ease;
+
+    &.visible {
+      display: block;
+    }
 }
