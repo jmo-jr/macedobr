@@ -1014,7 +1014,7 @@ body {
     right: 0;
     /* display: none; */
     height: 100vh;
-    padding: 146px 80px 40px;
+    padding: 150px 130px 40px;
     overflow: auto;
     transition: all 1s ease;
 		animation: slideUp 1.5s ease, fadeIn 2s ease;
