@@ -187,7 +187,13 @@
 						</h2>
 						<div id="estatuto" class="accordion-collapse collapse" data-bs-parent="#accTransparencia">
 							<div class="accordion-body">
-								...
+								<ul class="simple-list">
+									<li v-for="item in items" :key="item.id">
+										<a href="{{ item.link }}" target="_blank">
+											<img src="assets/icon-file.svg" class="list-icon">{{ item.name }}
+										</a>
+									</li>
+								</ul>
 							</div>
 						</div>
 					</div>
@@ -229,87 +235,29 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://getbootstrap.com/docs/4.1/assets/js/vendor/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
-    <!--<script>
-      document.addEventListener('DOMContentLoaded', function() {
-        
-        var navLinks = document.querySelectorAll('.nav-js');
-        
-        navLinks.forEach(function(navLink) {
-          // Ao clicar no link, torna painel visivel
-          navLink.addEventListener('click', function() {
-            
-            var panelId = navLink.getAttribute('data-panel');
-            var allPanels = document.querySelectorAll('.panel');
+	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+	<script>
+	const { createApp, ref } = Vue
 
-            //Remove class .active from all .nav-link elements
-            navLinks.forEach(eachLink => {
-              eachLink.classList.remove('active');
-            })
-            // Add class active on clicked link
-            navLink.classList.add('active');
-
-            // Atribui classe equiv. ao painel visivel
-            var docBody = document.getElementById('body');
-            docBody.className = '';
-            docBody.classList.add(panelId);
-
-            // Remove classe visible de tudo
-            allPanels.forEach(function(panel) {
-              panel.classList.remove('visible');
-            });
-            
-            var targetElement = document.getElementById(panelId);
-            
-            // Add classe visible somente no painel certo
-            if (targetElement) {
-              targetElement.classList.add('visible');
-            }
-          });
-        });
-
-        // Muda videos das abas de Quem Somos
-        const quemTabLinks = document.querySelectorAll('#quemTabs .nav-link');
-
-        quemTabLinks.forEach(qtabLink => {
-          qtabLink.addEventListener('click', function() {
-            let qVideoSrc = qtabLink.getAttribute('data-video');
-            let quemPlayer = document.getElementById('vidQuem');
-            
-            quemPlayer.src = qVideoSrc;
-            quemPlayer.style.animation = "fadeIn 2s ease";
-          })
-        })
-      
-        // Muda videos das abas de Atuação
-        const atuaTabLinks = document.querySelectorAll('#atuacaoTabs .nav-link');
-
-        atuaTabLinks.forEach(atabLink => {
-          atabLink.addEventListener('click', function() {
-            let aVideoSrc = atabLink.getAttribute('data-video');
-            let atuaPlayer = document.getElementById('vidAtua');
-            
-            atuaPlayer.src = aVideoSrc;
-            atuaPlayer.style.animation = "fadeIn 2s ease";
-          })
-        })
-
-        // Mostra ou oculta o menu principal - NOT WORKING
-        const backBtn = $('#home-link')
-        const mainNav = $('.default-header')
-
-        backBtn
-          .on('mouseover', function() {
-            console.log('hover')
-            $(this).addClass('hide');
-            mainNav.addClass('show');
-          })
-          .on('mouseout', function() {
-            console.log('hover out')
-            $(this).removeClass('hide');
-            mainNav.removeClass('show');
-          })
-
-      });
-    </script>-->
+	createApp({
+		setup() {
+			const items = ref('Hello vue!')
+			return {
+				data: {
+					items: [
+						{ 
+							name: 'Algo',
+							link: 'https://drive.google.com/'
+						 },
+						 { 
+							name: 'Outro',
+							link: 'https://google.com/'
+						 },
+					]
+				}
+			}
+		}
+	}).mount('#accTransparencia')
+</script>
 </body>
 </html>
