@@ -1,0 +1,16 @@
+{
+    "host": "ftp.macedobrasil.org.br",
+    "username": "macedobrasil1",
+    "password": "Miguelito1094!",
+    "remotePath": "public_html",
+    "protocol": "ftp",
+    "port": 21,
+    "fileNameEncoding": "utf8",
+    "autoUpload": false,
+    "autoDelete": false,
+    "autoDownload": false,
+    "ignore": [
+        ".git",
+        "/.vscode"
+    ]
+}
