@@ -189,7 +189,7 @@
 							<div class="accordion-body">
 								<ul class="simple-list">
 									<li v-for="item in items" :key="item.id">
-										<a href="{{ item.link }}" target="_blank">
+										<a :href="{{ item.link }}" target="_blank">
 											<img src="assets/icon-file.svg" class="list-icon">{{ item.name }}
 										</a>
 									</li>
@@ -241,10 +241,9 @@
 
 	createApp({
 		setup() {
-			const items = ref('Hello vue!')
+			const nope = ref('Hello vue!')
 			return {
-				data: {
-					items: [
+				items: [
 						{ 
 							name: 'Algo',
 							link: 'https://drive.google.com/'
@@ -254,7 +253,6 @@
 							link: 'https://google.com/'
 						 },
 					]
-				}
 			}
 		}
 	}).mount('#accTransparencia')
