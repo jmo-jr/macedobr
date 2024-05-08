@@ -245,6 +245,11 @@ body {
     left: 0;
     animation: downUp 1s ease, fadeIn 4s;
   }
+
+	.transp & {
+		bottom: 0;
+		/* animation: right2Left 1s ease, fadeOut 2s; */
+	}
 }
 
 .triangles {
@@ -279,6 +284,11 @@ body {
     bottom: 0;
     left: 60%;
   }
+
+	.transp & {
+		bottom: 0;
+    right: 5%;
+	}
 }
 
 /* HEADER */
@@ -429,7 +439,7 @@ body {
 
 }
 
-#body:not(.home):not(.parcerias):not(.fale) {
+#body:not(.home):not(.parcerias):not(.fale):not(.transp) {
   .default-header {
     transition: all 1s ease-in;
     transform: translateY(-100%);
@@ -1017,9 +1027,76 @@ body {
     padding: 150px 130px 40px;
     overflow: auto;
     transition: all 1s ease;
-		animation: slideUp 1.5s ease, fadeIn 2s ease;
+		animation: slideDown 1.5s ease, fadeIn 2s ease;
 
     &.visible {
       display: block;
     }
+
+		.page-title {
+			color: var(--green);
+			text-transform: uppercase;
+			font-size: 30px;
+			font-weight: bold;
+			margin: 20px 0;
+		}
+		.list-icon { 
+			width: 20px;
+			margin-right: 12px;
+		}
+		.simple-list {
+			margin-top: 16px;
+			padding: 0;
+			list-style-type: none;
+
+			& a {
+				display: flex;
+				margin-bottom: 8px;
+				padding: 10px 8px;
+				border-radius: 8px;
+				text-decoration: none;
+
+				&:hover {
+					background-color: #2cad781a;
+				}
+			}
+		}
+
+		.accordion-button {
+			padding: 24px;
+			font-size: 20px;
+
+			&:hover {
+				background-color: aliceblue;
+			}
+		}
+
+		.accordion {
+			position: relative;
+			border: solid 1px #eee;
+				border-radius: 8px;
+		}
+
+		.accordion-header {
+			width: 340px;
+			border-right: solid 1px #eee;
+			border-bottom: solid 1px #eee;
+		}
+
+		.accordion-item {
+			display: flex;
+			border: none;
+		}
+
+		.accordion-button::after {
+			transform: rotateZ(-90deg);
+		}
+
+		.accordion-button:not(.collapsed)::after { display: none; }
+
+		.accordion-collapse {
+			position: absolute;
+			top: 0;
+			left: 350px;
+		}
 }
