@@ -1068,16 +1068,16 @@ body {
 		#accTransparencia {
 
 			&.accordion {
-				position: relative;
+				/* position: relative; */
 				border: solid 1px #eee;
 				border-radius: 8px;
 
 				& > .accordion-item {
-					display: flex;
-					border: none;
+					/* display: flex; */
+					/* border: none; */
 
 					& > .accordion-header {
-						width: 340px;
+						/* width: 340px; */
 						border-right: solid 1px #eee;
 						border-bottom: solid 1px #eee;
 						
@@ -1090,15 +1090,15 @@ body {
 							}
 
 							&::after {
-								transform: rotateZ(-90deg);
+								/* transform: rotateZ(-90deg); */
 							}
 
-							&:not(.collapsed)::after { display: none; }
+							/* &:not(.collapsed)::after { display: none; } */
 						}
 					}
 
 					& > .accordion-collapse {
-						position: absolute;
+						/* position: absolute; */
 						top: 0;
 						left: 340px;
 						right: 0;
