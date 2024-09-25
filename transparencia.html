@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="animations.css">
     <link rel="stylesheet" href="style.css">
 		<style>
+			.default-header {
+					background-color: white;
+			}
 			h2.page-title {
 				color: var(--green);
 				text-transform: uppercase;
@@ -85,6 +88,76 @@
 				top: 0;
 				left: 350px;
 			}
+
+			.clickables {
+				display: flex;
+				align-items: center;
+				gap: 16px;
+			}
+
+			@media screen and (max-width: 1200px) {
+				.navbar > .container {
+					align-items: flex-start;
+				}
+
+				.default-header {
+					background-color: white;
+
+					.navbar-brand {
+						height: 100px;
+					}
+
+					.navbar-nav {
+						animation: none;
+					}
+
+					.nav-link {
+						text-align: right;
+					}
+
+					.navbar-toggler {
+						border: solid 2px #02ad78;
+						padding: 4px 8px;
+						height: 40px;
+						width: 40px;
+						font-size: small;
+					}
+
+					.navbar-toggler-icon {
+						border-top: solid 2px #02ad78;
+						border-bottom: solid 2px #02ad78;
+						background: none;
+						display: grid;
+						place-items: center;
+
+						&:before {
+							content: "";
+							width: 100%;
+							height: 2px;
+							background-color: #02ad78;
+							display: block;
+						}
+					}
+				}
+
+				.transparencia {
+					padding-left: 40px;
+					padding-right: 40px;
+					padding-top: 120px;
+				}
+
+				.clickables {
+					flex-direction: row-reverse;
+					flex-wrap: wrap-reverse;
+					width: calc(100% - 136px);
+					padding-top: 50px;
+				}
+
+				#mainNav {
+					margin-top: 22px;
+				}
+			}
+
 		</style>
 </head>
 <body id="body" class="home">
@@ -102,35 +175,54 @@
           <nav class="navbar navbar-expand-sm navbar-light bg-mbr">
               <div class="container">
 
+									<!-- LOGO -->
                   <a class="nav-link navbar-brand" href="index.html#home">
                     <img src="assets/logo_ambr_br.png" alt="Associação Macedo Brasil">
                   </a>
 
-                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav"
-                      aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-                      <span class="navbar-toggler-icon"></span>
-                  </button>
+									<div class="clickables">
+										<!-- MENU -->
+										<div class="collapse navbar-collapse justify-content-center" id="mainNav">
+											<div class="navbar-nav">
+												<a id="home-link" class="nav-js nav-link" aria-current="page" href="index.html#home" data-panel="home">Home</a>
+												<a id="quem-link" class="nav-js nav-link" aria-current="page" href="index.html#quem" data-panel="quem">Quem somos</a>
+												<a id="parcerias-link" class="nav-js nav-link" aria-current="page" href="index.html#parcerias" data-panel="parcerias">Parcerias</a>
+												<a id="atuacao-link" class="nav-js nav-link" aria-current="page" href="index.html#atuacao" data-panel="atuacao">Atuação</a>
+												<div class="dropdown">
+													<a class="nav-link active dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" href="#" role="button">Transparência</a>
+													<ul class="dropdown-menu">
+														<li><a class="dropdown-item" href="transparencia.html">Documentação</a></li>
+														<li class="dropend">
+															<button class="dropdown-item dropdown-toggle" data-bs-toggle="dropend" type="button">Contratos</button>
+															<ul class="dropdown-menu dropdown-submenu">
+																<li><a class="dropdown-item" href="contratos/coruripe/index.html">Coruripe/AL</a></li>
+															</ul>
+														</li>
+													</ul>
+												</div>
+												<a id="fale-link" class="nav-js nav-link" aria-current="page" href="index.html#fale" data-panel="fale">Fale Conosco</a>
+											</div>
+										</div>
 
-                  <div class="collapse navbar-collapse justify-content-center" id="mainNav">
-                      <div class="navbar-nav">
-                          <a id="home-link" class="nav-js nav-link" aria-current="page" href="index.html#home" data-panel="home">Home</a>
-                          <a id="quem-link" class="nav-js nav-link" aria-current="page" href="index.html#quem" data-panel="quem">Quem somos</a>
-                          <a id="parcerias-link" class="nav-js nav-link" aria-current="page" href="index.html#parcerias" data-panel="parcerias">Parcerias</a>
-                          <a id="atuacao-link" class="nav-js nav-link" aria-current="page" href="index.html#atuacao" data-panel="atuacao">Atuação</a>
-                          <a id="transp-link" class="nav-js nav-link active" aria-current="page" href="#" data-panel="transp">Transparência</a>
-													<a id="fale-link" class="nav-js nav-link" aria-current="page" href="index.html#fale" data-panel="fale">Fale Conosco</a>
-                      </div>
-                  </div>
+										<!-- BURGER -->
+										<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+												aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+												<span class="navbar-toggler-icon"></span>
+										</button>
 
-                  <div class="top-social">
-                    <a href="https://www.instagram.com/associacaomacedobrasil?igsh=MzRlODBiNWFlZA==" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                    <a href="https://www.facebook.com/profile.php?id=61555134284868" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                    <!-- <a href="https://wa.me/55759" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a> -->
-                </div>
+										<!-- SOCIAL -->
+										<div class="top-social">
+											<a href="https://www.instagram.com/associacaomacedobrasil?igsh=MzRlODBiNWFlZA==" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+											<a href="https://www.facebook.com/profile.php?id=61555134284868" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+											<!-- <a href="https://wa.me/55759" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a> -->
+									</div>
+								</div>
+
               </div>
           </nav>
 
           <a id="home-link" class="back-btn nav-link nav-js" href="#home" data-panel="home">HOME</a>
+
       </header>
 
       <section class="transparencia">
@@ -143,7 +235,7 @@
 					<div class="accordion-item">
 						<h2 class="accordion-header">
 							<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-								<img src="assets/icon-folder.svg" class="list-icon"> Certidões
+								<img src="assets/icon-certidao.svg" class="list-icon"> Certidões
 							</button>
 						</h2>
 						<div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accTransparencia">
@@ -151,9 +243,10 @@
 								<!-- Nenhuma certidão foi disponibilizada ainda. -->
 								<ul class="simple-list">
 									<li v-for="item in items.certidoes" :key="item.id">
-										<a :href="item.link" target="_blank">
+										<a v-if="item.link != '#'" :href="item.link" target="_blank">
 											<img src="assets/icon-file.svg" class="list-icon">{{ item.name }}
 										</a>
+										<span v-else>{{ item.name }}</span>
 									</li>
 								</ul>
 							</div>
@@ -163,27 +256,20 @@
 					<!-- Certificados -->
 					<div class="accordion-item">
 						<h2 class="accordion-header">
-							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-								<img src="assets/icon-folder.svg" class="list-icon"> Certificados
+							<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+								<img src="assets/icon-certifica.svg" class="list-icon"> Certificados
 							</button>
 						</h2>
-						<div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accTransparencia">
+						<div id="collapseTwo" class="accordion-collapse collapse show" data-bs-parent="#accTransparencia">
 							<div class="accordion-body">
-								Nenhum certificado foi disponibilizado ainda.
-							</div>
-						</div>
-					</div>
-
-					<!-- Chamamento Publico -->
-					<div class="accordion-item">
-						<h2 class="accordion-header">
-							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-								<img src="assets/icon-folder.svg" class="list-icon"> Chamamento Público
-							</button>
-						</h2>
-						<div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accTransparencia">
-							<div class="accordion-body">
-								Nenhum chamamento foi disponibilizado ainda.
+								<ul class="simple-list">
+									<li v-for="item in items.certificados" :key="item.id">
+										<a v-if="item.link != '#'" :href="item.link" target="_blank">
+											<img src="assets/icon-file.svg" class="list-icon">{{ item.name }}
+										</a>
+										<span v-else>{{ item.name }}</span>
+									</li>
+								</ul>
 							</div>
 						</div>
 					</div>
@@ -191,18 +277,19 @@
 					<!-- Estatuto -->
 					<div class="accordion-item">
 						<h2 class="accordion-header">
-							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#estatuto" aria-expanded="false" aria-controls="estatuto">
-								<img src="assets/icon-folder.svg" class="list-icon"> Estatuto
+							<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#estatuto" aria-expanded="true" aria-controls="estatuto">
+								<img src="assets/icon-estatuto.svg" class="list-icon"> Estatuto
 							</button>
 						</h2>
-						<div id="estatuto" class="accordion-collapse collapse" data-bs-parent="#accTransparencia">
+						<div id="estatuto" class="accordion-collapse collapse show" data-bs-parent="#accTransparencia">
 							<div class="accordion-body">
 								<!-- <iframe src="https://drive.google.com/file/d/19UFbrH_LkfIr860cSNd8T7usKqysHZ7j/preview" width="640" height="480" allow="autoplay"></iframe> -->
 								<ul class="simple-list">
 									<li v-for="item in items.estatuto" :key="item.id">
-										<a :href="item.link" target="_blank">
+										<a v-if="item.link != '#'" :href="item.link" target="_blank">
 											<img src="assets/icon-file.svg" class="list-icon">{{ item.name }}
 										</a>
+										<span v-else>{{ item.name }}</span>
 									</li>
 								</ul>
 							</div>
@@ -212,33 +299,20 @@
 					<!-- Regulamentos -->
 					<div class="accordion-item">
 						<h2 class="accordion-header">
-							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#regulamentos" aria-expanded="false" aria-controls="regulamentos">
-								<img src="assets/icon-folder.svg" class="list-icon"> Regulamentos
+							<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#regulamentos" aria-expanded="true" aria-controls="regulamentos">
+								<img src="assets/icon-regulam.svg" class="list-icon"> Regulamentos
 							</button>
 						</h2>
-						<div id="regulamentos" class="accordion-collapse collapse" data-bs-parent="#accTransparencia">
+						<div id="regulamentos" class="accordion-collapse collapse show" data-bs-parent="#accTransparencia">
 							<div class="accordion-body">
 								<ul class="simple-list">
 									<li v-for="item in items.regulamentos" :key="item.id">
-										<a :href="item.link" target="_blank">
+										<a v-if="item.link != '#'" :href="item.link" target="_blank">
 											<img src="assets/icon-file.svg" class="list-icon">{{ item.name }}
 										</a>
+										<span v-else>{{ item.name }}</span>
 									</li>
 								</ul>
-							</div>
-						</div>
-					</div>
-
-					<!-- Termo -->
-					<div class="accordion-item">
-						<h2 class="accordion-header">
-							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#termo" aria-expanded="false" aria-controls="termo">
-								<img src="assets/icon-folder.svg" class="list-icon"> Termo de Colaboração
-							</button>
-						</h2>
-						<div id="termo" class="accordion-collapse collapse" data-bs-parent="#accTransparencia">
-							<div class="accordion-body">
-								Nenhum termo foi disponibilizado ainda.
 							</div>
 						</div>
 					</div>
@@ -249,10 +323,11 @@
 
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://getbootstrap.com/docs/4.1/assets/js/vendor/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
-		<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script id="JQuery" src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script id="BootstrapBundle" src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <!-- <script id="Popper" src="https://getbootstrap.com/docs/4.1/assets/js/vendor/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script id="Bootstrap" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script> -->
+		<script id="VueCDN" src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 		<script src="main.js"></script>
 </body>
 </html>

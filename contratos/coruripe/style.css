@@ -1,0 +1,154 @@
+.default-header {
+		background-color: white;
+}
+h2.page-title {
+	color: var(--green);
+	text-transform: uppercase;
+	font-size: 30px;
+	font-weight: bold;
+	margin: 20px 0;
+}
+.list-icon { 
+	width: 20px;
+	margin-right: 12px;
+}
+.simple-list {
+	margin-top: 16px;
+	padding: 0;
+	list-style-type: none;
+
+	& a {
+		display: flex;
+		margin-bottom: 8px;
+		padding: 10px 8px;
+		border-radius: 8px;
+		text-decoration: none;
+
+		&:hover {
+			background-color: #2cad781a;
+		}
+	}
+}
+
+.accordion-button {
+	padding: 24px;
+	font-size: 20px;
+
+	&:hover {
+		background-color: aliceblue;
+	}
+}
+
+/* .accordion-item {
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	border-bottom-color: #eee;
+} */
+
+.accordion {
+	position: relative;
+	border: solid 1px #eee;
+	border-radius: 8px;
+}
+
+.accordion-header {
+	/* width: 340px; */
+	border-right: solid 1px #eee;
+	border-bottom: solid 1px #eee;
+}
+
+.accordion-item {
+	/* display: flex; */
+	border-left: none;
+	border-right: none;
+}
+
+/* .accordion-button::after {
+	transform: rotateZ(-90deg);
+} */
+
+/* .accordion-button:not(.collapsed)::after { display: none; } */
+
+.accordion-collapse {
+	/* position: absolute; */
+	top: 0;
+	left: 350px;
+}
+
+.clickables {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+}
+
+.page-subtitle {
+	font-size: 24px;
+}
+
+.file-button {
+	margin: 32px 0
+}
+
+@media screen and (max-width: 1200px) {
+	.navbar > .container {
+		align-items: flex-start;
+	}
+
+	.default-header {
+		background-color: white;
+
+		.navbar-brand {
+			height: 100px;
+		}
+
+		.navbar-nav {
+			animation: none;
+		}
+
+		.nav-link {
+			text-align: right;
+		}
+
+		.navbar-toggler {
+			border: solid 2px #02ad78;
+			padding: 4px 8px;
+			height: 40px;
+			width: 40px;
+			font-size: small;
+		}
+
+		.navbar-toggler-icon {
+			border-top: solid 2px #02ad78;
+			border-bottom: solid 2px #02ad78;
+			background: none;
+			display: grid;
+			place-items: center;
+
+			&:before {
+				content: "";
+				width: 100%;
+				height: 2px;
+				background-color: #02ad78;
+				display: block;
+			}
+		}
+	}
+
+	.transparencia {
+		padding-left: 40px;
+		padding-right: 40px;
+		padding-top: 120px;
+	}
+
+	.clickables {
+		flex-direction: row-reverse;
+		flex-wrap: wrap-reverse;
+		width: calc(100% - 136px);
+		padding-top: 50px;
+	}
+
+	#mainNav {
+		margin-top: 22px;
+	}
+}

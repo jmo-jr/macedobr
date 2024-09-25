@@ -1,32 +1,32 @@
 @font-face {
   font-family: vg;
   font-weight: 300;
-  src: url('fonts/Vastago\ Grotesk\ Light.otf');
+  src: url("fonts/Vastago\ Grotesk\ Light.otf");
 }
 
 @font-face {
   font-family: vg;
   font-weight: normal;
-  src: url('fonts/Vastago\ Grotesk\ Regular.otf');
+  src: url("fonts/Vastago\ Grotesk\ Regular.otf");
 }
 
 @font-face {
   font-family: vg;
   font-weight: 700;
-  src: url('fonts/Vastago\ Grotesk\ SemiBold.otf');
+  src: url("fonts/Vastago\ Grotesk\ SemiBold.otf");
 }
 
 :root {
-  --green: #00AD78;
+  --green: #00ad78;
   --default-transition: all 1s ease-out;
 }
 
 .d-flex {
-    gap: 60px;
+  gap: 60px;
 }
 
 .container {
-  height: 100%
+  height: 100%;
 }
 
 .multi-columns {
@@ -39,7 +39,7 @@
 
 body {
   background-color: #fefefe;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   overflow: hidden;
 }
 
@@ -66,7 +66,7 @@ body {
     }
 
     .quem & {
-      display: none
+      display: none;
     }
 
     .parcerias & {
@@ -168,7 +168,8 @@ body {
   .quem & {
     bottom: 0;
     left: 0;
-    animation: fadeIn 2s ease'
+    animation: fadeIn 2s ease
+      "
   }
 
   .atuacao & { display: none }
@@ -188,7 +189,7 @@ body {
   .quem & {
     top: 0;
     right: 0;
-    animation: fadeIn 2s ease'
+    animation: fadeIn 2s ease";
   }
 
   .parcerias & {
@@ -197,7 +198,7 @@ body {
     animation: upDown 3s ease;
   }
 
-  .atuacao & { 
+  .atuacao & {
     top: 0;
     right: 0;
     animation: right2Left 3s ease-out;
@@ -246,10 +247,10 @@ body {
     animation: downUp 1s ease, fadeIn 4s;
   }
 
-	.transp & {
-		bottom: 0;
-		/* animation: right2Left 1s ease, fadeOut 2s; */
-	}
+  .transp & {
+    bottom: 0;
+    /* animation: right2Left 1s ease, fadeOut 2s; */
+  }
 }
 
 .triangles {
@@ -285,10 +286,10 @@ body {
     left: 60%;
   }
 
-	.transp & {
-		bottom: 0;
+  .transp & {
+    bottom: 0;
     right: 5%;
-	}
+  }
 }
 
 /* HEADER */
@@ -297,6 +298,7 @@ body {
   position: absolute;
   top: 0;
   width: 100%;
+	background-color: transparent;
   z-index: 1000;
 
   .quem & {
@@ -309,11 +311,12 @@ body {
 
   .navbar-nav {
     width: 100%;
-    background-color: rgba(255,255,255,.8);
+    background-color: rgba(255, 255, 255, 0.8);
     font-family: vg;
     font-weight: 300;
     white-space: nowrap;
-    overflow: hidden;
+    overflow-x: clip;
+		overflow-y:visible;
     animation: fadeIn 2s, swipeRight 2s ease;
 
     .nav-link {
@@ -327,6 +330,35 @@ body {
         color: var(--green) !important;
       }
     }
+
+		.dropdown-menu {
+				left: 20px !important;
+				border-color: #f2f2f2;
+				border-radius: 4px;
+				padding: 0px;
+
+				& > li:hover > .dropdown-submenu {
+					display: block;
+				}
+		}
+
+		.dropdown-item {
+				text-transform: uppercase;
+				padding: 10px 16px;
+				color: #999;
+
+				&:hover {
+					background-color: var(--green);
+					color: white;
+				}
+		}
+
+		.dropdown-menu .dropdown-submenu {
+			display: none;
+			position: absolute;
+			left: 100% !important;
+			top: -1px;
+		}
   }
 
   .navbar-brand {
@@ -344,6 +376,12 @@ body {
     }
   }
 
+  .clickables {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
   .top-social {
     display: flex;
     gap: 16px;
@@ -357,19 +395,19 @@ body {
       background-position: center;
     }
 
-    .fa-facebook { 
+    .fa-facebook {
       background-image: url(assets/facebook.svg);
-      animation: popUp 2s ease; 
+      animation: popUp 2s ease;
     }
-    .fa-instagram { 
+    .fa-instagram {
       background-image: url(assets/instagram.svg);
       background-size: 60%;
     }
-    .fa-whatsapp { 
+    .fa-whatsapp {
       background-image: url(assets/wazapp.svg);
       background-size: 60%;
     }
-    
+
     & > a {
       display: inline-block;
       background-color: var(--green);
@@ -377,12 +415,16 @@ body {
       height: 32px;
       border-radius: 50px;
 
-      &:first-child { animation: popUp 2s ease; }
+      &:first-child {
+        animation: popUp 2s ease;
+      }
 
-      &:nth-child(2) { animation: fadeIn 4s, popUp 2s ease; }
-      
-      &:last-child { 
-        animation: fadeIn 6s, popUp 2s ease; 
+      &:nth-child(2) {
+        animation: fadeIn 4s, popUp 2s ease;
+      }
+
+      &:last-child {
+        animation: fadeIn 6s, popUp 2s ease;
       }
     }
   }
@@ -393,10 +435,10 @@ body {
     left: 50%;
     display: none;
     padding: 8px 16px;
-    background-color: #ABA9A9;
+    background-color: #aba9a9;
     border: none;
     color: white !important;
-    font-family: 'vg';
+    font-family: "vg";
     font-size: 18px !important;
     transition: all 2s ease;
 
@@ -427,16 +469,15 @@ body {
   width: 100%;
   margin: 0;
   z-index: 1;
-  
-  .navbar-brand {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      width: 100px;
-      margin: 30px 0 0;
-      animation: fadeIn 1s ease;
-  }
 
+  .navbar-brand {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100px;
+    margin: 30px 0 0;
+    animation: fadeIn 1s ease;
+  }
 }
 
 #body:not(.home):not(.parcerias):not(.fale):not(.transp) {
@@ -445,7 +486,7 @@ body {
     transform: translateY(-100%);
 
     .navbar-brand {
-      visibility: hidden 
+      visibility: hidden;
     }
   }
   .secondary-header {
@@ -469,15 +510,17 @@ body {
   .nav-item {
     transition: all 1s ease;
 
-    .atuacao & { animation: downUp 2s ease }
+    .atuacao & {
+      animation: downUp 2s ease;
+    }
   }
 
   .nav-link {
     border: none;
-    font-family: 'vg';
+    font-family: "vg";
     font-weight: 300;
     font-size: 17px;
-    color: #ABA9A9;
+    color: #aba9a9;
     text-transform: uppercase;
 
     &.active {
@@ -490,23 +533,22 @@ body {
 /* SECTIONS */
 
 .panel {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    display: none;
-    height: 100vh;
-    padding: 128px 50px 40px;
-    overflow: hidden;
-    transition: all 1s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: none;
+  height: 100vh;
+  padding: 128px 50px 40px;
+  overflow: hidden;
+  transition: all 1s ease;
 
-    &.visible {
-      display: block;
-    }
+  &.visible {
+    display: block;
+  }
 }
 
 #home {
-
   .headlines {
     width: 50%;
     text-align: center;
@@ -528,7 +570,7 @@ body {
   }
 
   .subtitle {
-    font-family: 'vg';
+    font-family: "vg";
     font-weight: 600;
     font-size: 23px;
     color: var(--green);
@@ -575,7 +617,8 @@ body {
     position: relative;
     height: 100%;
 
-    &:before, &:after {
+    &:before,
+    &:after {
       content: "";
       position: absolute;
       width: 100px;
@@ -583,7 +626,7 @@ body {
       display: block;
       background-color: var(--green);
       z-index: -1;
-    }  
+    }
 
     &:before {
       top: 0;
@@ -637,23 +680,23 @@ body {
   }
 
   .subtitle {
-      position: absolute;
-      top: 260px;
-      left: -116px;
-      width: 305px;
-      margin: 0;
-      color: #ABA9A9;
-      font-family: 'vg';
-      font-weight: 300;
-      font-size: 44px;
-      line-height: 1.2;
-      text-transform: uppercase;
-      overflow: hidden;
-      rotate: -90deg;
+    position: absolute;
+    top: 260px;
+    left: -116px;
+    width: 305px;
+    margin: 0;
+    color: #aba9a9;
+    font-family: "vg";
+    font-weight: 300;
+    font-size: 44px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    overflow: hidden;
+    rotate: -90deg;
 
-      & > div {
-        animation: left2Right 2s ease
-      }
+    & > div {
+      animation: left2Right 2s ease;
+    }
   }
 
   .banner-glyph {
@@ -697,7 +740,9 @@ body {
     min-height: 230px;
     transition: all 2s ease;
 
-    .atuacao & { animation: fadeIn 2s ease }
+    .atuacao & {
+      animation: fadeIn 2s ease;
+    }
   }
 
   div > img {
@@ -726,7 +771,8 @@ body {
       }
     }
 
-    &:before, &:after {
+    &:before,
+    &:after {
       content: "";
       position: absolute;
       width: 100px;
@@ -734,7 +780,7 @@ body {
       display: block;
       background-color: var(--green);
       z-index: -1;
-    }  
+    }
 
     &:before {
       top: 0;
@@ -748,7 +794,6 @@ body {
       height: 24px;
     }
   }
-
 }
 
 #parcerias {
@@ -808,7 +853,6 @@ body {
       }
     }
   }
-
 }
 
 #atuacao {
@@ -820,7 +864,9 @@ body {
     text-align: center;
     transition: all 1s ease;
 
-    .atuacao & { animation: fadeIn 2s ease }
+    .atuacao & {
+      animation: fadeIn 2s ease;
+    }
   }
 
   .title-container {
@@ -832,8 +878,8 @@ body {
     margin-top: 316px;
     margin-left: -94px;
     width: 305px;
-    color: #ABA9A9;
-    font-family: 'vg';
+    color: #aba9a9;
+    font-family: "vg";
     font-weight: 300;
     font-size: 44px;
     line-height: 1.2;
@@ -844,7 +890,9 @@ body {
     & > div {
       transition: all 1s ease;
 
-      .atuacao & { animation: left2Right 2s ease }
+      .atuacao & {
+        animation: left2Right 2s ease;
+      }
     }
   }
 
@@ -867,7 +915,9 @@ body {
       text-align: justify;
     }
 
-    & p, ul, li {
+    & p,
+    ul,
+    li {
       margin-bottom: 8px;
     }
   }
@@ -879,7 +929,9 @@ body {
     background-color: white;
     transition: all 4s ease;
 
-    .atuacao & { animation: fadeIn 2s ease }
+    .atuacao & {
+      animation: fadeIn 2s ease;
+    }
   }
 
   div > img {
@@ -908,7 +960,8 @@ body {
       }
     }
 
-    &:before, &:after {
+    &:before,
+    &:after {
       content: "";
       position: absolute;
       width: 100px;
@@ -916,7 +969,7 @@ body {
       display: block;
       background-color: var(--green);
       z-index: -1;
-    }  
+    }
 
     &:before {
       top: 0;
@@ -930,7 +983,6 @@ body {
       height: 24px;
     }
   }
-
 }
 
 #fale {
@@ -948,7 +1000,7 @@ body {
     z-index: 10;
     animation: fadeIn 1s ease, slideRight 2s ease;
 
-    @media screen and (min-width:1440px) {
+    @media screen and (min-width: 1440px) {
       left: 14%;
     }
   }
@@ -988,21 +1040,21 @@ body {
   }
 
   .form-label {
-      line-height: 1;
-      margin-bottom: 5px;
-      color: white;
+    line-height: 1;
+    margin-bottom: 5px;
+    color: white;
   }
 
   .form-control {
-      background-color: rgba(255, 255, 255, 0);
-      border-radius: 0;
-      border-width: 2px;
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 0;
+    border-width: 2px;
   }
 
   button.btn {
-      text-transform: uppercase;
-      border-radius: 0;
-      width: 120px;
+    text-transform: uppercase;
+    border-radius: 0;
+    width: 120px;
   }
 
   .contacts {
@@ -1018,98 +1070,202 @@ body {
 }
 
 .transparencia {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    /* display: none; */
-    height: 100vh;
-    padding: 150px 130px 40px;
-    overflow: auto;
-    transition: all 1s ease;
-		animation: slideDown 1.5s ease, fadeIn 2s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  /* display: none; */
+  height: 100vh;
+  padding: 150px 130px 40px;
+  overflow: auto;
+  transition: all 1s ease;
+  animation: slideDown 1.5s ease, fadeIn 2s ease;
 
-    &.visible {
-      display: block;
-    }
+  &.visible {
+    display: block;
+  }
 
-		.page-title {
+  .page-title {
+    color: var(--green);
+    text-transform: uppercase;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 16px 0 8px;
+
+		& > a {
 			color: var(--green);
-			text-transform: uppercase;
-			font-size: 30px;
-			font-weight: bold;
-			margin: 20px 0;
-		}
+			text-decoration: none;
 
-		.list-icon { 
-			width: 20px;
-			margin-right: 12px;
-		}
-
-		.simple-list {
-			margin-top: 16px;
-			padding: 0;
-			list-style-type: none;
-
-			& a {
-				display: flex;
-				margin-bottom: 8px;
-				padding: 10px 8px;
-				border-radius: 8px;
-				text-decoration: none;
-
-				&:hover {
-					background-color: #2cad781a;
-				}
+			&:hover {
+				text-decoration: underline;
 			}
 		}
+  }
 
-		/* Accordion changes */
-		#accTransparencia {
+  .list-icon {
+    width: 24px;
+		height: 32px;
+    margin-right: 12px;
+  }
 
-			&.accordion {
-				/* position: relative; */
-				border: solid 1px #eee;
-				border-radius: 8px;
+  .simple-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+		display: grid;
+		grid-template-columns: auto auto auto;
 
-				& > .accordion-item {
-					/* display: flex; */
-					/* border: none; */
+    & a {
+      display: flex;
+      margin-bottom: 0;
+      padding: 10px 8px;
+      border-radius: 8px;
+      text-decoration: none;
 
-					& > .accordion-header {
-						/* width: 340px; */
-						border-right: solid 1px #eee;
-						border-bottom: solid 1px #eee;
-						
-						.accordion-button {
-							padding: 24px;
-							font-size: 20px;
+      &:hover {
+        background-color: #2cad781a;
+      }
+    }
+  }
 
-							&:hover {
-								background-color: aliceblue;
-							}
+  /* Accordion changes */
+  #accTransparencia {
+    &.accordion {
+      /* position: relative; */
+      border: none;
+      border-radius: 8px;
 
-							&::after {
-								/* transform: rotateZ(-90deg); */
-							}
+      & > .accordion-item {
+				margin-bottom: 24px;
+        border: solid 1px #eee;
 
-							/* &:not(.collapsed)::after { display: none; } */
+        & > .accordion-header {
+          /* width: 340px; */
+          border-right: solid 1px #eee;
+          border-bottom: solid 1px #eee;
+
+          .accordion-button {
+            padding: 24px;
+            font-size: 20px;
+
+            &:hover {
+              background-color: aliceblue;
+            }
+
+						&:not(.collapsed) {
+							background-color: #def2ea !important
 						}
-					}
+            
+						/* &::after {
+               transform: rotateZ(-90deg);
+            }*/
 
-					& > .accordion-collapse {
-						/* position: absolute; */
-						top: 0;
-						left: 340px;
-						right: 0;
-					}
-				}
+
+            /* &:not(.collapsed)::after { display: none; } */
+          }
+        }
+
+        & > .accordion-collapse {
+          /* position: absolute; */
+          top: 0;
+          left: 340px;
+          right: 0;
+        }
+      }
+    }
+  }
+
+  #termo01 > .accordion-item {
+    margin-bottom: 6px;
+    border: solid 1px #f2f2f2;
+    border-radius: 5px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+
+	.home .glyph-plus {
+		left: 5%;
+	}
+
+	.navbar > .container {
+		align-items: flex-start;
+	}
+
+	.default-header {
+		background-color: white;
+
+		.navbar-brand {
+			height: 100px;
+		}
+
+		.navbar-nav {
+			animation: none;
+		}
+
+		.nav-link {
+			text-align: right;
+		}
+
+		.navbar-toggler {
+			border: solid 2px #02ad78;
+			padding: 4px 8px;
+			height: 40px;
+			width: 40px;
+			font-size: small;
+		}
+
+		.navbar-toggler-icon {
+			border-top: solid 2px #02ad78;
+			border-bottom: solid 2px #02ad78;
+			background: none;
+			display: grid;
+			place-items: center;
+
+			&:before {
+				content: "";
+				width: 100%;
+				height: 2px;
+				background-color: #02ad78;
+				display: block;
 			}
 		}
+	}
 
-		#termo01 > .accordion-item {
-			margin-bottom: 6px;
-			border: solid 1px #f2f2f2;
-			border-radius: 5px;
+	#home {
+		.container {
+			& > div {
+				flex-wrap: wrap;
+			}
+
+			.headlines {
+				width: 100%;
+			}
+
+			.video-container {
+				width: 100%;
+			}
 		}
+	}
+
+	.panel {
+		overflow: hidden auto;
+	}
+
+	.transparencia {
+		padding-left: 40px;
+		padding-right: 40px;
+		padding-top: 120px;
+	}
+
+	.clickables {
+		flex-direction: row-reverse;
+		flex-wrap: wrap-reverse;
+		width: calc(100% - 136px);
+		padding-top: 50px;
+	}
+
+	#mainNav {
+		margin-top: 22px;
+	}
 }

@@ -1,19 +1,4 @@
 {
-  "ftp://macedobrasil1@ftp.macedobrasil.org.br:21": {
-    "portal-transparencia.html": {
-      "type": "-",
-      "size": 9546,
-      "lmtime": 1715089600444.1497,
-      "modified": false
-    },
-    "public_html": {
-      "main.js": {
-        "type": "-",
-        "size": 664,
-        "lmtime": 1715200551759.3613,
-        "modified": false
-      }
-    }
-  },
+  "ftp://macedobrasil1@ftp.macedobrasil.org.br:21": {},
   "$version": 1
 }
