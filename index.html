@@ -71,7 +71,7 @@
 
 										<!-- SOCIAL -->
 										<div class="top-social">
-											<a href="https://www.instagram.com/associacaomacedobrasil?igsh=MzRlODBiNWFlZA==" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+											<a href="https://www.instagram.com/associacao.macedobrasil" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
 											<a href="https://www.facebook.com/profile.php?id=61555134284868" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
 											<!-- <a href="https://wa.me/55759" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a> -->
 									</div>
@@ -98,8 +98,9 @@
               </div>
 
               <div class="video-container">
-                <div class="video-frame">
-                  <video width="100%" height="100%" autoplay muted loop>
+                <div id="lazycontainer" class="video-frame">
+									<img class="d-none" id="placeholder_image" src="assets/home_vph.png" fetchpriority="high" />
+                  <video class="dnone" width="100%" height="100%" data-src="assets/home.mp4" poster="assets/home_vph.png" autoplay muted loop>
                     <source src="assets/home.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                   </video>
@@ -175,9 +176,9 @@
                 <!-- Video -->
                 <div class="video-container">
                   <div class="video-frame changes" style="background-color:white">
-                    <video id="vidQuem" class="video-player" autoplay muted loop>
-                      <source src="assets/quemsomos.mp4" type="video/mp4">
-                      Your browser does not support the video tag.
+                    <video id="vidQuem" class="video-player" data-src="assets/quemsomos.mp4" autoplay muted loop>
+                      <!-- <source src="assets/quemsomos.mp4" type="video/mp4">
+                      Your browser does not support the video tag. -->
                     </video>
                   </div>
                 </div>
@@ -260,9 +261,9 @@
               
               <div class="video-container">
                 <div class="video-frame changes">
-                  <video id="vidAtua" class="video-player" autoplay muted loop>
-                    <source src="assets/infraestrutura.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
+                  <video id="vidAtua" class="video-player" data-src="assets/infraestrutura.mp4" autoplay muted loop>
+                    <!-- <source src="assets/infraestrutura.mp4" type="video/mp4">
+                    Your browser does not support the video tag. -->
                   </video>
                 </div>
               </div>
@@ -364,165 +365,51 @@
 
       </section>
 
-			<section id="transp" class="panel transparencia">
-				<h2 class="page-title">Portal de Transparência</h2>
-
-        <div class="accordion" id="accTransparencia">
-
-					<!-- Certidões -->
-					<div class="accordion-item">
-						<h2 class="accordion-header">
-							<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-								<img src="assets/icon-certidao.svg" class="list-icon"> Certidões
-							</button>
-						</h2>
-						<div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accTransparencia">
-							<div class="accordion-body">
-								Nenhuma certidão foi disponibilizada ainda.
-								<!-- <ul class="simple-list">
-									<li v-for="item in items.certidoes" :key="item.id">
-										<a :href="item.link" target="_blank">
-											<img src="assets/icon-file.svg" class="list-icon">{{ item.name }}
-										</a>
-									</li>
-								</ul> -->
-							</div>
-						</div>
-					</div>
-
-					<!-- Certificados -->
-					<div class="accordion-item">
-						<h2 class="accordion-header">
-							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-								<img src="assets/icon-certifica.svg" class="list-icon"> Certificados
-							</button>
-						</h2>
-						<div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accTransparencia">
-							<div class="accordion-body">
-								Nenhum certificado foi disponibilizado ainda.
-							</div>
-						</div>
-					</div>
-
-					<!-- Chamamento Publico -->
-					<div class="accordion-item">
-						<h2 class="accordion-header">
-							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-								<img src="assets/icon-chamam.svg" class="list-icon"> Chamamento Público
-							</button>
-						</h2>
-						<div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accTransparencia">
-							<div class="accordion-body">
-								Nenhum chamamento foi disponibilizado ainda.
-							</div>
-						</div>
-					</div>
-
-					<!-- Estatuto -->
-					<div class="accordion-item">
-						<h2 class="accordion-header">
-							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#estatuto" aria-expanded="false" aria-controls="estatuto">
-								<img src="assets/icon-estatuto.svg" class="list-icon"> Estatuto
-							</button>
-						</h2>
-						<div id="estatuto" class="accordion-collapse collapse" data-bs-parent="#accTransparencia">
-							<div class="accordion-body">
-								<iframe src="https://drive.google.com/file/d/19UFbrH_LkfIr860cSNd8T7usKqysHZ7j/preview" width="640" height="480" allow="autoplay"></iframe>
-							</div>
-						</div>
-					</div>
-
-					<!-- Regulamentos -->
-					<div class="accordion-item">
-						<h2 class="accordion-header">
-							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#regulamentos" aria-expanded="false" aria-controls="regulamentos">
-								<img src="assets/icon-regulam.svg" class="list-icon"> Regulamentos
-							</button>
-						</h2>
-						<div id="regulamentos" class="accordion-collapse collapse" data-bs-parent="#accTransparencia">
-							<div class="accordion-body">
-								<ul class="simple-list">
-									<li v-for="item in items.regulamentos" :key="item.id">
-										<a :href="item.link" target="_blank">
-											<img src="assets/icon-file.svg" class="list-icon">{{ item.name }}
-										</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-
-					<!-- Termo -->
-					<div class="accordion-item">
-						<h2 class="accordion-header">
-							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#termo" aria-expanded="false" aria-controls="termo">
-								<img src="assets/icon-contrato.svg" class="list-icon"> Termo de Colaboração
-							</button>
-						</h2>
-						<div id="termo" class="accordion-collapse collapse" data-bs-parent="#accTransparencia">
-							<div class="accordion-body">
-
-								<!-- Pasta -->
-								<div class="accordion" id="termo01">
-
-									<div class="accordion-item">
-
-										<h2 class="accordion-header">
-											<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#pasta01" aria-expanded="false" aria-controls="pasta01">
-												<img src="assets/icon-folder.svg" class="list-icon"> Pasta 01
-											</button>
-										</h2>
-
-										<div id="pasta01" class="accordion-collapse collapse" data-bs-parent="#termo01">
-											<div class="accordion-body">
-												<ul class="simple-list">
-													<li>
-														<a href="#" target="_blank">
-															<img src="assets/icon-file.svg" class="list-icon"> Arquivo
-														</a>
-													</li>
-												</ul>
-											</div>
-										</div>
-
-									</div>
-
-									<div class="accordion-item">
-
-										<h2 class="accordion-header">
-											<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#pasta02" aria-expanded="false" aria-controls="pasta02">
-												<img src="assets/icon-folder.svg" class="list-icon"> Pasta 02
-											</button>
-										</h2>
-
-										<div id="pasta02" class="accordion-collapse collapse" data-bs-parent="#termo02">
-											<div class="accordion-body">
-												<ul class="simple-list">
-													<li>
-														<a href="#" target="_blank">
-															<img src="assets/icon-file.svg" class="list-icon"> Arquivo
-														</a>
-													</li>
-												</ul>
-											</div>
-										</div>
-
-									</div>
-
-								</div><!-- /pasta -->
-
-							</div>
-						</div>
-					</div>
-
-				</div>
-			</section>
-
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script id="BootstrapBundle" src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
     <script>
+			// Lazy Load Video
+			var img = document.getElementById("placeholder_image");
+			var lazyContainer = document.getElementById("lazy_container");
+
+			const options = {
+				root: null,
+				rootMargin: "0px",
+				threshold: 0.5 // Trigger when img is 50% visible
+			};
+
+			var observer = new IntersectionObserver(function (entries) {
+				entries.forEach(function (entry) {
+					if (entry.isIntersecting) {
+						// remove the img
+						lazyContainer.removeChild(img);
+						// create a video instead
+						const videoElement = document.createElement("video");
+						//videoElement.src = "assets/home.mp4";
+						videoElement.alt = "Lazy-loaded Video";
+						videoElement.poster = "assets/home_vph.png";
+						videoElement.autoplay = true;
+						videoElement.loop = true;
+						videoElement.controls = false;
+						const videoSource = document.createElement("source");
+						videoSource.src = "assets/home.mp4";
+						videoSource.type = "video/mp4";
+						videoElement.appendChild(videoSource);
+						// swap it in for the img
+						lazyContainer.appendChild(videoElement);
+						// load video
+						videoElement.load();
+						// disconnect observer
+						observer.unobserve(img);
+					}
+				});
+			}, options);
+
+			observer.observe(img);
+
+			// JS Navigation
       document.addEventListener('DOMContentLoaded', function() {
         
         var navLinks = document.querySelectorAll('.nav-js');
@@ -557,6 +444,12 @@
             if (targetElement) {
               targetElement.classList.add('visible');
             }
+
+						//
+						var video = targetElement.querySelector('video');
+						if (video && !video.src) {
+							video.src = video.getAttribute('data-src');
+						}
           });
         });
 
@@ -604,7 +497,5 @@
 
       });
     </script>
-		<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-		<script src="main.js"></script>
 </body>
 </html>

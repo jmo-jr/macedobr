@@ -1117,6 +1117,7 @@ body {
 
     & a {
       display: flex;
+			align-items: center;
       margin-bottom: 0;
       padding: 10px 8px;
       border-radius: 8px;
