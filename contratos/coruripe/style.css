@@ -86,8 +86,12 @@ h2.page-title {
 	font-size: 24px;
 }
 
-.file-button {
-	margin: 32px 0
+.docs {
+	margin: 32px 0;
+}
+
+.file-button:not(:last-child) {
+	margin-bottom: 8px
 }
 
 @media screen and (max-width: 1200px) {

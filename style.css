@@ -840,18 +840,17 @@ body {
     width: 60%;
     padding: 30px;
 
-    .d-grid-6 {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      gap: 24px;
+		.logo-container {
+			background-color: white;
+			border-radius: 50%;
+			width: 100%;
+			aspect-ratio: 1 / 1;
+			overflow: hidden;
 
-      .logo-container {
-        background-color: lightgrey;
-        border-radius: 50px;
-        width: 70px;
-        height: 70px;
-      }
-    }
+			& img {
+				width: 100%;
+			}
+		}
   }
 }
 
@@ -1058,7 +1057,7 @@ body {
   }
 
   .contacts {
-    margin-top: 40px;
+    margin-top: 20px;
   }
 
   .contact {

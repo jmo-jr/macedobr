@@ -64,7 +64,7 @@
 
 										<!-- SOCIAL -->
 										<div class="top-social">
-											<a href="https://www.instagram.com/associacaomacedobrasil?igsh=MzRlODBiNWFlZA==" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+											<a href="https://www.instagram.com/associacao.macedobrasil" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
 											<a href="https://www.facebook.com/profile.php?id=61555134284868" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
 											<!-- <a href="https://wa.me/55759" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a> -->
 									</div>
@@ -96,6 +96,26 @@
 									<li v-for="item in items.termos" :key="item.id">
 										<a :href="'documentos.html?id=' + item.id">
 											<img src="../../assets/icon-folder.svg" class="list-icon">{{ item.name }}
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<!-- Funcionários -->
+					<div class="accordion-item">
+						<h2 class="accordion-header">
+							<button class="accordion-button" type="button" aria-expanded="true" aria-controls="termo">
+								<img src="../../assets/icon-colab.svg" class="list-icon"> Funcionários
+							</button>
+						</h2>
+						<div id="termo" class="accordion-collapse collapse show" data-bs-parent="#accTransparencia">
+							<div class="accordion-body">
+								<ul class="simple-list">
+									<li v-for="item in items.funcionarios" :key="item.id">
+										<a :href="item.link" target="_blank">
+											<img src="../../assets/icon-file.svg" class="list-icon">{{ item.name }}
 										</a>
 									</li>
 								</ul>

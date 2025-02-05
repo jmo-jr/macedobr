@@ -85,15 +85,23 @@
 
 				<h3 class="page-subtitle">{{ filteredData[0].name }}</h3>
 
-				<div class="file-button" v-for="item in filteredData" :key="item.id">
-					<a :href="item.link" target="_blank">
-						<img src="../../assets/icon-file.svg" class="list-icon">{{ item.name }}
-					</a>
+				<!-- Documento do Termo -->
+				<div class="docs">
+					<div class="file-button" v-for="item in filteredData" :key="item.id">
+						<a :href="item.link" target="_blank">
+							<img src="../../assets/icon-file.svg" class="list-icon">{{ item.name }}
+						</a>
+					</div>
+					<div class="file-button" v-for="item in filteredAditivos" :key="item.id">
+						<a :href="item.link" target="_blank">
+							<img src="../../assets/icon-file.svg" class="list-icon">{{ item.name }}
+						</a>
+					</div>
 				</div>
 
         <div class="accordion" id="accTransparencia">
 
-					<!-- Termo -->
+					<!-- Termo (inativo) -->
 					<div class="accordion-item d-none">
 						<h2 class="accordion-header">
 							<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
@@ -122,13 +130,16 @@
 						</h2>
 						<div id="collapseThree" class="accordion-collapse collapse show" data-bs-parent="#accTransparencia">
 							<div class="accordion-body">
-								<ul class="simple-list">
-									<li v-for="item in items.chamamentos" :key="item.id">
+								<ul class="simple-list" v-if="filteredDocs.length > 0">
+									<li v-for="item in filteredDocs" :key="item.id">
 										<a v-if="item.link != '#'" :href="item.link" target="_blank">
-											<img src="../../assets/icon-folder.svg" class="list-icon">{{ item.name }}
+											<img src="../../assets/icon-file.svg" class="list-icon">{{ item.name }}
 										</a>
 										<span v-else>{{ item.name }}</span>
 									</li>
+								</ul>
+								<ul class="simple-list" v-else>
+									<li>Nenhum chamamento encontrado.</li>
 								</ul>
 							</div>
 						</div>
