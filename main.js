@@ -11,11 +11,11 @@ const { createApp } = Vue
 						},
 						{ 
 							name: 'Certidão Federal',
-							link: "https://drive.google.com/file/d/1J2tAXphg-ee1YhDKUvoFA7RhE76KFMly/preview"
+							link: "https://drive.google.com/file/d/1krWV3lH88ccBYNnjrosimrOMeLo-_PKy/preview"
 						},
 						{ 
 							name: 'Certidão Estadual',
-							link: "https://drive.google.com/file/d/1SLntYad1F4ppkqtIMcMbgDdanhX9EHok/preview"
+							link: "https://drive.google.com/file/d/1gmp1CzdvlIdtfmjoY7jWYy1s_1_e36lj/preview"
 						},
 						{ 
 							name: 'Certidão Municipal',
@@ -23,11 +23,11 @@ const { createApp } = Vue
 						},
 						{ 
 							name: 'Certidão FGTS',
-							link: "https://drive.google.com/file/d/1s9IlFlvgumT29BmrFYR06VMxpttKTfyq/preview"
+							link: "https://drive.google.com/file/d/1ZfJ9BnF4kPlQqxN3g1aB0rAJZsLbZ8ij/preview"
 						},
 						{ 
 							name: 'Certidão Trabalhista',
-							link: "https://drive.google.com/file/d/1wPlmmSTomxLqTkcXAi4eaPwgwqyU-qq1/preview"
+							link: "https://drive.google.com/file/d/1pIlS_wLD9hFtZC2lKX006UHG4N4SBAl_/preview"
 						},
 					],
 					certificados: [

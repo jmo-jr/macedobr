@@ -138,7 +138,7 @@ const { createApp } = Vue
 						{
 							id: 1,
 							name: 'Relação de Colaboradores',
-							link: 'https://drive.google.com/file/d/1ekOJvddq0CZCo_JYbCLaR4bxreOqSXnp/preview'
+							link: 'https://drive.google.com/file/d/1ZPq2qk461nlrWkK43Zr40yEmNJvPichQ/preview'
 						},
 					]
 				},
