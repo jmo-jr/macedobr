@@ -13,7 +13,7 @@ export default {
 				<div class="container">
 
 					<!-- LOGO -->
-					<a class="nav-link navbar-brand animate" href="index.html#home">
+					<a class="nav-link navbar-brand animate" href="/#">
 						<img class="animate" src="assets/logo_ambr_br.png" alt="Associação Macedo Brasil">
 					</a>
 
@@ -33,7 +33,7 @@ export default {
 										<li class="dropend">
 											<button class="dropdown-item dropdown-toggle" data-bs-toggle="dropend" type="button">Contratos</button>
 											<ul class="dropdown-menu dropdown-submenu">
-												<li><router-link to="/coruripe" class="dropdown-item">Coruripe/AL</router-link></li>
+												<li><router-link to="/contratos/coruripe" class="dropdown-item">Coruripe/AL</router-link></li>
 											</ul>
 										</li>
 									</ul>

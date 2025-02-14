@@ -1,4 +1,4 @@
 # macedobr
-Novo site da Macedo Brasil
+Novo site da Associação Macedo Brasil
 
-Baseado em HTML, CSS e JS
+Baseado em HTML, CSS, JS & Vue

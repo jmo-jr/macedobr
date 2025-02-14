@@ -1,17 +1,25 @@
 import HeaderComponent from './components/HeaderComponent.js';
-import HomePage from './components/HomePage.js';
+import HomePage from './pages/HomePage.js';
+import AboutPage from './pages/AboutPage.js';
+import PartnersPage from './pages/PartnersPage.js';
+import PerformancePage from './pages/PerformancePage.js';
+import ProjectsPage from './pages/ProjectsPage.js';
+import TransparencyPage from './pages/TransparencyPage.js';
+import ContactPage from './pages/ContactPage.js';
+import CoruripePage from './pages/CoruripePage.js';
 
 const { createApp } = Vue;
 const { createRouter, createWebHashHistory } = VueRouter;
 
 const routes = [
 	{ path: '/', component: HomePage },
-	// { path: '/sobre', component: AboutPage },
-	// { path: '/parcerias', component: PsrtnersPage },
-	// { path: '/atuacao', component: PerformancePage },
-	// { path: '/projetos', component: ProjectsPage },
-	// { path: '/transparencia', component: TransparencyPage },
-	// { path: '/contato', component: ContactPage },
+	{ path: '/sobre', component: AboutPage },
+	{ path: '/parcerias', component: PartnersPage },
+	{ path: '/atuacao', component: PerformancePage },
+	{ path: '/projetos', component: ProjectsPage },
+	{ path: '/transparencia', component: TransparencyPage },
+	{ path: '/contato', component: ContactPage },
+	{ path: '/contratos/coruripe', component: CoruripePage },
 ];
 
 const router = createRouter({

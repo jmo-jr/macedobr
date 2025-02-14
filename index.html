@@ -38,8 +38,11 @@
 		integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
 		crossorigin="anonymous"></script>
 	
-	<script>
-		// Lazy Load Video
+	<script id="VueCDN" src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue-router@4/dist/vue-router.global.js"></script>
+	<script type="module" src="main.js"></script>
+
+	<script id="lazyLoad">
 		var img = document.getElementById("placeholder_image");
 		var lazyContainer = document.getElementById("lazy_container");
 
@@ -77,8 +80,8 @@
 		}, options);
 
 		observer.observe(img);
-
-		// JS Navigation
+	</script>
+	<script id="jsNavigation">
 		document.addEventListener('DOMContentLoaded', function () {
 
 			var navLinks = document.querySelectorAll('.nav-js');
@@ -88,31 +91,13 @@
 				navLink.addEventListener('click', function () {
 
 					var panelId = navLink.getAttribute('data-panel');
-					var allPanels = document.querySelectorAll('.panel');
-
-					//Remove class .active from all .nav-link elements
-					navLinks.forEach(eachLink => {
-						eachLink.classList.remove('active');
-					})
-					// Add class active on clicked link
-					navLink.classList.add('active');
 
 					// Atribui classe equiv. ao painel visivel
 					var docBody = document.getElementById('body');
 					docBody.className = '';
 					docBody.classList.add(panelId);
 
-					// Remove classe visible de tudo
-					allPanels.forEach(function (panel) {
-						panel.classList.remove('visible');
-					});
-
 					var targetElement = document.getElementById(panelId);
-
-					// Add classe visible somente no painel certo
-					if (targetElement) {
-						targetElement.classList.add('visible');
-					}
 
 					//
 					var video = targetElement.querySelector('video');
@@ -166,10 +151,6 @@
 
 		});
 	</script>
-
-	<script id="VueCDN" src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/vue-router@4/dist/vue-router.global.js"></script>
-	<script type="module" src="main.js"></script>
 </body>
 
 </html>

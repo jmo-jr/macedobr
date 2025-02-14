@@ -330,7 +330,7 @@ body {
       font-size: 19px;
       text-transform: uppercase;
 
-      &.active {
+      &.router-link-active {
         color: var(--green) !important;
       }
     }
@@ -490,7 +490,7 @@ body {
   }
 }
 
-body:not(.home):not(.parcerias):not(.fale):not(.transp) {
+body:not(.home):not(.parcerias):not(.fale):not(.transp):not(.projetos) {
   .default-header {
     transition: all 1s ease-in;
     transform: translateY(-100%);
@@ -812,7 +812,7 @@ body:not(.home):not(.parcerias):not(.fale):not(.transp) {
   transition: all 2s ease;
 
   .headlines {
-    width: 40%;
+    flex: 1;
     text-align: center;
     transition: all 1s ease;
     animation: fadeIn 2s ease;
@@ -834,7 +834,7 @@ body:not(.home):not(.parcerias):not(.fale):not(.transp) {
   }
 
   .headline {
-    width: 400px;
+    width: 100%;
     margin: 0 auto;
     color: #999;
     font-size: 18px;
@@ -847,7 +847,7 @@ body:not(.home):not(.parcerias):not(.fale):not(.transp) {
   }
 
   .logos-grid {
-    width: 60%;
+    flex: 1;
     padding: 30px;
 
 		.logo-container {
