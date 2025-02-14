@@ -22,22 +22,117 @@
 </head>
 
 <body id="body" class="home">
-	<div id="app" class="wrapper">
+	<div class="wrapper">
 
-		<header-component></header-component>
+		<div class="body-glyphs glyph-dots top-dots"></div>
+		<div class="body-glyphs glyph-dots bottom-dots"></div>
+		<div class="body-glyphs glyph-plus"></div>
+		<div class="body-glyphs glyph-tl-corner"></div>
+		<div class="body-glyphs glyph-tr-corner"></div>
+		<div class="body-glyphs glyph-bl-corner"></div>
+		<div class="body-glyphs triangles"></div>
 
-		<router-view></router-view>
+		<header class="default-header">
+			<nav class="navbar navbar-expand-sm navbar-light bg-mbr">
+				<div class="container">
+
+					<!-- LOGO -->
+					<a class="nav-link navbar-brand animate" href="index.html#home">
+						<img class="animate" src="assets/logo_ambr_br.png" alt="Associação Macedo Brasil">
+					</a>
+
+					<div class="clickables">
+						<!-- MENU -->
+						<div class="collapse navbar-collapse justify-content-center" id="mainNav">
+							<div class="navbar-nav animate">
+								<a id="home-link" class="nav-js nav-link active" aria-current="page" href="index.html"
+									data-panel="home">Home</a>
+								<a id="quem-link" class="nav-js nav-link" aria-current="page" href="quem.html"
+									data-panel="quem">Quem somos</a>
+								<a id="parcerias-link" class="nav-js nav-link" aria-current="page" href="parcerias.html"
+									data-panel="parcerias">Parcerias</a>
+								<a id="atuacao-link" class="nav-js nav-link" aria-current="page" href="atuacao.html"
+									data-panel="atuacao">Atuação</a>
+								<div class="dropdown">
+									<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" href="#"
+										role="button">Transparência</a>
+									<ul class="dropdown-menu">
+										<li><a class="dropdown-item" href="transparencia.html">Documentação</a></li>
+										<li class="dropend">
+											<button class="dropdown-item dropdown-toggle" data-bs-toggle="dropend"
+												type="button">Contratos</button>
+											<ul class="dropdown-menu dropdown-submenu">
+												<li><a class="dropdown-item" href="contratos/coruripe/index.html">Coruripe/AL</a></li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+								<a id="fale-link" class="nav-js nav-link" aria-current="page" href="fale.html" data-panel="fale">Fale
+									Conosco</a>
+							</div>
+						</div>
+
+						<!-- BURGER -->
+						<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+							aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+							<span class="navbar-toggler-icon"></span>
+						</button>
+
+						<!-- SOCIAL -->
+						<div class="top-social">
+							<a href="https://www.instagram.com/associacao.macedobrasil" target="_blank" class="instagram animate">
+								<i class="fa fa-instagram"
+									aria-hidden="true"></i></a>
+							<a href="https://www.facebook.com/profile.php?id=61555134284868" target="_blank" class="facebook animate">
+								<i class="fa fa-facebook"
+									aria-hidden="true"></i></a>
+							<!-- <a href="https://wa.me/55759" target="_blank" class="whatsapp animate"><i class="fa fa-whatsapp" aria-hidden="true"></i></a> -->
+						</div>
+					</div>
+
+				</div>
+			</nav>
+
+			<a id="home-link" class="back-btn nav-link nav-js" href="#home" data-panel="home">HOME</a>
+		</header>
+
+		<section id="home" class="panel visible">
+			<div class="container">
+
+				<div class="d-flex justify-content-around align-items-center h-100">
+					<div class="headlines">
+						<h2 class="main-title">
+							<div class="enter-title">Associação<br>Macedo Brasil</div>
+						</h2>
+						<div class="banner-glyph"></div>
+						<h3 class="subtitle">Unimos forças para transformar realidades</h3>
+						<p class="headline">Dignidade humana, desenvolvimento social e sustentabilidade.</p>
+						<div class="wave-glyph"></div>
+					</div>
+
+					<div class="video-container">
+						<div id="lazycontainer" class="video-frame">
+							<img class="d-none" id="placeholder_image" src="assets/home_vph.png" fetchpriority="high" />
+							<video class="dnone" width="100%" height="100%" data-src="assets/home.mp4" poster="assets/home_vph.png"
+								autoplay muted loop>
+								<source src="assets/home.mp4" type="video/mp4">
+								Your browser does not support the video tag.
+							</video>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</section>
 
 	</div>
 
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
 		crossorigin="anonymous"></script>
-	
 	<script id="BootstrapBundle" src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
 		crossorigin="anonymous"></script>
-	
 	<script>
 		// Lazy Load Video
 		var img = document.getElementById("placeholder_image");
@@ -166,10 +261,6 @@
 
 		});
 	</script>
-
-	<script id="VueCDN" src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/vue-router@4/dist/vue-router.global.js"></script>
-	<script type="module" src="main.js"></script>
 </body>
 
 </html>

@@ -301,7 +301,8 @@ body {
 	background-color: transparent;
   z-index: 1000;
 
-  .quem & {
+  .quem &,
+	.atuacao & {
     animation: outUp 1s ease;
   }
 
@@ -317,7 +318,10 @@ body {
     white-space: nowrap;
     overflow-x: clip;
 		overflow-y:visible;
-    animation: fadeIn 2s, swipeRight 2s ease;
+
+		&.animate {
+    	animation: fadeIn 2s, swipeRight 2s ease;
+		}
 
     .nav-link {
       padding-left: 20px !important;
@@ -369,9 +373,12 @@ body {
     height: 128px;
     padding: 10px;
     background-color: var(--green);
-    animation: upDown 2s ease;
 
-    & img {
+		&.animate {
+    	animation: upDown 2s ease;
+		}
+
+    & img.animate {
       animation: fadeIn 8s ease;
     }
   }
@@ -397,7 +404,10 @@ body {
 
     .fa-facebook {
       background-image: url(assets/facebook.svg);
-      animation: popUp 2s ease;
+
+			&.animate {
+      	animation: popUp 2s ease;
+			}
     }
     .fa-instagram {
       background-image: url(assets/instagram.svg);
@@ -415,15 +425,15 @@ body {
       height: 32px;
       border-radius: 50px;
 
-      &:first-child {
+      &.instagram.animate {
         animation: popUp 2s ease;
       }
 
-      &:nth-child(2) {
+      &.facebook.animate {
         animation: fadeIn 4s, popUp 2s ease;
       }
 
-      &:last-child {
+      &.whatsapp.animate {
         animation: fadeIn 6s, popUp 2s ease;
       }
     }
@@ -480,7 +490,7 @@ body {
   }
 }
 
-#body:not(.home):not(.parcerias):not(.fale):not(.transp) {
+body:not(.home):not(.parcerias):not(.fale):not(.transp) {
   .default-header {
     transition: all 1s ease-in;
     transform: translateY(-100%);
@@ -1078,7 +1088,7 @@ body {
   padding: 150px 130px 40px;
   overflow: auto;
   transition: all 1s ease;
-  animation: slideDown 1.5s ease, fadeIn 2s ease;
+  /* animation: slideDown 1.5s ease, fadeIn 2s ease; */
 
   &.visible {
     display: block;
@@ -1268,4 +1278,12 @@ body {
 	#mainNav {
 		margin-top: 22px;
 	}
+}
+
+/* HELPERS */
+.flex-centered {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
