@@ -1,35 +1,41 @@
+import GlyphsComponent from '../components/GlyphsComponent.js';
+
 export default {
+	components: {
+		'glyphs-component': GlyphsComponent
+	},
+	data() {
+		return {
+			folders: [
+				{
+					id: 1,
+					name: 'Termos de Colaboração',
+					link: '#/contratos/coruripe/termos'
+				},
+				{
+					id: 2,
+					name: 'Funcionários',
+					link: 'https://drive.google.com/file/d/1ZPq2qk461nlrWkK43Zr40yEmNJvPichQ/preview',
+					target: '_blank'
+				}
+			]
+		}
+	},
 	template: `
 		<section class="transparencia">
 
-				<h2 class="page-title">Coruripe AL</h2>
+				<h2 class="page-title">Contrato Coruripe/AL</h2>
 
-				<div class="d-flex mt-5">
-					<a href="#">
-						<div style="width: 140px;height: 180px;background: #409a40 url(assets/bg-docs.jpeg) no-repeat;background-size: cover;background-blend-mode: multiply;" class="flex-centered">
-							<span class="text-uppercase text-light">Certidões</span>
-						</div>
-					</a>
-					<a href="#">
-						<div style="width: 140px;height: 180px;background: #409a40 url(assets/bg-docs.jpeg) no-repeat;background-size: cover;background-blend-mode: multiply;" class="flex-centered">
-							<span class="text-uppercase text-light">Certificados</span>
-						</div>
-					</a>
-					<a href="#">
-						<div style="width: 140px;height: 180px;background: #409a40 url(assets/bg-docs.jpeg) no-repeat;background-size: cover;background-blend-mode: multiply;" class="flex-centered">
-							<span class="text-uppercase text-light">Estatuto</span>
-						</div>
-					</a>
-					<a href="#">
-						<div style="width: 140px;height: 180px;background: #409a40 url(assets/bg-docs.jpeg) no-repeat;background-size: cover;background-blend-mode: multiply;" class="flex-centered">
-							<span class="text-uppercase text-light">Regulamentos</span>
-						</div>
-					</a>
-					<a href="#">
-						<div style="width: 140px;height: 180px;background: #409a40 url(assets/bg-docs.jpeg) no-repeat;background-size: cover;background-blend-mode: multiply;" class="flex-centered">
-							<span class="text-uppercase text-light">Termos</span>
-						</div>
-					</a>
+				<div id="docsCoruripe" class="d-flex mt-5">
+
+					<div v-for="folder in folders" :key="folder.id">
+						<a :href="folder.link" :target="folder.target != undefined ? folder.target : '_self'">
+							<div class="flex-centered folder-block">
+								<span class="text-uppercase text-light">{{ folder.name }}</span>
+							</div>
+						</a>
+					</div>
+					
 				</div>
 
       </section>

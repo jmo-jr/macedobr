@@ -1,6 +1,13 @@
+import GlyphsComponent from '../components/GlyphsComponent.js';
+
 export default {
+	components: {
+		'glyphs-component': GlyphsComponent
+	},
 	template: `
-		<section id="parcerias" class="panel visible">
+		<section id="parcerias" class="parcerias panel visible">
+
+		<glyphs-component></glyphs-component>
 			<div class="container">
 
 				<div class="d-flex justify-content-around align-items-center h-100">

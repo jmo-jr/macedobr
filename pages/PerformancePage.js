@@ -1,10 +1,17 @@
+import GlyphsComponent from '../components/GlyphsComponent.js';
+
 export default {
+	components: {
+		'glyphs-component': GlyphsComponent
+	},
 	template: `
-		<section id="atuacao" class="panel visible">
+		<section id="atuacao" class="atuacao panel visible">
+
+		<glyphs-component></glyphs-component>
 
 			<div class="container">
 
-				<header class="secondary-header">
+				<header class="secondary-header display-none">
 					<nav class="nav">
 						<div style="margin-left:-40px">
 							<a class="navbar-brand" href="#">
@@ -25,7 +32,6 @@ export default {
 					<div class="video-container">
 						<div class="video-frame changes">
 							<video id="vidAtua" class="video-player" data-src="assets/infraestrutura.mp4" src="assets/infraestrutura.mp4" autoplay muted loop>
-								<!-- <source src="assets/infraestrutura.mp4" type="video/mp4"> -->
 							</video>
 						</div>
 					</div>

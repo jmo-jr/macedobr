@@ -1,6 +1,14 @@
+import GlyphsComponent from '../components/GlyphsComponent.js';
+
 export default {
+	components: {
+		'glyphs-component': GlyphsComponent
+	},
 	template: `
-		<section id="quem" class="panel visible">
+		<section id="quem" class="quem panel visible">
+
+			<glyphs-component></glyphs-component>
+
 			<div class="container h-100">
 
 				<header class="secondary-header">
@@ -81,7 +89,6 @@ export default {
 						<div class="video-container">
 							<div class="video-frame changes" style="background-color:white">
 								<video id="vidQuem" class="video-player" data-src="assets/quemsomos.mp4" autoplay muted loop>
-									<source src="assets/quemsomos.mp4" type="video/mp4">
 								</video>
 							</div>
 						</div>

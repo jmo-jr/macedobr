@@ -1,6 +1,13 @@
+import GlyphsComponent from '../components/GlyphsComponent.js';
+
 export default {
+	components: {
+		'glyphs-component': GlyphsComponent
+	},
 	template: `
 		<section id="fale" class="panel visible">
+
+		<glyphs-component></glyphs-component>
 
         <div class="img-container"></div>
 

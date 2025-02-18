@@ -21,7 +21,7 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 
-<body id="body" class="home">
+<body id="body" class="">
 	<div id="app" class="wrapper">
 
 		<header-component></header-component>
@@ -30,57 +30,7 @@
 
 	</div>
 
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-		crossorigin="anonymous"></script>
-	
-	<script id="BootstrapBundle" src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
-		crossorigin="anonymous"></script>
-	
-	<script id="VueCDN" src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/vue-router@4/dist/vue-router.global.js"></script>
-	<script type="module" src="main.js"></script>
-
-	<script id="lazyLoad">
-		var img = document.getElementById("placeholder_image");
-		var lazyContainer = document.getElementById("lazy_container");
-
-		const options = {
-			root: null,
-			rootMargin: "0px",
-			threshold: 0.5 // Trigger when img is 50% visible
-		};
-
-		var observer = new IntersectionObserver(function (entries) {
-			entries.forEach(function (entry) {
-				if (entry.isIntersecting) {
-					// remove the img
-					lazyContainer.removeChild(img);
-					// create a video instead
-					const videoElement = document.createElement("video");
-					//videoElement.src = "assets/home.mp4";
-					videoElement.alt = "Lazy-loaded Video";
-					videoElement.poster = "assets/home_vph.png";
-					videoElement.autoplay = true;
-					videoElement.loop = true;
-					videoElement.controls = false;
-					const videoSource = document.createElement("source");
-					videoSource.src = "assets/home.mp4";
-					videoSource.type = "video/mp4";
-					videoElement.appendChild(videoSource);
-					// swap it in for the img
-					lazyContainer.appendChild(videoElement);
-					// load video
-					videoElement.load();
-					// disconnect observer
-					observer.unobserve(img);
-				}
-			});
-		}, options);
-
-		observer.observe(img);
-	</script>
+	<!-- SCRIPTS -->
 	<script id="jsNavigation">
 		document.addEventListener('DOMContentLoaded', function () {
 
@@ -88,7 +38,7 @@
 
 			navLinks.forEach(function (navLink) {
 				// Ao clicar no link, torna painel visivel
-				navLink.addEventListener('click', function () {
+				navLink.addEventListener('onload', function () {
 
 					var panelId = navLink.getAttribute('data-panel');
 
@@ -107,7 +57,28 @@
 				});
 			});
 
-			// Muda videos das abas de Quem Somos
+			// Mostra ou oculta o menu principal - NOT WORKING
+			const backBtn = $('#home-link')
+			const mainNav = $('.default-header')
+
+			backBtn
+				.on('mouseover', function () {
+					console.log('hover')
+					$(this).addClass('hide');
+					mainNav.addClass('show');
+				})
+				.on('mouseout', function () {
+					console.log('hover out')
+					$(this).removeClass('hide');
+					mainNav.removeClass('show');
+				})
+
+		});
+	</script>
+	
+	<script id="changeVideos">
+		document.addEventListener('DOMContentLoaded', function () {
+		// Muda videos das abas de Quem Somos
 			const quemTabLinks = document.querySelectorAll('#quemTabs .nav-link');
 
 			quemTabLinks.forEach(qtabLink => {
@@ -132,24 +103,61 @@
 					atuaPlayer.style.animation = "fadeIn 2s ease";
 				})
 			})
-
-			// Mostra ou oculta o menu principal - NOT WORKING
-			const backBtn = $('#home-link')
-			const mainNav = $('.default-header')
-
-			backBtn
-				.on('mouseover', function () {
-					console.log('hover')
-					$(this).addClass('hide');
-					mainNav.addClass('show');
-				})
-				.on('mouseout', function () {
-					console.log('hover out')
-					$(this).removeClass('hide');
-					mainNav.removeClass('show');
-				})
-
 		});
+	</script>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	
+	<script id="BootstrapBundle" src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+		crossorigin="anonymous"></script>
+	
+	<script id="VueCDN" src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue-router@4/dist/vue-router.global.js"></script>
+	<script type="module" src="main.js"></script>
+
+	<script id="lazyLoad">
+		var img = document.getElementById("placeholder_image");
+		var lazyContainer = document.getElementById("lazy_container");
+
+		if(img) {
+			const options = {
+				root: null,
+				rootMargin: "0px",
+				threshold: 0.5 // Trigger when img is 50% visible
+			};
+
+			var observer = new IntersectionObserver(function (entries) {
+				entries.forEach(function (entry) {
+					if (entry.isIntersecting) {
+						// remove the img
+						lazyContainer.removeChild(img);
+						// create a video instead
+						const videoElement = document.createElement("video");
+						//videoElement.src = "assets/home.mp4";
+						videoElement.alt = "Lazy-loaded Video";
+						videoElement.poster = "assets/home_vph.png";
+						videoElement.autoplay = true;
+						videoElement.loop = true;
+						videoElement.controls = false;
+						const videoSource = document.createElement("source");
+						videoSource.src = "assets/home.mp4";
+						videoSource.type = "video/mp4";
+						videoElement.appendChild(videoSource);
+						// swap it in for the img
+						lazyContainer.appendChild(videoElement);
+						// load video
+						videoElement.load();
+						// disconnect observer
+						observer.unobserve(img);
+					}
+				});
+			}, options);
+
+			observer.observe(img);
+		}
 	</script>
 </body>
 

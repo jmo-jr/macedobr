@@ -1,9 +1,17 @@
+import GlyphsComponent from '../components/GlyphsComponent.js';
+
 export default {
+	components: {
+		'glyphs-component': GlyphsComponent
+	},
 	template: `
-		<section id="parcerias" class="panel visible">
+		<section id="projetos" class="projetos panel visible">
+
+		<glyphs-component></glyphs-component>
+		
 			<div class="container">
 
-				<div class="d-flex flex-column justify-content-around align-items-center h-100">
+				<div class="d-flex flex-column justify-content-around align-items-center h-100" style="gap: 0">
 
 					<div class="headlines">
 
@@ -19,22 +27,21 @@ export default {
 					</div>
 
 					<div class="logos-grid">
-						<div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:24px;">
+						<div class="d-flex justify-content-center align-items-center" style="gap:60px;">
 							<div class="logo-container">
-								<a href="#">
-									<img src="assets/pmcoruripe.jpg" alt="Prefeitura de Coruripe"
-										title="Prefeitura Municipal de Coruripe/AL" class="logo">
+								<a href="#/projetos/bioarte">
+									<img src="assets/bioarte.png" alt="Bioarte" title="Bioarte" class="logo">
 								</a>
 							</div>
 							<div class="logo-container">
-								<a href="#">
-									<img src="assets/cognvox.jpeg" alt="Cognvox" title="Cognvox - Software de desenvolvimento cognitivo"
+								<a href="#/projetos/florescer">
+									<img src="assets/florescer.png" alt="Florescer" title="Florescer"
 										class="logo">
 								</a>
 							</div>
 							<div class="logo-container">
-								<a href="#">
-									<img src="assets/casadeoracao.png" alt="Casa de Oração" title="Casa de Oração"
+								<a href="#/projetos/barbearia">
+									<img src="assets/barbearia.png" alt="Barbearia Garden" title="Barbearia Garden"
 										class="logo">
 								</a>
 							</div>

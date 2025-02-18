@@ -84,6 +84,13 @@ body {
       right: 8%;
       animation: fadeIn 3s ease-out;
     }
+
+		.projetos &, .transparencia & {
+			left: 5%;
+    	top: 45%;
+			transform: rotate(90deg);
+			animation: fadeIn 2s ease-out, rotate90 2s ease-out;
+		}
   }
 
   &.bottom-dots {
@@ -115,6 +122,10 @@ body {
       left: 5%;
       animation: fadeIn 3s ease-out;
     }
+
+		.projetos &, .transparencia & {
+			display: none;
+		}
   }
 }
 
@@ -152,6 +163,11 @@ body {
     right: 10px;
     animation: showUpRotate 2s ease 2s, fadeIn 4s ease 1s;
   }
+
+	.projetos &, .transparencia & {
+		right: 10%;
+		animation: showUpRotate 2s ease;
+	}
 }
 
 .glyph-tl-corner {
@@ -168,11 +184,16 @@ body {
   .quem & {
     bottom: 0;
     left: 0;
-    animation: fadeIn 2s ease
-      "
+    animation: fadeIn 2s ease;
   }
 
   .atuacao & { display: none }
+
+	.projetos &, .transparencia & {
+		top: 0;
+    right: 0;
+		animation: fadeIn 2s ease;
+	}
 }
 
 .glyph-tr-corner {
@@ -209,6 +230,12 @@ body {
     right: 0;
     animation: fadeIn 3s ease-out;
   }
+
+	.projetos &, .transparencia & {
+		top: 100%;
+    right: 0;
+		animation: fadeIn 3s ease-out;
+	}
 }
 
 .glyph-bl-corner {
@@ -234,6 +261,7 @@ body {
 
   .parcerias & {
     bottom: 0;
+		left: 0;
     animation: downUp 2s ease, fadeIn 4s;
   }
 
@@ -247,9 +275,12 @@ body {
     animation: downUp 1s ease, fadeIn 4s;
   }
 
-  .transp & {
+  .projetos &, .transparencia & {
+    width: 40%;
+    height: 30px;
     bottom: 0;
-    /* animation: right2Left 1s ease, fadeOut 2s; */
+    left: 0;
+    animation: left2Right 3s ease, fadeIn 2s;
   }
 }
 
@@ -286,9 +317,10 @@ body {
     left: 60%;
   }
 
-  .transp & {
+	.projetos &, .transparencia & {
     bottom: 0;
-    right: 5%;
+    right: 20px;
+    animation: downUp 1s ease;
   }
 }
 
@@ -493,15 +525,15 @@ body {
 body:not(.home):not(.parcerias):not(.fale):not(.transp):not(.projetos) {
   .default-header {
     transition: all 1s ease-in;
-    transform: translateY(-100%);
+    /* transform: translateY(-100%); */
 
-    .navbar-brand {
+    /* .navbar-brand {
       visibility: hidden;
-    }
+    } */
   }
-  .secondary-header {
+  /* .secondary-header {
     display: block;
-  }
+  } */
 }
 
 /* TABS */
@@ -514,7 +546,7 @@ body:not(.home):not(.parcerias):not(.fale):not(.transp):not(.projetos) {
   overflow: hidden;
 
   .atuacao & {
-    margin-top: 60px;
+    margin-top: 120px;
   }
 
   .nav-item {
@@ -661,7 +693,7 @@ body:not(.home):not(.parcerias):not(.fale):not(.transp):not(.projetos) {
     flex-direction: column;
     justify-content: space-evenly;
     width: 100%;
-    margin-top: 17px;
+    margin-top: 80px;
     margin-right: 90px;
     text-align: center;
     transition: all 1s ease;
@@ -710,23 +742,23 @@ body:not(.home):not(.parcerias):not(.fale):not(.transp):not(.projetos) {
   }
 
   .banner-glyph {
-    width: 38px;
-    height: 32px;
+    width: 28px;
+    height: 24px;
     margin: 16px auto;
     background: url(assets/losango.svg) no-repeat;
     background-size: contain;
   }
 
   .headline {
-    width: 600px;
-    height: 208px;
+    width: 90%;
+    height: 200px;
     margin: 0 auto;
     color: #999;
     font-size: 20px;
     line-height: 1.3;
 
     &.mission-variant {
-      width: 100%;
+      /* width: 100%; */
       font-size: 18px;
 
       & p {
@@ -806,7 +838,7 @@ body:not(.home):not(.parcerias):not(.fale):not(.transp):not(.projetos) {
   }
 }
 
-#parcerias {
+#parcerias, #projetos {
   padding-top: 130px;
   padding-left: 140px;
   transition: all 2s ease;
@@ -826,19 +858,19 @@ body:not(.home):not(.parcerias):not(.fale):not(.transp):not(.projetos) {
   }
 
   .banner-glyph {
-    width: 38px;
-    height: 32px;
-    margin: 10px auto;
+    width: 28px;
+    height: 24px;
+    margin: 32px auto;
     background: url(assets/losango.svg) no-repeat;
     background-size: contain;
   }
 
   .headline {
-    width: 100%;
+    width: 90%;
     margin: 0 auto;
     color: #999;
     font-size: 18px;
-    line-height: 1.2;
+    line-height: 1.4;
     text-align: justify;
 
     & p {
@@ -853,9 +885,14 @@ body:not(.home):not(.parcerias):not(.fale):not(.transp):not(.projetos) {
 		.logo-container {
 			background-color: white;
 			border-radius: 50%;
+			max-width: 200px;
 			width: 100%;
 			aspect-ratio: 1 / 1;
 			overflow: hidden;
+
+			&.max-width {
+				max-width: 180px;
+			}
 
 			& img {
 				width: 100%;
@@ -906,8 +943,8 @@ body:not(.home):not(.parcerias):not(.fale):not(.transp):not(.projetos) {
   }
 
   .banner-glyph {
-    width: 38px;
-    height: 32px;
+    width: 28px;
+    height: 24px;
     margin: 40px auto;
     background: url(assets/losango.svg) no-repeat;
     background-size: contain;
@@ -981,7 +1018,7 @@ body:not(.home):not(.parcerias):not(.fale):not(.transp):not(.projetos) {
     }
 
     &:before {
-      top: 0;
+      top: 296px;
       left: -24px;
       height: 500px;
     }
@@ -1078,17 +1115,20 @@ body:not(.home):not(.parcerias):not(.fale):not(.transp):not(.projetos) {
   }
 }
 
+/*
+ ***** TRANSPARENCIA ***** 
+ */
+
 .transparencia {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  /* display: none; */
   height: 100vh;
   padding: 150px 130px 40px;
   overflow: auto;
   transition: all 1s ease;
-  /* animation: slideDown 1.5s ease, fadeIn 2s ease; */
+  animation: slideDown 1.5s ease, fadeIn 2s ease;
 
   &.visible {
     display: block;
@@ -1111,18 +1151,34 @@ body:not(.home):not(.parcerias):not(.fale):not(.transp):not(.projetos) {
 		}
   }
 
+	& a {
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
   .list-icon {
     width: 24px;
 		height: 32px;
     margin-right: 12px;
   }
 
+	.backbtn {
+    color: var(--green);
+    display: inline-block;
+    margin-right: 8px;
+	}
+
   .simple-list {
     margin: 0;
     padding: 0;
     list-style-type: none;
 		display: grid;
-		grid-template-columns: auto auto auto;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 16px 0;
+		font-size: 18px;
 
     & a {
       display: flex;
@@ -1190,7 +1246,92 @@ body:not(.home):not(.parcerias):not(.fale):not(.transp):not(.projetos) {
     border: solid 1px #f2f2f2;
     border-radius: 5px;
   }
+
+	&.subpages {
+		animation: slideRight 2s ease, fadeIn 2s ease;
+	}
+
+	.folder-block {
+		width: 140px;
+		height: 180px;
+		background: #409a40 url(assets/bg-docs.jpeg) no-repeat;
+		background-size: cover;
+		background-blend-mode: multiply;
+		font-size: 14px;
+    text-align: center;
+	}
 }
+
+/*
+ ***** PROJETO UNICO ***** 
+ */
+
+.projeto {
+	& h2 {
+		color: var(--green);
+		text-transform: uppercase;
+		font-size: 32;
+		font-weight: bold;
+	}
+	.headline {
+    text-align: left;
+    margin-bottom: 16px !important;
+    line-height: 1.4 !important;
+	}
+	.project-social {
+    display: flex;
+    gap: 16px;
+
+    .fa-facebook,
+    .fa-instagram,
+    .fa-whatsapp {
+      display: block;
+      height: 100%;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .fa-facebook {
+      background-image: url(assets/facebook.svg);
+
+			&.animate {
+      	animation: popUp 2s ease;
+			}
+    }
+    .fa-instagram {
+      background-image: url(assets/instagram.svg);
+      background-size: 60%;
+    }
+    .fa-whatsapp {
+      background-image: url(assets/wazapp.svg);
+      background-size: 60%;
+    }
+
+    & > a {
+      display: inline-block;
+      background-color: var(--green);
+      width: 32px;
+      height: 32px;
+      border-radius: 50px;
+
+      &.instagram.animate {
+        animation: popUp 2s ease;
+      }
+
+      &.facebook.animate {
+        animation: fadeIn 4s, popUp 2s ease;
+      }
+
+      &.whatsapp.animate {
+        animation: fadeIn 6s, popUp 2s ease;
+      }
+    }
+  }
+}
+
+/*
+ ***** MEDIA QUERIES *****
+ */
 
 @media screen and (max-width: 1200px) {
 
@@ -1280,7 +1421,10 @@ body:not(.home):not(.parcerias):not(.fale):not(.transp):not(.projetos) {
 	}
 }
 
-/* HELPERS */
+/* 
+ ***** HELPERS ***** 
+ */
+
 .flex-centered {
 	display: flex;
 	flex-direction: column;

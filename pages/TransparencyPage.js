@@ -1,33 +1,35 @@
+import GlyphsComponent from '../components/GlyphsComponent.js';
+
 export default {
+	components: {
+		'glyphs-component': GlyphsComponent
+	},
 	template: `
 		<section class="transparencia">
+
+			<glyphs-component></glyphs-component>
 
 				<h2 class="page-title">Portal de Transparência</h2>
 
 				<div class="d-flex mt-5">
-					<a href="#">
-						<div style="width: 140px;height: 180px;background: #409a40 url(assets/bg-docs.jpeg) no-repeat;background-size: cover;background-blend-mode: multiply;" class="flex-centered">
+					<a href="#/transparencia/certidoes">
+						<div class="flex-centered folder-block">
 							<span class="text-uppercase text-light">Certidões</span>
 						</div>
 					</a>
 					<a href="#">
-						<div style="width: 140px;height: 180px;background: #409a40 url(assets/bg-docs.jpeg) no-repeat;background-size: cover;background-blend-mode: multiply;" class="flex-centered">
+						<div class="flex-centered folder-block">
 							<span class="text-uppercase text-light">Certificados</span>
 						</div>
 					</a>
-					<a href="#">
-						<div style="width: 140px;height: 180px;background: #409a40 url(assets/bg-docs.jpeg) no-repeat;background-size: cover;background-blend-mode: multiply;" class="flex-centered">
+					<a href="#/transparencia/estatutos">
+						<div class="flex-centered folder-block">
 							<span class="text-uppercase text-light">Estatuto</span>
 						</div>
 					</a>
-					<a href="#">
-						<div style="width: 140px;height: 180px;background: #409a40 url(assets/bg-docs.jpeg) no-repeat;background-size: cover;background-blend-mode: multiply;" class="flex-centered">
-							<span class="text-uppercase text-light">Regulamentos</span>
-						</div>
-					</a>
-					<a href="#">
-						<div style="width: 140px;height: 180px;background: #409a40 url(assets/bg-docs.jpeg) no-repeat;background-size: cover;background-blend-mode: multiply;" class="flex-centered">
-							<span class="text-uppercase text-light">Termos</span>
+					<a href="#/transparencia/regulamentos">	
+						<div class="flex-centered folder-block">
+							<span class="text-uppercase text-light" style="font-size:14px">Regulamentos</span>
 						</div>
 					</a>
 				</div>
