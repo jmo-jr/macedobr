@@ -893,6 +893,7 @@ body:not(.home):not(.parcerias):not(.fale):not(.transp):not(.projetos) {
 			width: 100%;
 			aspect-ratio: 1 / 1;
 			overflow: hidden;
+			animation: slideDown 1.5s ease, fadeIn 2s ease;
 
 			&.max-width {
 				max-width: 180px;
@@ -973,44 +974,15 @@ body:not(.home):not(.parcerias):not(.fale):not(.transp):not(.projetos) {
   }
 
   .video-container {
+		position: relative;
     flex-grow: 0;
     aspect-ratio: 2 / 3.23;
+		width: 36%;
     height: 100vh;
     background-color: white;
     transition: all 4s ease;
 
-    .atuacao & {
-      animation: fadeIn 2s ease;
-    }
-  }
-
-  div > img {
-    width: 100%;
-    padding: 0 16px;
-  }
-
-  .video-frame {
-    position: relative;
-    height: 100%;
-
-    .video-player {
-      width: 100%;
-      height: 100%;
-    }
-
-    .atuacao & {
-      &:before {
-        animation: right2Left 2s ease;
-      }
-    }
-
-    .atuacao & {
-      &:after {
-        animation: left2Right 2s ease;
-      }
-    }
-
-    &:before,
+		&:before,
     &:after {
       content: "";
       position: absolute;
@@ -1032,6 +1004,40 @@ body:not(.home):not(.parcerias):not(.fale):not(.transp):not(.projetos) {
       right: -24px;
       height: 24px;
     }
+
+    .atuacao & {
+      animation: fadeIn 2s ease;
+    }
+  }
+
+  div > img {
+    width: 100%;
+    padding: 0 16px;
+  }
+
+  .video-frame {
+    position: relative;
+    height: 100%;
+		overflow: hidden;
+
+    .video-player {
+      width: auto;
+      height: 100%;
+    }
+
+    .atuacao & {
+      &:before {
+        animation: right2Left 2s ease;
+      }
+    }
+
+    .atuacao & {
+      &:after {
+        animation: left2Right 2s ease;
+      }
+    }
+
+    
   }
 }
 

@@ -4,22 +4,22 @@ export default {
 	components: {
 		'glyphs-component': GlyphsComponent
 	},
+	data() {
+		return {
+			currentVideo: "assets/videos/quemsomos.mp4"
+		}
+	},
+	methods: {
+    changeVideo(videoSrc) {
+      this.currentVideo = videoSrc;
+    }
+  },
 	template: `
 		<section id="quem" class="quem panel visible">
 
 			<glyphs-component></glyphs-component>
 
 			<div class="container h-100">
-
-				<header class="secondary-header">
-					<nav class="nav">
-						<div style="margin-left:-40px">
-							<a class="navbar-brand nav-js" href="#home" data-panel="home">
-								<img src="assets/logo_ambr_cor.png" alt="Associação Macedo Brasil">
-							</a>
-						</div>
-					</nav>
-				</header>
 
 				<div class="d-flex justify-content-around h-100">
 
@@ -35,20 +35,17 @@ export default {
 						<ul class="nav nav-tabs" id="quemTabs" role="tablist">
 
 							<li class="nav-item" role="presentation">
-								<button class="nav-link active" id="who-tab" data-bs-toggle="tab" data-bs-target="#who"
-									data-video="assets/videos/quemsomos.mp4" type="button" role="tab" aria-controls="who"
+								<button class="nav-link active" id="who-tab" data-bs-toggle="tab" data-bs-target="#who" @click="changeVideo('assets/videos/quemsomos.mp4')" type="button" role="tab" aria-controls="who"
 									aria-selected="true">Quem Somos</button>
 							</li>
 
 							<li class="nav-item" role="presentation">
-								<button class="nav-link" id="vision-tab" data-bs-toggle="tab" data-bs-target="#vision"
-									data-video="assets/videos/visao.mp4" type="button" role="tab" aria-controls="vision"
+								<button class="nav-link" id="vision-tab" data-bs-toggle="tab" data-bs-target="#vision" @click="changeVideo('assets/videos/visao.mp4')" type="button" role="tab" aria-controls="vision"
 									aria-selected="false">Nossa Visão</button>
 							</li>
 
 							<li class="nav-item" role="presentation">
-								<button class="nav-link" id="mission-tab" data-bs-toggle="tab" data-bs-target="#mission"
-									data-video="assets/videos/missao.mp4" type="button" role="tab" aria-controls="mission"
+								<button class="nav-link" id="mission-tab" data-bs-toggle="tab" data-bs-target="#mission" @click="changeVideo('assets/videos/missao.mp4')" type="button" role="tab" aria-controls="mission"
 									aria-selected="false">Nossa Missão</button>
 							</li>
 							
@@ -96,7 +93,7 @@ export default {
 						<!-- Video -->
 						<div class="video-container">
 							<div class="video-frame changes" style="background-color:white">
-								<video id="vidQuem" class="video-player" data-src="assets/videos/quemsomos.mp4" src="assets/videos/quemsomos.mp4" autoplay muted loop>
+								<video id="vidQuem" class="video-player" :src="currentVideo" autoplay muted loop>
 								</video>
 							</div>
 						</div>

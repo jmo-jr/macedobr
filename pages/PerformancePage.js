@@ -4,22 +4,22 @@ export default {
 	components: {
 		'glyphs-component': GlyphsComponent
 	},
+	data() {
+		return {
+			currentVideo: "assets/videos/infraestrutura.mp4"
+		}
+	},
+	methods: {
+    changeVideo(videoSrc) {
+      this.currentVideo = videoSrc;
+    }
+  },
 	template: `
 		<section id="atuacao" class="atuacao panel visible">
 
 		<glyphs-component></glyphs-component>
 
 			<div class="container">
-
-				<header class="secondary-header display-none">
-					<nav class="nav">
-						<div style="margin-left:-40px">
-							<a class="navbar-brand" href="#">
-								<img src="assets/logo_ambr_cor.png" alt="Associação Macedo Brasil">
-							</a>
-						</div>
-					</nav>
-				</header>
 
 				<div class="d-flex justify-content-around">
 
@@ -31,7 +31,7 @@ export default {
 
 					<div class="video-container">
 						<div class="video-frame changes">
-							<video id="vidAtua" class="video-player" data-src="assets/infraestrutura.mp4" src="assets/infraestrutura.mp4" autoplay muted loop>
+							<video id="vidAtua" class="video-player" :src="currentVideo" autoplay muted loop>
 							</video>
 						</div>
 					</div>
@@ -41,22 +41,19 @@ export default {
 						<ul class="nav nav-tabs" id="atuacaoTabs" role="tablist">
 							<li class="nav-item" role="presentation">
 								<button class="nav-link active" id="infra-tab" data-bs-toggle="tab" data-bs-target="#infra"
-									data-video="assets/infraestrutura.mp4" type="button" role="tab" aria-controls="infra"
+									@click="changeVideo('assets/videos/infraestrutura.mp4')" type="button" role="tab" aria-controls="infra"
 									aria-selected="true">Infraestrutura</button>
 							</li>
 							<li class="nav-item" role="presentation">
-								<button class="nav-link" id="education-tab" data-bs-toggle="tab" data-bs-target="#education"
-									data-video="assets/educacao.mp4" type="button" role="tab" aria-controls="education"
+								<button class="nav-link" id="education-tab" data-bs-toggle="tab" data-bs-target="#education" @click="changeVideo('assets/videos/educacao.mp4')" type="button" role="tab" aria-controls="education"
 									aria-selected="false">Educação</button>
 							</li>
 							<li class="nav-item" role="presentation">
-								<button class="nav-link" id="management-tab" data-bs-toggle="tab" data-bs-target="#management"
-									data-video="assets/gestao.mp4" type="button" role="tab" aria-controls="management"
+								<button class="nav-link" id="management-tab" data-bs-toggle="tab" data-bs-target="#management" @click="changeVideo('assets/videos/gestao.mp4')" type="button" role="tab" aria-controls="management"
 									aria-selected="false">Gestão</button>
 							</li>
 							<li class="nav-item" role="presentation">
-								<button class="nav-link" id="ti-tab" data-bs-toggle="tab" data-bs-target="#ti"
-									data-video="assets/tecnologia.mp4" type="button" role="tab" aria-controls="ti"
+								<button class="nav-link" id="ti-tab" data-bs-toggle="tab" data-bs-target="#ti" @click="changeVideo('assets/videos/tecnologia.mp4')" type="button" role="tab" aria-controls="ti"
 									aria-selected="false">Tecnologias</button>
 							</li>
 						</ul>

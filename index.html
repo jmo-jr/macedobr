@@ -31,81 +31,6 @@
 	</div>
 
 	<!-- SCRIPTS -->
-	<script id="jsNavigation">
-		document.addEventListener('DOMContentLoaded', function () {
-
-			var navLinks = document.querySelectorAll('.nav-js');
-
-			navLinks.forEach(function (navLink) {
-				// Ao clicar no link, torna painel visivel
-				navLink.addEventListener('onload', function () {
-
-					var panelId = navLink.getAttribute('data-panel');
-
-					// Atribui classe equiv. ao painel visivel
-					var docBody = document.getElementById('body');
-					docBody.className = '';
-					docBody.classList.add(panelId);
-
-					var targetElement = document.getElementById(panelId);
-
-					//
-					var video = targetElement.querySelector('video');
-					if (video && !video.src) {
-						video.src = video.getAttribute('data-src');
-					}
-				});
-			});
-
-			// Mostra ou oculta o menu principal - NOT WORKING
-			const backBtn = $('#home-link')
-			const mainNav = $('.default-header')
-
-			backBtn
-				.on('mouseover', function () {
-					console.log('hover')
-					$(this).addClass('hide');
-					mainNav.addClass('show');
-				})
-				.on('mouseout', function () {
-					console.log('hover out')
-					$(this).removeClass('hide');
-					mainNav.removeClass('show');
-				})
-
-		});
-	</script>
-	
-	<script id="changeVideos">
-		document.addEventListener('DOMContentLoaded', function () {
-		// Muda videos das abas de Quem Somos
-			const quemTabLinks = document.querySelectorAll('#quemTabs .nav-link');
-
-			quemTabLinks.forEach(qtabLink => {
-				qtabLink.addEventListener('click', function () {
-					let qVideoSrc = qtabLink.getAttribute('data-video');
-					let quemPlayer = document.getElementById('vidQuem');
-
-					quemPlayer.src = qVideoSrc;
-					quemPlayer.style.animation = "fadeIn 2s ease";
-				})
-			})
-
-			// Muda videos das abas de Atuação
-			const atuaTabLinks = document.querySelectorAll('#atuacaoTabs .nav-link');
-
-			atuaTabLinks.forEach(atabLink => {
-				atabLink.addEventListener('click', function () {
-					let aVideoSrc = atabLink.getAttribute('data-video');
-					let atuaPlayer = document.getElementById('vidAtua');
-
-					atuaPlayer.src = aVideoSrc;
-					atuaPlayer.style.animation = "fadeIn 2s ease";
-				})
-			})
-		});
-	</script>
-
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
 		crossorigin="anonymous"></script>
@@ -118,47 +43,6 @@
 	<script src="https://cdn.jsdelivr.net/npm/vue-router@4/dist/vue-router.global.js"></script>
 	<script type="module" src="main.js"></script>
 
-	<script id="lazyLoad">
-		var img = document.getElementById("placeholder_image");
-		var lazyContainer = document.getElementById("lazy_container");
-
-		if(img) {
-			const options = {
-				root: null,
-				rootMargin: "0px",
-				threshold: 0.5 // Trigger when img is 50% visible
-			};
-
-			var observer = new IntersectionObserver(function (entries) {
-				entries.forEach(function (entry) {
-					if (entry.isIntersecting) {
-						// remove the img
-						lazyContainer.removeChild(img);
-						// create a video instead
-						const videoElement = document.createElement("video");
-						//videoElement.src = "assets/video/home.mp4";
-						videoElement.alt = "Lazy-loaded Video";
-						videoElement.poster = "assets/video/home_vph.png";
-						videoElement.autoplay = true;
-						videoElement.loop = true;
-						videoElement.controls = false;
-						const videoSource = document.createElement("source");
-						videoSource.src = "assets/video/home.mp4";
-						videoSource.type = "video/mp4";
-						videoElement.appendChild(videoSource);
-						// swap it in for the img
-						lazyContainer.appendChild(videoElement);
-						// load video
-						videoElement.load();
-						// disconnect observer
-						observer.unobserve(img);
-					}
-				});
-			}, options);
-
-			observer.observe(img);
-		}
-	</script>
 </body>
 
 </html>
