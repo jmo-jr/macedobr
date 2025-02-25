@@ -5,7 +5,7 @@ export default {
 		'glyphs-component': GlyphsComponent
 	},
 	template: `
-		<section id="fale" class="panel visible">
+		<section id="fale" class="fale panel visible">
 
 		<glyphs-component></glyphs-component>
 

@@ -17,7 +17,7 @@ export default {
 							<span class="text-uppercase text-light">Certidões</span>
 						</div>
 					</a>
-					<a href="#">
+					<a>
 						<div class="flex-centered folder-block">
 							<span class="text-uppercase text-light">Certificados</span>
 						</div>

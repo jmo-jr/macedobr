@@ -23,15 +23,15 @@ export default {
 
 				<div class="d-flex justify-content-around">
 
-					<div class="headlines" style="margin-top: 160px">
+					<div class="headlines" style="margin-top:160px; margin-left:100px; flex:1">
 
 						<h2>
-							Bioarte
+							<a href="#/projetos" class="breadcrumb-home">Projetos / </a>Bioarte
 						</h2>
 
 						<div class="banner-glyph"></div>
 
-						<p class="headline">O Projeto Bioarte, em Coruripe-AL, é uma iniciativa da AMBR que une sustentabilidade, educação e inclusão social. Através de ações socioambientais, incentivamos práticas sustentáveis, a economia criativa e a valorização do meio ambiente.</p>
+						<p class="headline">O <strong>Projeto Bioarte</strong>, em Coruripe-AL, é uma iniciativa da AMBR que une sustentabilidade, educação e inclusão social. Através de ações socioambientais, incentivamos práticas sustentáveis, a economia criativa e a valorização do meio ambiente.</p>
 						<p class="headline">Capacitamos a comunidade com oficinas, atividades educativas e apoio à bioprodução, fortalecendo a consciência ecológica e gerando novas oportunidades. Juntos, estamos transformando realidades e construindo um futuro mais sustentável!</p>
 
 						<div class="project-social">
@@ -46,10 +46,7 @@ export default {
 					</div>
 
 					<div class="video-container">
-						<div class="video-frame changes">
-							<video id="vidAtua" class="video-player" data-src="assets/infraestrutura.mp4" src="assets/infraestrutura.mp4" autoplay muted loop>
-								<!-- <source src="assets/infraestrutura.mp4" type="video/mp4"> -->
-							</video>
+						<div class="video-frame changes" style="background: url('assets/bioarte.jpeg') no-repeat center center; background-size: cover;">
 						</div>
 					</div>
 

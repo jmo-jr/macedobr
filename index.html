@@ -136,14 +136,14 @@
 						lazyContainer.removeChild(img);
 						// create a video instead
 						const videoElement = document.createElement("video");
-						//videoElement.src = "assets/home.mp4";
+						//videoElement.src = "assets/video/home.mp4";
 						videoElement.alt = "Lazy-loaded Video";
-						videoElement.poster = "assets/home_vph.png";
+						videoElement.poster = "assets/video/home_vph.png";
 						videoElement.autoplay = true;
 						videoElement.loop = true;
 						videoElement.controls = false;
 						const videoSource = document.createElement("source");
-						videoSource.src = "assets/home.mp4";
+						videoSource.src = "assets/video/home.mp4";
 						videoSource.type = "video/mp4";
 						videoElement.appendChild(videoSource);
 						// swap it in for the img

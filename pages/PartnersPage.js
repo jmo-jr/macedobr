@@ -28,19 +28,19 @@ export default {
 					<div class="logos-grid">
 						<div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:24px;">
 							<div class="logo-container">
-								<a href="#">
+								<a href="https://site.coruripe.al.gov.br/"  target="_blank">
 									<img src="assets/pmcoruripe.jpg" alt="Prefeitura de Coruripe"
 										title="Prefeitura Municipal de Coruripe/AL" class="logo">
 								</a>
 							</div>
 							<div class="logo-container">
-								<a href="#">
+								<a href="https://cognvox.com.br/" target="_blank">
 									<img src="assets/cognvox.jpeg" alt="Cognvox" title="Cognvox - Software de desenvolvimento cognitivo"
 										class="logo">
 								</a>
 							</div>
 							<div class="logo-container">
-								<a href="#">
+								<a href="#" target="_blank">
 									<img src="assets/casadeoracao.png" alt="Casa de Oração" title="Casa de Oração"
 										class="logo">
 								</a>

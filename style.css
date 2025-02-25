@@ -344,7 +344,7 @@ body {
 
   .navbar-nav {
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.9);
     font-family: vg;
     font-weight: 300;
     white-space: nowrap;
@@ -713,10 +713,14 @@ body:not(.home):not(.parcerias):not(.fale):not(.transp):not(.projetos) {
       content: "";
       display: block;
       position: absolute;
-      top: -40px;
+      /* top: -40px;
       left: 71px;
       width: 80px;
-      height: 490px;
+      height: 490px; */
+			top: 120px;
+			left: 70px;
+			width: 34px;
+			height: 330px;
       background-color: var(--green);
     }
   }
@@ -866,7 +870,7 @@ body:not(.home):not(.parcerias):not(.fale):not(.transp):not(.projetos) {
   }
 
   .headline {
-    width: 90%;
+    width: 80%;
     margin: 0 auto;
     color: #999;
     font-size: 18px;
@@ -955,7 +959,7 @@ body:not(.home):not(.parcerias):not(.fale):not(.transp):not(.projetos) {
     margin: 0 auto;
     color: #999;
     font-size: 20px;
-    line-height: 1.3;
+    line-height: 1.4;
 
     &.text-justify {
       text-align: justify;
@@ -1047,7 +1051,7 @@ body:not(.home):not(.parcerias):not(.fale):not(.transp):not(.projetos) {
     animation: fadeIn 1s ease, slideRight 2s ease;
 
     @media screen and (min-width: 1440px) {
-      left: 14%;
+      left: 10%;
     }
   }
 
@@ -1080,8 +1084,8 @@ body:not(.home):not(.parcerias):not(.fale):not(.transp):not(.projetos) {
     animation: fadeIn 2s ease;
 
     @media screen and (min-width: 1440px) {
-      width: calc(100% - 610px);
-      padding: 20px 200px;
+      width: calc(100% - 420px);
+      padding: 20px 240px 20px 140px;
     }
   }
 
@@ -1270,8 +1274,20 @@ body:not(.home):not(.parcerias):not(.fale):not(.transp):not(.projetos) {
 	& h2 {
 		color: var(--green);
 		text-transform: uppercase;
-		font-size: 32;
+		font-size: 24px;
 		font-weight: bold;
+		text-align: left;
+
+		.breadcrumb-home {
+			color: grey;
+			font-size: 22px;
+			font-weight: normal;
+			text-decoration: none;
+
+			&:hover {
+				color: blue;
+			}
+		}
 	}
 	.headline {
     text-align: left;

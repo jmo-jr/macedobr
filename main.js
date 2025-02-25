@@ -5,6 +5,8 @@ import PartnersPage from './pages/PartnersPage.js';
 import PerformancePage from './pages/PerformancePage.js';
 import ProjectsPage from './pages/ProjectsPage.js';
 import BioarteSubpage from './pages/BioarteSubpage.js';
+import FlorescerSubpage from './pages/FlorescerSubpage.js';
+import BarbeirosSubpage from './pages/EscBarbeirosSubpage.js';
 import TransparencyPage from './pages/TransparencyPage.js';
 import CertidoesPage from './pages/CertidoesPage.js';
 import EstatutosPage from './pages/EstatutosPage.js';
@@ -22,6 +24,8 @@ const routes = [
 	{ path: '/atuacao', component: PerformancePage },
 	{ path: '/projetos', component: ProjectsPage },
 	{ path: '/projetos/bioarte', component: BioarteSubpage },
+	{ path: '/projetos/florescer', component: FlorescerSubpage },
+	{ path: '/projetos/escola-barbeiros', component: BarbeirosSubpage },
 	{ path: '/transparencia', component: TransparencyPage },
 	{ path: '/transparencia/certidoes', component: CertidoesPage },
 	{ path: '/transparencia/estatutos', component: EstatutosPage },

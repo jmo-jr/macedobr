@@ -40,7 +40,7 @@ export default {
 								</a>
 							</div>
 							<div class="logo-container">
-								<a href="#/projetos/barbearia">
+								<a href="#/projetos/escola-barbeiros">
 									<img src="assets/barbearia.png" alt="Barbearia Garden" title="Barbearia Garden"
 										class="logo">
 								</a>
