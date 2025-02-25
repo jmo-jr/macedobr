@@ -26,10 +26,10 @@ export default {
 						<p class="headline">Com aulas práticas e teóricas, os alunos aprendem técnicas de barbearia, atendimento ao cliente e gestão, desenvolvendo habilidades que podem transformar seu futuro. Acreditamos que, através da educação e da profissionalização, podemos gerar impacto social e criar oportunidades reais para quem deseja crescer!</p>
 
 						<div class="project-social">
-							<a href="https://www.instagram.com/" target="_blank" class="instagram">
+							<a href="https://www.instagram.com/barbeariagardencom/" target="_blank" class="instagram">
 								<i class="fa fa-instagram" aria-hidden="false"></i>
 							</a>
-							<a href="https://www.facebook.com/profile.php?id=" target="_blank" class="facebook">
+							<a href="https://www.facebook.com/profile.php?id=100095314007556" target="_blank" class="facebook">
 								<i class="fa fa-facebook" aria-hidden="alse"></i>
 							</a>
 						</div>

@@ -1019,6 +1019,7 @@ body:not(.home):not(.parcerias):not(.fale):not(.transp):not(.projetos) {
     position: relative;
     height: 100%;
 		overflow: hidden;
+		background-color: lightgrey;
 
     .video-player {
       width: auto;

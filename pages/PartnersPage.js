@@ -40,7 +40,7 @@ export default {
 								</a>
 							</div>
 							<div class="logo-container">
-								<a href="#" target="_blank">
+								<a href="https://www.instagram.com/casadeoracao.cop?igsh=amZzMHd5aGFpZGll" target="_blank">
 									<img src="assets/casadeoracao.png" alt="Casa de Oração" title="Casa de Oração"
 										class="logo">
 								</a>

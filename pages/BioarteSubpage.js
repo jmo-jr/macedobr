@@ -35,10 +35,10 @@ export default {
 						<p class="headline">Capacitamos a comunidade com oficinas, atividades educativas e apoio à bioprodução, fortalecendo a consciência ecológica e gerando novas oportunidades. Juntos, estamos transformando realidades e construindo um futuro mais sustentável!</p>
 
 						<div class="project-social">
-							<a href="https://www.instagram.com/" target="_blank" class="instagram">
+							<a href="https://www.instagram.com/bioartesociambiental/" target="_blank" class="instagram">
 								<i class="fa fa-instagram" aria-hidden="false"></i>
 							</a>
-							<a href="https://www.facebook.com/profile.php?id=" target="_blank" class="facebook">
+							<a href="https://www.facebook.com/profile.php?id=61572277323388" target="_blank" class="facebook">
 								<i class="fa fa-facebook" aria-hidden="alse"></i>
 							</a>
 						</div>
