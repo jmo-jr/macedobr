@@ -113,8 +113,8 @@ body {
     }
 
     .atuacao & {
-      bottom: 80px;
-      right: 24%;
+      bottom: 200px;
+      right: 2%;
     }
 
     .fale & {
@@ -153,8 +153,8 @@ body {
   }
 
   .atuacao & {
-    bottom: 50px;
-    right: 45%;
+    bottom: 15px;
+    left: 48%;
     animation: showUpRotate 2s ease 2s, fadeIn 4s ease 1s;
   }
 
@@ -950,7 +950,7 @@ body:not(.home):not(.parcerias):not(.fale):not(.transp):not(.projetos) {
   .banner-glyph {
     width: 28px;
     height: 24px;
-    margin: 40px auto;
+    margin: 32px auto;
     background: url(assets/losango.svg) no-repeat;
     background-size: contain;
   }
@@ -959,7 +959,7 @@ body:not(.home):not(.parcerias):not(.fale):not(.transp):not(.projetos) {
     width: 100%;
     margin: 0 auto;
     color: #999;
-    font-size: 20px;
+    font-size: 18px;
     line-height: 1.4;
 
     &.text-justify {
@@ -1453,4 +1453,22 @@ body:not(.home):not(.parcerias):not(.fale):not(.transp):not(.projetos) {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+}
+
+.loading-screen {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgb(63 169 88 / 46%);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 10px;
 }

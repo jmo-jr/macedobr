@@ -6,20 +6,49 @@ export default {
 	},
 	data() {
 		return {
-			currentVideo: "assets/videos/infraestrutura.mp4"
+			isPageLoading: true,
+			currentVideo: "assets/videos/infraestrutura.mp4",
 		}
 	},
 	methods: {
     changeVideo(videoSrc) {
       this.currentVideo = videoSrc;
-    }
+    },
+		checkPageLoaded() {
+				this.isPageLoading = true; // Mantém o loading ativo
+
+				this.$nextTick(() => {
+						const videos = document.querySelectorAll("video");
+						let loadedCount = 0;
+
+						if (videos.length === 0) {
+								this.isPageLoading = false; // Se não houver vídeos, remove o loading
+								return;
+						}
+
+						videos.forEach(video => {
+								video.oncanplaythrough = () => {
+										loadedCount++;
+										if (loadedCount === videos.length) {
+												this.isPageLoading = false; // Remove o loading quando todos carregarem
+										}
+								};
+						});
+				});
+		}
   },
 	template: `
 		<section id="atuacao" class="atuacao panel visible">
 
-		<glyphs-component></glyphs-component>
+			<glyphs-component></glyphs-component>
 
-			<div class="container">
+			<!-- Tela de Loading -->
+			<div v-if="isPageLoading" class="loading-screen">
+				<div class="spinner"></div>
+				<p>Carregando...</p>
+			</div>
+
+			<div v-if="!isPageLoading" class="container">
 
 				<div class="d-flex justify-content-around">
 
@@ -30,10 +59,20 @@ export default {
 					</div>
 
 					<div class="video-container">
+
 						<div class="video-frame changes">
-							<video id="vidAtua" class="video-player" :src="currentVideo" autoplay muted loop>
+							<video 
+								v-if="currentVideo" 
+								id="vidAtua" 
+								class="video-player" 
+								:src="currentVideo" 
+								autoplay muted loop
+							>
+								<source :src="currentVideo" type="video/mp4">
+								Seu navegador não suporta vídeos.
 							</video>
 						</div>
+
 					</div>
 
 					<div class="headlines">
@@ -90,5 +129,13 @@ export default {
 
 			</div>
 		</section>
-	`
+	`,
+	beforeMount() {
+			this.checkPageLoaded(); // Executa o loading ao carregar a página
+	},
+	watch: {
+			'$el': function () {
+					this.checkPageLoaded(); // Executa toda vez que o componente for montado na tela
+			}
+	}
 }
