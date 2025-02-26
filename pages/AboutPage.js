@@ -99,11 +99,25 @@ export default {
 							</div>
 
 							<div class="tab-pane fade" id="mission" role="tabpanel" aria-labelledby="mission-tab">
+
 								<div class="banner-glyph"></div>
+
 								<div class="headline mission-variant">
-									<p>Orientamos nossa missão com objetivos claros de fomentar o desenvolvimento humano e a
-										sustentabilidade, fundamentados nos direitos consagrados pela Constituição Federal:</p>
-									<div class="multi-columns">
+									<p>
+										Orientamos nossa missão com objetivos claros de fomentar o desenvolvimento humano e a sustentabilidade, fundamentados nos direitos consagrados pela Constituição Federal:
+									</p>
+
+									<ul>
+										<li>Assegurar o direito à vida, liberdade, igualdade, segurança e propriedade;</li>
+										<li>Atuar como agentes de promoção dos direitos sociais, incluindo educação, saúde, alimentação,
+											trabalho, moradia, transporte, lazer, segurança, proteção à maternidade, infância e assistência
+											aos desamparados; </li>
+										<li>Facilitar o acesso à cultura, educação, ciência, tecnologia, pesquisa e inovação;</li>
+										<li>Desenvolver soluções voltadas para a preservação do meio ambiente e o combate à poluição em
+											todas as suas formas.</li>
+									</ul>
+
+									<div class="multi-columns" style="display:none">
 										<ul>
 											<li>Assegurar o direito à vida, liberdade, igualdade, segurança e propriedade;</li>
 											<li>Atuar como agentes de promoção dos direitos sociais, incluindo educação, saúde, alimentação,
@@ -115,6 +129,7 @@ export default {
 										</ul>
 									</div>
 								</div>
+
 							</div>
 
 						</div>

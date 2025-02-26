@@ -758,11 +758,12 @@ body:not(.home):not(.parcerias):not(.fale):not(.transp):not(.projetos) {
     height: 200px;
     margin: 0 auto;
     color: #999;
-    font-size: 20px;
+    font-size: 18px;
     line-height: 1.3;
+		text-align: left;
 
     &.mission-variant {
-      /* width: 100%; */
+      width: 100%;
       font-size: 18px;
 
       & p {
@@ -773,10 +774,6 @@ body:not(.home):not(.parcerias):not(.fale):not(.transp):not(.projetos) {
         margin-bottom: 0;
         padding-left: 24px;
         font-size: 16px;
-
-        & li {
-          margin-bottom: 8px;
-        }
       }
     }
   }
@@ -884,7 +881,7 @@ body:not(.home):not(.parcerias):not(.fale):not(.transp):not(.projetos) {
 
   .logos-grid {
     flex: 1;
-    padding: 30px;
+    padding: 0 30px;
 
 		.logo-container {
 			background-color: white;
@@ -961,6 +958,7 @@ body:not(.home):not(.parcerias):not(.fale):not(.transp):not(.projetos) {
     color: #999;
     font-size: 18px;
     line-height: 1.4;
+		text-align: justify;
 
     &.text-justify {
       text-align: justify;
