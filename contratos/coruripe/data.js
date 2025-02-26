@@ -39,42 +39,42 @@ createApp({
 				termos: [
 					{
 						id: 1,
-						name: 'Termo de Colaboração 01 - Creche 1 Pontal',
+						name: 'TC 01 - Creche 1 Pontal',
 						link: "https://drive.google.com/file/d/1Hj2FEoxeylQe2GqRCsvVe_vOY4E9JXf6/view?usp=sharing"
 					},
 					{
 						id: 2,
-						name: 'Termo de Colaboração 02 - Creche 2 Pindorama',
+						name: 'TC 02 - Creche 2 Pindorama',
 						link: "https://drive.google.com/file/d/1heeVcISCmM5hX5b-f89BK_98ilridRlC/view?usp=sharing"
 					},
 					{
 						id: 6,
-						name: 'Termo de Colaboração 06 - Praça do Hospital',
+						name: 'TC 06 - Praça do Hospital',
 						link: "https://drive.google.com/file/d/1_0dNdtpmDqW4ZB5OWrpFIJkmQ2DO3iBM/view?usp=sharing"
 					},
 					{
 						id: 7,
-						name: 'Termo de Colaboração 07 - Usina de Geração de Energia Solar',
+						name: 'TC 07 - Usina de Geração de Energia Solar',
 						link: "https://drive.google.com/file/d/1K9JMwxYFwK0J5rHS6TqFrPVU6uyYucse/view?usp=sharing"
 					},
 					{
 						id: 11,
-						name: 'Termo de Colaboração 11 - Unidade Mista de Saúde Pindorama',
+						name: 'TC 11 - Unidade Mista de Saúde Pindorama',
 						link: "https://drive.google.com/file/d/11fLK9svdBOq-26KKxtM6NiIynUQ0zlVU/view?usp=sharing"
 					},
 					{
 						id: 16,
-						name: 'Termo de Colaboração 16 - Praça Miaí de Cima',
+						name: 'TC 16 - Praça Miaí de Cima',
 						link: "https://drive.google.com/file/d/1_AehLuVK1k-mDvnntI730UC2tJFTjIBH/view?usp=drive_link"
 					},
 					{
 						id: 18,
-						name: 'Termo de Colaboração 18 - Praça Miaí de Baixo',
+						name: 'TC 18 - Praça Miaí de Baixo',
 						link: "https://drive.google.com/file/d/1DwAhGWIqG2ayxw6pClskeOeu9rs5iwLZ/view?usp=drive_link"
 					},
 					{
 						id: 20,
-						name: 'Termo de Colaboração 20 - Iluminação Pública',
+						name: 'TC 20 - Iluminação Pública',
 						link: "https://drive.google.com/file/d/1dNOls2KPF5-lFRHgyEDJxHnUCCSXBtkP/view?usp=sharing"
 					},
 				],

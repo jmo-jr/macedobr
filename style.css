@@ -1263,12 +1263,21 @@ body:not(.home):not(.parcerias):not(.fale):not(.transp):not(.projetos) {
 	.folder-block {
 		width: 140px;
 		height: 180px;
+		padding: 8px;
 		background: #409a40 url(assets/bg-docs.jpeg) no-repeat;
 		background-size: cover;
 		background-blend-mode: multiply;
 		font-size: 14px;
     text-align: center;
 	}
+}
+
+.docs-header {
+	font-size: 22px;
+	color: #517365;
+	background-color: #f6f6f6;
+	padding: 8px 16px;
+	border-radius: 4px;
 }
 
 /*

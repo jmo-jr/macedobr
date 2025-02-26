@@ -91,48 +91,43 @@
 				<h2 class="page-title">Contrato Coruripe/AL</h2>
 				<br>
 
-        <div class="accordion" id="accTransparencia">
+				<!-- Termo -->
+				<div class="accordion-item">
 
-					<!-- Termo -->
-					<div class="accordion-item">
-						<h2 class="accordion-header">
-							<button class="accordion-button" type="button" aria-expanded="true" aria-controls="termo">
-								<img src="../../assets/icon-colab.svg" class="list-icon"> Termos de Colaboração
-							</button>
-						</h2>
-						<div id="termo" class="accordion-collapse collapse show" data-bs-parent="#accTransparencia">
-							<div class="accordion-body">
-								<ul class="simple-list">
-									<li v-for="item in items.termos" :key="item.id">
-										<a :href="'documentos.html?id=' + item.id">
-											<img src="../../assets/icon-folder.svg" class="list-icon">{{ item.name }}
-										</a>
-									</li>
-								</ul>
+					<h3 class="docs-header">
+							<img src="../../assets/icon-colab.svg" class="list-icon"> Termos de Colaboração
+					</h3>
+
+					<div id="termo" class="accordion-collapse collapse show" data-bs-parent="#accTransparencia">
+						<div class="accordion-body">
+							<div class="d-flex flex-wrap mt-4" style="gap: 50px">
+								<div v-for="item in items.termos" :key="item.id">
+									<a :href="'documentos.html?id=' + item.id">
+										<div class="flex-centered folder-block">
+											<span class="text-uppercase text-light">{{ item.name }}</span>
+										</div>
+									</a>
+								</div>
 							</div>
 						</div>
 					</div>
 
-					<!-- Funcionários -->
-					<div class="accordion-item">
-						<h2 class="accordion-header">
-							<button class="accordion-button" type="button" aria-expanded="true" aria-controls="termo">
-								<img src="../../assets/icon-colab.svg" class="list-icon"> Funcionários
-							</button>
-						</h2>
-						<div id="termo" class="accordion-collapse collapse show" data-bs-parent="#accTransparencia">
-							<div class="accordion-body">
-								<ul class="simple-list">
-									<li v-for="item in items.funcionarios" :key="item.id">
-										<a :href="item.link" target="_blank">
-											<img src="../../assets/icon-file.svg" class="list-icon">{{ item.name }}
-										</a>
-									</li>
-								</ul>
-							</div>
+				</div>
+				<br>
+				<!-- Funcionários -->
+				<div class="accordion-item">
+					<div id="termo" class="accordion-collapse collapse show" data-bs-parent="#accTransparencia">
+						<div class="accordion-body">
+							<ul class="simple-list">
+								<li v-for="item in items.funcionarios" :key="item.id">
+									<a :href="item.link" target="_blank">
+										<img src="../../assets/badge-employee.svg" class="list-icon" style="color: #517365"> {{ item.name }}
+										<!-- <img src="../../assets/icon-file.svg" class="list-icon">{{ item.name }} -->
+									</a>
+								</li>
+							</ul>
 						</div>
 					</div>
-
 				</div>
 
       </section>

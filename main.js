@@ -31,7 +31,7 @@ const routes = [
 	{ path: '/transparencia/estatutos', component: EstatutosPage },
 	{ path: '/transparencia/regulamentos', component: RegulamentosPage },
 	{ path: '/contato', component: ContactPage },
-	{ path: '/contratos/coruripe', redirect: () => window.location.href = '/contratos/coruripe/index.html' }
+	{ path: '/contratos/coruripe', redirect: () => window.location.href = '/contratos/coruripe/' }
 ];
 
 const router = createRouter({

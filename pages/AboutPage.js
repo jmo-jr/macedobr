@@ -116,18 +116,6 @@ export default {
 										<li>Desenvolver soluções voltadas para a preservação do meio ambiente e o combate à poluição em
 											todas as suas formas.</li>
 									</ul>
-
-									<div class="multi-columns" style="display:none">
-										<ul>
-											<li>Assegurar o direito à vida, liberdade, igualdade, segurança e propriedade;</li>
-											<li>Atuar como agentes de promoção dos direitos sociais, incluindo educação, saúde, alimentação,
-												trabalho, moradia, transporte, lazer, segurança, proteção à maternidade, infância e assistência
-												aos desamparados; </li>
-											<li>Facilitar o acesso à cultura, educação, ciência, tecnologia, pesquisa e inovação;</li>
-											<li>Desenvolver soluções voltadas para a preservação do meio ambiente e o combate à poluição em
-												todas as suas formas.</li>
-										</ul>
-									</div>
 								</div>
 
 							</div>
