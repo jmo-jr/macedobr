@@ -18,7 +18,7 @@ export default {
 						</h2>
 						<div class="banner-glyph"></div>
 						<h3 class="subtitle">Unimos forças para<br>transformar realidades</h3>
-						<p class="headline">Dignidade humana, desenvolvimento social<br>e sustentabilidade.</p>
+						<p class="headline">Dignidade humana, desenvolvimento social <br>e sustentabilidade.</p>
 						<div class="wave-glyph"></div>
 					</div>
 

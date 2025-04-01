@@ -1,0 +1,293 @@
+@media screen and (max-width: 768px) {
+
+	.mobile {
+		display: block;
+	}
+
+	.default-header {
+		& .navbar {
+			padding: 0;
+		}
+
+		& .navbar-toggler {
+			border: none;
+			/* transition: all 0.3s ease; */
+
+			&:focus {
+					box-shadow: none;
+			}
+
+			& .navbar-toggler-icon {
+				border-top: solid 3px #02ad78;
+				border-bottom: solid 3px #02ad78;
+				
+				&:before {
+						height: 3px;
+				}
+			}
+		}
+
+		& .navbar-toggler:not(.collapsed) {
+			padding: 0;
+			/* transition: all 0.3s ease; */
+
+			& .navbar-toggler-icon {
+				border: solid 3px var(--green);
+				border-radius: 50px;
+				padding: 14px;
+				position: relative;
+				
+				&:before {
+						rotate: 45deg;
+						width: 16px;
+						position: absolute;
+				}
+				&:after {
+						content: "";
+						width: 16px;
+						height: 3px;
+						background-color: #02ad78;
+						display: block;
+						rotate: -45deg;
+						position: absolute;
+				}
+			}
+		}
+	}
+
+	#home .main-title {
+			font-size: 32px;
+	}
+
+	#home {
+		& .container {
+
+			& > div {
+				flex-direction: column-reverse;
+				flex-wrap: nowrap;
+			}
+
+			& .video-container {
+					aspect-ratio: unset;
+					width: 107%;
+
+					& .video-frame video {
+						aspect-ratio: 16 / 10;
+						object-fit: cover;
+					}
+			}
+
+			& .headlines {
+					padding: 0 20px;
+					position: relative;
+			}
+		}
+
+		& .main-title {
+				font-weight: 500;
+		}
+
+		& .banner-glyph {
+        width: 80px;
+        height: 70px;
+        margin: 0;
+        background: url(assets/losango.svg) no-repeat;
+        background-size: contain;
+        position: absolute;
+        right: -12px;
+        rotate: 180deg;
+    }
+
+		& .subtitle {
+        font-family: "vg";
+        font-weight: 600;
+        font-size: 16px;
+        color: #b3b3b3;
+        text-transform: uppercase;
+        text-align: left;
+        width: 71%;
+        margin: 12px 0;
+    }
+
+		& .headline {
+        width: 98%;
+        margin: 0;
+        color: var(--green);
+        font-size: 14px;
+        line-height: 1.3;
+        text-align: left;
+
+				& br {
+					display: none;
+				}
+    }
+
+		& .wave-glyph {
+			display: none;
+		}
+	}
+
+	.panel {
+			padding-left: 0;
+			padding-right: 0;
+	}
+
+	#mainNav {
+			background-color: white;
+			height: calc(100vh - 132px);
+			position: absolute;
+			top: 88px;
+			left: 0;
+			right: 0;
+			width: 100vw;
+	}
+
+	.default-header .navbar-nav {
+			background-color: var(--green);
+			padding: 60px 20px;
+	}
+
+	.default-header .navbar-nav .nav-link {
+			color: white;
+			text-align: left;
+
+			&.router-link-active {
+					color: white !important;
+					font-weight: 600;
+			}
+	}
+
+	.body-glyphs.glyph-bl-corner {
+			display: none;
+	}
+
+	.default-header .navbar-brand {
+			background-color: unset;
+			justify-content: center;
+
+			& .mob-logo {
+				display: block;	
+			}
+
+			& .dt-logo {
+				display: none;
+			}
+	}
+
+	.default-header .clickables {
+			padding-top: 0;
+			padding-top: 32px;
+	}
+
+	.glyph-dots {
+			&.bottom-dots {
+					.home & {
+							top: 57%;
+							left: 5%;
+							animation: fadeIn 3s ease-out;
+					}
+			}
+	}
+
+	/* QUEM */
+
+	#quem {
+			padding-top: 100px;
+
+		& .container.h-100 {
+				height: unset !important;
+		}
+
+		& .d-flex.justify-content-around.h-100 {
+				flex-direction: column;
+				gap: 0;
+		}
+
+		& .headlines {
+				margin-top: 0;
+		}
+
+		& .title-container:after {
+				display: none;
+		}
+
+		& .banner-glyph_2 {
+        width: 70px;
+        height: 70px;
+        margin: 0 24px;
+        background: url(assets/losango.svg) no-repeat;
+        background-size: contain;
+				rotate: 180deg;
+    }
+
+		& .subtitle {
+				position: static;
+				width: 50%;
+				rotate: unset;
+				font-size: 28px;
+				color: var(--green);
+				font-weight: 600;
+				text-align: right;
+				margin-bottom: 0;
+				margin-top: 20px;
+		}
+
+		& .mobile.title-container {
+				display: flex;
+				align-items: center;
+				order: 2;
+				width: 100%;
+		}
+
+		& .title-container {
+				display: none;
+		}
+
+		& .video-container {
+				display: none;
+		}
+
+		& .mobile.video-container {
+				order: 2;
+				min-height: unset;
+				display: block;
+				margin: 24px 0;
+		}
+
+		& #quemTabContent {
+				order: 3;
+		}
+
+		& .nav-tabs {
+				order: 1;
+				border-top: solid 1px var(--green);
+		}
+
+		& .nav-tabs .nav-link {
+				font-size: 13px;
+				font-weight: 600;
+				padding: 10px;
+		}
+
+		& .banner-glyph {
+				display: none;
+		}
+
+		& .headline {
+				font-size: 16px;
+				width: 83%;
+				height: unset;
+
+				& .green-text {
+						display: inline-block;
+						color: var(--green);
+						margin-bottom: 10px;
+				}
+		}
+
+		& .body-glyphs {
+				display: none;
+		}
+	}
+
+}

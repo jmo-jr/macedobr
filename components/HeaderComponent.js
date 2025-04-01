@@ -6,7 +6,8 @@ export default {
 
 					<!-- LOGO -->
 					<a class="nav-link navbar-brand animate" href="/#">
-						<img class="animate" src="assets/logo_ambr_br.png" alt="Associação Macedo Brasil">
+						<img class="dt-logo animate" src="assets/logo_ambr_br.png" alt="Associação Macedo Brasil">
+						<img class="mob-logo" src="assets/logo_ambr_cor.png" alt="Associação Macedo Brasil">
 					</a>
 
 					<div class="clickables">
@@ -35,7 +36,7 @@ export default {
 						</div>
 
 						<!-- BURGER -->
-						<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+						<button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
 							aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
 							<span class="navbar-toggler-icon"></span>
 						</button>

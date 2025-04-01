@@ -80,29 +80,90 @@ export default {
 							
 						</ul>
 
-						<!-- Tab Content -->
 						<div class="tab-content" id="quemTabContent">
 
+							<!-- Tab 1 -->
 							<div class="tab-pane fade show active" id="who" role="tabpanel" aria-labelledby="who-tab">
+
+								<div class="mobile title-container">
+									<h3 class="subtitle">
+										<div>Quem Somos</div>
+									</h3>
+									<div class="banner-glyph_2"></div>
+								</div>
+
 								<div class="banner-glyph"></div>
-								<p class="headline">A Associação Macedo Brasil – AMBR, entidade civil sem fins lucrativos, dedica-se a
-									estabelecer parcerias tanto no âmbito público quanto privado. Nosso compromisso é alcançar resultados
-									significativos nas áreas de desenvolvimento urbano, novas tecnologias, saúde, socioambientais e
+
+								<!-- Video -->
+								<div class="mobile video-container">
+									<div class="video-frame changes" style="background-color:white">
+										<video id="vidQuem" class="video-player" :src="currentVideo" autoplay muted loop>
+											<source :src="currentVideo" type="video/mp4">
+											Seu navegador não suporta vídeos.
+										</video>
+									</div>
+								</div>
+
+								<p class="headline">
+									<span class="green-text">A Associação Macedo Brasil – AMBR, entidade civil sem fins lucrativos, dedica-se a estabelecer parcerias tanto no âmbito público quanto privado.</span>
+									<br>
+									Nosso compromisso é alcançar resultados significativos nas áreas de  desenvolvimento urbano, novas tecnologias, saúde, socioambientais e
 									socioeducacionais, promovendo a melhoria contínua da qualidade de vida e do bem-estar em comunidades.
+								</p>
+
+							</div>
+
+							<!-- Tab 2 -->
+							<div class="tab-pane fade" id="vision" role="tabpanel" aria-labelledby="vision-tab">
+
+								<div class="mobile title-container">
+									<h3 class="subtitle">
+										<div>Nossa Visão</div>
+									</h3>
+									<div class="banner-glyph_2"></div>
+								</div>
+
+								<div class="banner-glyph"></div>
+
+								<!-- Video -->
+								<div class="mobile video-container">
+									<div class="video-frame changes" style="background-color:white">
+										<video id="vidQuem" class="video-player" :src="currentVideo" autoplay muted loop>
+											<source :src="currentVideo" type="video/mp4">
+											Seu navegador não suporta vídeos.
+										</video>
+									</div>
+								</div>
+
+								<p class="headline" style="width: 70%;line-height: 1.4;">
+									Unidos, somos agentes de transformação para promover a dignidade humana em seu
+									ambiente, impulsionando o desenvolvimento social, físico e psicológico.
 								</p>
 							</div>
 
-							<div class="tab-pane fade" id="vision" role="tabpanel" aria-labelledby="vision-tab">
-								<div class="banner-glyph"></div>
-								<p class="headline" style="width: 70%;line-height: 1.4;">Unidos, somos agentes de transformação para promover a dignidade humana em seu
-									ambiente, impulsionando o desenvolvimento social, físico e psicológico.</p>
-							</div>
-
+							<!-- Tab 3 -->
 							<div class="tab-pane fade" id="mission" role="tabpanel" aria-labelledby="mission-tab">
 
+								<div class="mobile title-container">
+									<h3 class="subtitle">
+										<div>Nossa Missão</div>
+									</h3>
+									<div class="banner-glyph_2"></div>
+								</div>
+
 								<div class="banner-glyph"></div>
 
-								<div class="headline mission-variant">
+								<!-- Video -->
+								<div class="mobile video-container">
+									<div class="video-frame changes" style="background-color:white">
+										<video id="vidQuem" class="video-player" :src="currentVideo" autoplay muted loop>
+											<source :src="currentVideo" type="video/mp4">
+											Seu navegador não suporta vídeos.
+										</video>
+									</div>
+								</div>
+
+								<div class="headline">
 									<p>
 										Orientamos nossa missão com objetivos claros de fomentar o desenvolvimento humano e a sustentabilidade, fundamentados nos direitos consagrados pela Constituição Federal:
 									</p>

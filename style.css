@@ -35,6 +35,10 @@
   text-align: justify;
 }
 
+.mobile {
+	display: none;
+}
+
 /* BODY */
 
 body {
@@ -413,6 +417,14 @@ body {
     & img.animate {
       animation: fadeIn 8s ease;
     }
+
+		& .mob-logo {
+			display: none;	
+		}
+
+		& .dt-logo {
+			display: block;
+		}
   }
 
   .clickables {
