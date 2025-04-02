@@ -57,9 +57,14 @@ export default {
 							<div>Atuação</div>
 						</h3>
 					</div>
+					<div class="mobile title-container">
+						<h3 class="subtitle">
+							<div>Atuação</div>
+						</h3>
+						<div class="banner-glyph_2"></div>
+					</div>
 
 					<div class="video-container">
-
 						<div class="video-frame changes">
 							<video 
 								v-if="currentVideo" 
@@ -72,7 +77,6 @@ export default {
 								Seu navegador não suporta vídeos.
 							</video>
 						</div>
-
 					</div>
 
 					<div class="headlines">
@@ -98,20 +102,82 @@ export default {
 						</ul>
 
 						<div class="tab-content" id="atuacaoTabContent">
+
 							<div class="tab-pane fade show active" id="infra" role="tabpanel" aria-labelledby="infra-tab">
 								<div class="banner-glyph"></div>
+
+								<div class="mobile video-container">
+									<div class="video-frame changes">
+										<video 
+											v-if="currentVideo" 
+											id="vidAtua" 
+											class="video-player" 
+											:src="currentVideo" 
+											autoplay muted loop
+										>
+											<source :src="currentVideo" type="video/mp4">
+											Seu navegador não suporta vídeos.
+										</video>
+									</div>
+								</div>
+
 								<p class="headline">Atuamos com planejamento e desenvolvimento de projetos que abrangem infraestrutura e desenvolvimento urbano, engenharia civil, mobilidade urbana e acessibilidade. Nossa abordagem visa construir bases sólidas para comunidades, promovendo o crescimento sustentável e a qualidade de vida.</p>
 							</div>
+
 							<div class="tab-pane fade" id="education" role="tabpanel" aria-labelledby="education-tab">
 								<div class="banner-glyph"></div>
+								<div class="mobile video-container">
+									<div class="video-frame changes">
+										<video 
+											v-if="currentVideo" 
+											id="vidAtua" 
+											class="video-player" 
+											:src="currentVideo" 
+											autoplay muted loop
+										>
+											<source :src="currentVideo" type="video/mp4">
+											Seu navegador não suporta vídeos.
+										</video>
+									</div>
+								</div>
 								<p class="headline">Desenvolvemos programas integrados voltados para a modernização da educação e o acesso às novas tecnologias, abrangendo todas as faixas etárias. Nossa iniciativa visa proporcionar oportunidades educacionais inclusivas, capacitando indivíduos de todas as idades para enfrentar os desafios do mundo contemporâneo.</p>
 							</div>
+
 							<div class="tab-pane fade" id="management" role="tabpanel" aria-labelledby="management-tab">
 								<div class="banner-glyph"></div>
+								<div class="mobile video-container">
+									<div class="video-frame changes">
+										<video 
+											v-if="currentVideo" 
+											id="vidAtua" 
+											class="video-player" 
+											:src="currentVideo" 
+											autoplay muted loop
+										>
+											<source :src="currentVideo" type="video/mp4">
+											Seu navegador não suporta vídeos.
+										</video>
+									</div>
+								</div>
 								<p class="headline">Oferecemos apoio técnico para fortalecer a capacidade de gestão, por meio de um conjunto de ações voltadas para promover os direitos à transparência e ao controle social da gestão pública. Nosso compromisso é potencializar práticas eficientes de administração, promovendo uma gestão pública mais transparente, participativa e comprometida com o bem-estar da comunidade.</p>
 							</div>
+
 							<div class="tab-pane fade" id="ti" role="tabpanel" aria-labelledby="ti-tab">
 								<div class="banner-glyph"></div>
+								<div class="mobile video-container">
+									<div class="video-frame changes">
+										<video 
+											v-if="currentVideo" 
+											id="vidAtua" 
+											class="video-player" 
+											:src="currentVideo" 
+											autoplay muted loop
+										>
+											<source :src="currentVideo" type="video/mp4">
+											Seu navegador não suporta vídeos.
+										</video>
+									</div>
+								</div>
 								<div class="headline text-justify">
 									<p>Desenvolvemos projetos integrando ações, metodologias e sistemas informatizados para maximizar a efetividade de suas operações e alcançar resultados significativos. Ao longo de nossa história, implementamos diversas soluções tecnológicas, incluindo:</p>
 									<ul>
@@ -119,9 +185,10 @@ export default {
 										<li>Sistema de Gestão de Contratos;</li>
 										<li>Sistema de Gestão Arquivística.</li>
 									</ul>
-									<p>Essas iniciativas refletem nosso compromisso com a inovação e a aplicação prática da tecnologia para aprimorar nossas operações e impactar positivamente as comunidades servidas por nós.</p>
+									<p class="green-text">Essas iniciativas refletem nosso compromisso com a inovação e a aplicação prática da tecnologia para aprimorar nossas operações e impactar positivamente as comunidades servidas por nós.</p>
 								</div>
 							</div>
+
 						</div>
 
 					</div>

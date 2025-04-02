@@ -1,12 +1,35 @@
 @media screen and (max-width: 768px) {
 
+	body {
+		overflow: unset;
+	}
+
 	.mobile {
 		display: block;
 	}
 
+	.panel {
+		position: static;
+		padding-left: 0;
+		padding-right: 0;
+		height: initial;
+	}
+
+	.green-text {
+			color: var(--green);
+	}
+
+	/***** NAVBAR *****/
+
 	.default-header {
+		position: fixed;
+
 		& .navbar {
 			padding: 0;
+
+			& > .container {
+				align-items: center;
+			}
 		}
 
 		& .navbar-toggler {
@@ -55,11 +78,97 @@
 		}
 	}
 
-	#home .main-title {
-			font-size: 32px;
+	.default-header .navbar-nav {
+			background-color: var(--green);
+			padding: 80px 20px;
+			
+			&:before {
+				content: "";
+				background: url(assets/losango_br.svg) no-repeat center;
+				background-size: contain;
+				width: 100px;
+				aspect-ratio: 1 / 1;
+				position: absolute;
+				top: 25%;
+				right: 0;
+				rotate: 180deg;
+			}
+
+			&:after {
+				content: "";
+				background: url(assets/triangulos_br.svg) no-repeat center;
+				background-size: contain;
+				width: 80px;
+				aspect-ratio: 3 / 1;
+				position: absolute;
+				bottom: 0;
+				left: 10%;
+			}
 	}
 
+	.default-header .navbar-nav .nav-link {
+			color: white;
+			font-size: 17px;
+			font-weight: 600;
+			text-align: left;
+
+			&.router-link-active {
+					color: white !important;
+					font-weight: 700;
+			}
+	}
+
+	.default-header .navbar-brand {
+			background-color: unset;
+			justify-content: center;
+			height: 80px;
+
+			& .mob-logo {
+				display: block;	
+			}
+
+			& .dt-logo {
+				display: none;
+			}
+	}
+
+	.default-header .clickables {
+		padding-top: 0;
+
+		#mainNav {
+			background-color: white;
+			height: calc(100vh - 80px);
+			position: absolute;
+			top: 58px;
+			left: 0;
+			right: 0;
+			width: 100vw;
+		}
+	}
+
+	.body-glyphs.glyph-bl-corner {
+			display: none;
+	}
+
+	.glyph-dots {
+			&.bottom-dots {
+					.home & {
+							top: 50%;
+							left: 5%;
+							animation: fadeIn 3s ease-out;
+					}
+			}
+	}
+
+	/***** HOME *****/
+
 	#home {
+		padding-top: 100px;
+
+		& .triangles {
+			display: none;
+		}
+
 		& .container {
 
 			& > div {
@@ -85,11 +194,13 @@
 
 		& .main-title {
 				font-weight: 500;
+				font-size: 30px;
+				line-height: 1.1;
 		}
 
 		& .banner-glyph {
-        width: 80px;
-        height: 70px;
+        width: 95px;
+        height: 80px;
         margin: 0;
         background: url(assets/losango.svg) no-repeat;
         background-size: contain;
@@ -105,7 +216,7 @@
         color: #b3b3b3;
         text-transform: uppercase;
         text-align: left;
-        width: 71%;
+        width: 55%;
         margin: 12px 0;
     }
 
@@ -127,72 +238,13 @@
 		}
 	}
 
-	.panel {
-			padding-left: 0;
-			padding-right: 0;
-	}
+	/***** QUEM *****/
 
-	#mainNav {
-			background-color: white;
-			height: calc(100vh - 132px);
-			position: absolute;
-			top: 88px;
-			left: 0;
-			right: 0;
-			width: 100vw;
-	}
-
-	.default-header .navbar-nav {
-			background-color: var(--green);
-			padding: 60px 20px;
-	}
-
-	.default-header .navbar-nav .nav-link {
-			color: white;
-			text-align: left;
-
-			&.router-link-active {
-					color: white !important;
-					font-weight: 600;
-			}
-	}
-
-	.body-glyphs.glyph-bl-corner {
-			display: none;
-	}
-
-	.default-header .navbar-brand {
-			background-color: unset;
-			justify-content: center;
-
-			& .mob-logo {
-				display: block;	
-			}
-
-			& .dt-logo {
-				display: none;
-			}
-	}
-
-	.default-header .clickables {
-			padding-top: 0;
-			padding-top: 32px;
-	}
-
-	.glyph-dots {
-			&.bottom-dots {
-					.home & {
-							top: 57%;
-							left: 5%;
-							animation: fadeIn 3s ease-out;
-					}
-			}
-	}
-
-	/* QUEM */
-
-	#quem {
-			padding-top: 100px;
+	#quem, #parcerias, #atuacao {
+		padding-top: 80px;
+		padding-left: 0;
+		padding-right: 0;
+		overflow: auto;
 
 		& .container.h-100 {
 				height: unset !important;
@@ -236,7 +288,7 @@
 				display: flex;
 				align-items: center;
 				order: 2;
-				width: 100%;
+				width: 100% !important;
 		}
 
 		& .title-container {
@@ -274,19 +326,138 @@
 		}
 
 		& .headline {
-				font-size: 16px;
 				width: 83%;
 				height: unset;
+				font-size: 16px;
+				line-height: 1.2;
+				text-align: left;
 
 				& .green-text {
 						display: inline-block;
-						color: var(--green);
 						margin-bottom: 10px;
 				}
 		}
 
 		& .body-glyphs {
 				display: none;
+		}
+	}
+
+	/***** PARCEIROS *****/
+
+	#parcerias {
+
+		& .mobile_title-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 4px;
+			margin: 24px 0;
+		}
+
+    & .headlines h2 {
+        font-size: 28px;
+        font-weight: 500;
+        text-transform: unset;
+    }
+
+    & .banner-glyph {
+        display: block;
+        height: 50px;
+        width: 50px;
+				margin: 0;
+    }
+
+		& .d-flex.justify-content-around.h-100 {
+				height: auto !important;
+		}
+
+		& .headline p {
+			text-align: left;
+			margin-bottom: 10px;
+		}
+
+		& .logos-grid {
+			margin: 20px auto;
+		}
+	}
+
+	/***** ATUACAO *****/
+	
+	#atuacao {
+		
+		& .d-flex.justify-content-around {
+			display: block !important;
+		}
+
+		& .mobile.title-container {
+			justify-content: center;
+			gap: 4px;
+			padding: 20px 0 10px;
+			border-top: solid 1px var(--green);
+
+			& .subtitle {
+				margin: 0;
+				font-size: 18px;
+				overflow: unset;
+			}
+
+			& .banner-glyph_2 {
+				flex: 1;
+				height: 36px;
+				margin: 0;
+				rotate: unset;
+			}
+		}
+
+		& .headlines {
+			width: 100%;
+			margin-bottom: 40px;
+
+			& .headline {
+				& p {
+					margin-bottom: 10px;
+					text-align: left;
+				}
+				& ul {
+					margin-bottom: 10px;
+					padding-left: 16px;
+				}
+			}
+		}
+
+		& .nav-tabs {
+			justify-content: flex-start;
+			margin-top: 0;
+			border: none;
+
+			& .nav-link {
+				font-size: 12px;
+				padding: 10px 6px;
+			}
+		}
+
+		& .mobile.video-container {
+			width: 96%;
+			height: unset;
+			margin-top: 8px;
+			margin-left: -12px !important;
+			aspect-ratio: 4 / 3;
+
+			&:before {
+				display: none;
+			}
+
+			& .video-frame video {
+				aspect-ratio: 16 / 10;
+				object-fit: cover;
+			}
+
+			&:after {
+				top: 14px;
+				right: -20px;
+				height: 90%;
+			}
 		}
 	}
 

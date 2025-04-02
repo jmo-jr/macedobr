@@ -17,7 +17,7 @@ export default {
 							<div class="enter-title">Associação<br>Macedo Brasil</div>
 						</h2>
 						<div class="banner-glyph"></div>
-						<h3 class="subtitle">Unimos forças para<br>transformar realidades</h3>
+						<h3 class="subtitle">Unimos forças para transformar realidades</h3>
 						<p class="headline">Dignidade humana, desenvolvimento social <br>e sustentabilidade.</p>
 						<div class="wave-glyph"></div>
 					</div>

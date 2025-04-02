@@ -624,6 +624,9 @@ body:not(.home):not(.parcerias):not(.fale):not(.transp):not(.projetos) {
   }
 
   .subtitle {
+		width: 50%;
+		margin-left: auto;
+		margin-right: auto;
     font-family: "vg";
     font-weight: 600;
     font-size: 23px;
