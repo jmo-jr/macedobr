@@ -927,6 +927,12 @@ body:not(.home):not(.parcerias):not(.fale):not(.transp):not(.projetos) {
     text-align: center;
     transition: all 1s ease;
 
+		&.project-subpage {
+			flex: 1;
+			margin-top: 160px; 
+			margin-left: 100px; 
+		}
+
     .atuacao & {
       animation: fadeIn 2s ease;
     }
@@ -1102,6 +1108,11 @@ body:not(.home):not(.parcerias):not(.fale):not(.transp):not(.projetos) {
     padding: 20px 120px;
     background: url(assets/bg_fale.png) no-repeat left center;
     animation: fadeIn 2s ease;
+
+		& .submit-container {
+			display: flex; 
+			justify-content: flex-end;
+		}
 
     @media screen and (min-width: 1440px) {
       width: calc(100% - 420px);

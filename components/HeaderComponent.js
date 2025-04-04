@@ -18,18 +18,33 @@ export default {
 								<router-link to="/parcerias" class="nav-js nav-link" aria-current="page" data-panel="parcerias">Parcerias</router-link>
 								<router-link to="/atuacao" class="nav-js nav-link" aria-current="page" data-panel="atuacao">Atuação</router-link>
 								<router-link to="/projetos" class="nav-js nav-link" aria-current="page" data-panel="projetos">Projetos</router-link>
+								
 								<div class="dropdown">
 									<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" href="#"
 										role="button">Transparência</a>
+
 									<ul class="dropdown-menu">
 										<li><router-link to="/transparencia" class="dropdown-item">Documentação</router-link></li>
+
 										<li class="dropend">
-											<button class="dropdown-item dropdown-toggle" data-bs-toggle="dropend" type="button">Contratos</button>
+											<button class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" type="button">Contratos</button>
+
 											<ul class="dropdown-menu dropdown-submenu">
 												<li><router-link to="/contratos/coruripe" class="dropdown-item">Coruripe/AL</router-link></li>
 											</ul>
+
+										</li>
+
+										<li class="mobile-dropend">
+											<button class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" type="button">Contratos</button>
+
+											<ul class="dropdown-menu">
+												<li><router-link to="/contratos/coruripe" class="dropdown-item">Coruripe/AL</router-link></li>
+											</ul>
+
 										</li>
 									</ul>
+
 								</div>
 								<router-link to="/contato" class="nav-js nav-link" aria-current="page" data-panel="fale">Fale Conosco</router-link>
 							</div>
@@ -37,7 +52,7 @@ export default {
 
 						<!-- BURGER -->
 						<button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
-							aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+							aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation" data-bs-auto-close="true">
 							<span class="navbar-toggler-icon"></span>
 						</button>
 

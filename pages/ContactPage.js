@@ -39,7 +39,7 @@ export default {
                   </div>
                 </div>
               </div>
-              <div class="d-flex justify-content-end">
+              <div class="submit-container">
                 <button type="submit" class="btn btn-light">Enviar</button>
               </div>
             </form>

@@ -13,7 +13,7 @@ export default {
 
 				<div class="d-flex justify-content-around">
 
-					<div class="headlines" style="margin-top:160px; margin-left:100px; flex:1">
+					<div class="headlines project-subpage">
 
 						<h2>
 							<a href="#/projetos" class="breadcrumb-home">Projetos / </a>Florescer

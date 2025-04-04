@@ -40,10 +40,20 @@
 		integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
 		crossorigin="anonymous"></script>
 	
-	<script id="VueCDN" src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+	<script id="VueCDN" src="https://cdn.jsdelivr.net/npm/vue@3.5.13/dist/vue.global.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/vue-router@4/dist/vue-router.global.js"></script>
 	<script type="module" src="main.js"></script>
+	<script>
+		// remove the show class from the navbar-collapse when the user clicks on a link
+		const navbarCollapse = document.querySelector('#mainNav');
+		const navbarLinks = document.querySelectorAll('.nav-link');
 
+		navbarLinks.forEach(link => {
+			link.addEventListener('click', () => {
+				navbarCollapse.classList.remove('show');
+			});
+		});
+	</script>
 </body>
 
 </html>
