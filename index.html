@@ -44,15 +44,19 @@
 	<script src="https://cdn.jsdelivr.net/npm/vue-router@4/dist/vue-router.global.js"></script>
 	<script type="module" src="main.js"></script>
 	<script>
-		// remove the show class from the navbar-collapse when the user clicks on a link
-		const navbarCollapse = document.querySelector('#mainNav');
-		const navbarLinks = document.querySelectorAll('.nav-link');
-
-		navbarLinks.forEach(link => {
-			link.addEventListener('click', () => {
-				navbarCollapse.classList.remove('show');
-			});
-		});
+		document.addEventListener('DOMContentLoaded', () => {
+			const mainNav = document.querySelector('#mainNav');
+			if (mainNav) {
+					const links = mainNav.querySelectorAll('a');
+					links.forEach(link => {
+							link.addEventListener('click', () => {
+									mainNav.classList.remove('show');
+							});
+					});
+			} else {
+					console.warn('Elemento #mainNav não encontrado no DOM.');
+			}
+	});
 	</script>
 </body>
 

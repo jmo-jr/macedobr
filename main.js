@@ -126,6 +126,7 @@ createApp({
 	components: {
 		HeaderComponent
 	},
+
 	provide() {
     return {
       docs,

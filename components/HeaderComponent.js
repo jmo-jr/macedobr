@@ -11,6 +11,7 @@ export default {
 					</a>
 
 					<div class="clickables">
+					
 						<!-- MENU -->
 						<div class="collapse navbar-collapse justify-content-center" id="mainNav">
 							<div class="navbar-nav animate">
@@ -20,10 +21,11 @@ export default {
 								<router-link to="/projetos" class="nav-js nav-link" aria-current="page" data-panel="projetos">Projetos</router-link>
 								
 								<div class="dropdown">
-									<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" href="#"
+									<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside" href="#"
 										role="button">Transparência</a>
 
 									<ul class="dropdown-menu">
+										
 										<li><router-link to="/transparencia" class="dropdown-item">Documentação</router-link></li>
 
 										<li class="dropend">
@@ -32,17 +34,16 @@ export default {
 											<ul class="dropdown-menu dropdown-submenu">
 												<li><router-link to="/contratos/coruripe" class="dropdown-item">Coruripe/AL</router-link></li>
 											</ul>
-
 										</li>
 
 										<li class="mobile-dropend">
 											<button class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" type="button">Contratos</button>
 
-											<ul class="dropdown-menu">
+											<ul class="dropdown-menu dropdown-submenu">
 												<li><router-link to="/contratos/coruripe" class="dropdown-item">Coruripe/AL</router-link></li>
 											</ul>
-
 										</li>
+
 									</ul>
 
 								</div>
