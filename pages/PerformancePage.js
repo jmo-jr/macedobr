@@ -52,7 +52,7 @@ export default {
 
 			<div v-if="!isPageLoading" class="container">
 
-				<div class="d-flex justify-content-around">
+				<div class="d-flex justify-content-around" style="gap: 30px;">
 
 					<div class="title-container">
 						<h3 class="subtitle">

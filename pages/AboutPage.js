@@ -7,7 +7,7 @@ export default {
 	data() {
 		return {
 			isPageLoading: true,
-			currentVideo: "assets/videos/quemsomos.mp4",
+			currentVideo: "assets/videos/quemsomos.webm",
 			currentPoster: "assets/capas/quemsomos.jpg"
 		}
 	},

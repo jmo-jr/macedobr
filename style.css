@@ -377,8 +377,8 @@ body {
 		}
 
     .nav-link, .nav-item {
-      padding-left: 20px !important;
-      padding-right: 20px !important;
+      padding-left: 12px !important;
+      padding-right: 12px !important;
 			/* padding-top: 0 !important; */
       color: #999;
       font-size: 19px;
@@ -577,7 +577,7 @@ body:not(.home):not(.parcerias):not(.fale):not(.transp):not(.projetos) {
 /* TABS */
 
 .nav-tabs {
-  flex-wrap: nowrap;
+  /* flex-wrap: nowrap; */
   justify-content: center;
   min-height: 40px;
   border: none;
@@ -596,6 +596,7 @@ body:not(.home):not(.parcerias):not(.fale):not(.transp):not(.projetos) {
   }
 
   .nav-link {
+		padding: 8px;
     border: none;
     font-family: "vg";
     font-weight: 300;
@@ -979,8 +980,8 @@ body:not(.home):not(.parcerias):not(.fale):not(.transp):not(.projetos) {
   }
 
   .subtitle {
-    margin-top: 316px;
-    margin-left: -120px;
+    margin-top: 220px;
+    margin-left: -130px;
     width: 305px;
     color: #aba9a9;
     font-family: "vg";
@@ -1031,7 +1032,7 @@ body:not(.home):not(.parcerias):not(.fale):not(.transp):not(.projetos) {
 		position: relative;
     flex-grow: 0;
     aspect-ratio: 2 / 3.6;
-		max-width: 28%;
+		max-width: 45%;
     height: 85vh;
 		margin-top: 120px;
     background-color: white;
