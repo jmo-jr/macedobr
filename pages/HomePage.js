@@ -24,7 +24,7 @@ export default {
 
 					<div class="video-container">
 						<div id="lazycontainer" class="video-frame">
-							<img class="d-none placeholder-img" id="placeholder_image" src="assets/capas/home" fetchpriority="high" />
+							<img class="d-none placeholder-img" id="placeholder_image" src="assets/capas/home.jpg" fetchpriority="high" />
 							<video class="dnone desktop" width="100%" height="100%" data-src="assets/videos/home.webm" poster="assets/capas/home.jpg"
 								autoplay loop>
 								<source src="assets/videos/home.webm" type="video/mp4">
