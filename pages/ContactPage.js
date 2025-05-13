@@ -9,8 +9,6 @@ export default {
 
 		<glyphs-component></glyphs-component>
 
-        <div class="img-container"></div>
-
         <div class="d-flex justify-content-end align-items-center h-100">
           <div class="form-container">
 
@@ -45,6 +43,7 @@ export default {
             </form>
 
             <div class="contacts">
+							<div class="img-container"></div>
               <div class="d-flex">
                 <div class="contact">contato@macedobrasil.org.br <br> contato.al@macedobrasil.org.br</div>
               </div>

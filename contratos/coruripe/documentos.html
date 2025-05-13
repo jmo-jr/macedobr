@@ -30,7 +30,8 @@
 			
 						<!-- LOGO -->
 						<a class="nav-link navbar-brand" href="/">
-							<img src="../../assets/logo_ambr_cor.png" alt="Associação Macedo Brasil">
+							<img class="dt-logo animate" src="../../assets/logo_ambr_br.png" alt="Associação Macedo Brasil">
+							<img class="mob-logo" src="../../assets/logo_ambr_cor.png" alt="Associação Macedo Brasil">
 						</a>
 			
 						<div class="clickables">
@@ -88,99 +89,99 @@
 			</header>
 
       <section class="transparencia" id="docsCoruripe">
-
-				<h2 class="page-title">Contrato Coruripe/AL	</h2>
-				<br>
-				<h3 class="page-subtitle">
-					<a class="backbtn" href="index.html">
-						<svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="currentColor"><path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z"/></svg>
-					</a>
-					{{ filteredData[0].name }}
-				</h3>
-
-				<!-- Documento do Termo -->
-				<div class="docs">
-					<div class="file-button" v-for="item in filteredData" :key="item.id">
-						<a :href="item.link" target="_blank">
-							<img src="../../assets/icon-file.svg" class="list-icon">{{ item.name }}
+				<div class="container">
+					<h2 class="page-title">Contrato Coruripe/AL	</h2>
+					<br>
+					<h3 class="page-subtitle">
+						<a class="backbtn" href="index.html">
+							<svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="currentColor"><path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z"/></svg>
 						</a>
+						{{ filteredData[0].name }}
+					</h3>
+
+					<!-- Documento do Termo -->
+					<div class="docs">
+						<div class="file-button" v-for="item in filteredData" :key="item.id">
+							<a :href="item.link" target="_blank">
+								<img src="../../assets/icon-file.svg" class="list-icon">{{ item.name }}
+							</a>
+						</div>
+						<div class="file-button" v-for="item in filteredAditivos" :key="item.id">
+							<a :href="item.link" target="_blank">
+								<img src="../../assets/icon-file.svg" class="list-icon">{{ item.name }}
+							</a>
+						</div>
 					</div>
-					<div class="file-button" v-for="item in filteredAditivos" :key="item.id">
-						<a :href="item.link" target="_blank">
-							<img src="../../assets/icon-file.svg" class="list-icon">{{ item.name }}
-						</a>
+
+					<div class="accordion" id="accTransparencia">
+
+						<!-- Termo (inativo) -->
+						<div class="accordion-item d-none">
+							<h2 class="accordion-header">
+								<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+									<img src="../../assets/icon-chamam.svg" class="list-icon"> Chamamento Público
+								</button>
+							</h2>
+							<div id="collapseThree" class="accordion-collapse collapse show" data-bs-parent="#accTransparencia">
+								<div class="accordion-body">
+									<ul class="simple-list">
+										<li v-for="item in filteredData" :key="item.id">
+											<a  :href="item.link" target="_blank">
+												<img src="../../assets/icon-file.svg" class="list-icon">{{ item.name }}
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<!-- Chamamento Publico -->
+						<div class="accordion-item">
+							<h2 class="accordion-header">
+								<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+									<img src="../../assets/icon-chamam.svg" class="list-icon"> Chamamento Público
+								</button>
+							</h2>
+							<div id="collapseThree" class="accordion-collapse collapse show" data-bs-parent="#accTransparencia">
+								<div class="accordion-body">
+									<ul class="simple-list" v-if="filteredDocs.length > 0">
+										<li v-for="item in filteredDocs" :key="item.id">
+											<a v-if="item.link != '#'" :href="item.link" target="_blank">
+												<img src="../../assets/icon-file.svg" class="list-icon">{{ item.name }}
+											</a>
+											<span v-else>{{ item.name }}</span>
+										</li>
+									</ul>
+									<ul class="simple-list" v-else>
+										<li>Nenhum chamamento encontrado.</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<!-- Editais -->
+						<div class="accordion-item">
+							<h2 class="accordion-header">
+								<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#termo" aria-expanded="true" aria-controls="termo">
+									<img src="../../assets/icon-prestaconta.svg" class="list-icon"> Prestação de Contas
+								</button>
+							</h2>
+							<div id="termo" class="accordion-collapse collapse show" data-bs-parent="#accTransparencia">
+								<div class="accordion-body">
+									<ul class="simple-list">
+										<li v-for="item in items.contas" :key="item.id">
+											<a v-if="item.link != '#'" :href="item.link" target="_blank">
+												<img src="../../assets/icon-file.svg" class="list-icon">{{ item.name }}
+											</a>
+											<span v-else>{{ item.name }}</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
 					</div>
 				</div>
-
-        <div class="accordion" id="accTransparencia">
-
-					<!-- Termo (inativo) -->
-					<div class="accordion-item d-none">
-						<h2 class="accordion-header">
-							<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-								<img src="../../assets/icon-chamam.svg" class="list-icon"> Chamamento Público
-							</button>
-						</h2>
-						<div id="collapseThree" class="accordion-collapse collapse show" data-bs-parent="#accTransparencia">
-							<div class="accordion-body">
-								<ul class="simple-list">
-									<li v-for="item in filteredData" :key="item.id">
-										<a  :href="item.link" target="_blank">
-											<img src="../../assets/icon-file.svg" class="list-icon">{{ item.name }}
-										</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-
-					<!-- Chamamento Publico -->
-					<div class="accordion-item">
-						<h2 class="accordion-header">
-							<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-								<img src="../../assets/icon-chamam.svg" class="list-icon"> Chamamento Público
-							</button>
-						</h2>
-						<div id="collapseThree" class="accordion-collapse collapse show" data-bs-parent="#accTransparencia">
-							<div class="accordion-body">
-								<ul class="simple-list" v-if="filteredDocs.length > 0">
-									<li v-for="item in filteredDocs" :key="item.id">
-										<a v-if="item.link != '#'" :href="item.link" target="_blank">
-											<img src="../../assets/icon-file.svg" class="list-icon">{{ item.name }}
-										</a>
-										<span v-else>{{ item.name }}</span>
-									</li>
-								</ul>
-								<ul class="simple-list" v-else>
-									<li>Nenhum chamamento encontrado.</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-
-					<!-- Editais -->
-					<div class="accordion-item">
-						<h2 class="accordion-header">
-							<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#termo" aria-expanded="true" aria-controls="termo">
-								<img src="../../assets/icon-prestaconta.svg" class="list-icon"> Prestação de Contas
-							</button>
-						</h2>
-						<div id="termo" class="accordion-collapse collapse show" data-bs-parent="#accTransparencia">
-							<div class="accordion-body">
-								<ul class="simple-list">
-									<li v-for="item in items.contas" :key="item.id">
-										<a v-if="item.link != '#'" :href="item.link" target="_blank">
-											<img src="../../assets/icon-file.svg" class="list-icon">{{ item.name }}
-										</a>
-										<span v-else>{{ item.name }}</span>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-
-				</div>
-
       </section>
 
     </div>

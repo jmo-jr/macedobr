@@ -5,8 +5,11 @@
 	}
 
 	.mobile {
-		display: block;
-	}
+	display: block !important;
+}
+.desktop {
+	display: none !important;
+}
 
 	.panel {
 		position: static;
@@ -127,7 +130,8 @@
 			}
 	}
 
-	.default-header .navbar-nav .nav-link {
+	.default-header .navbar-nav .nav-link,
+	.default-header .navbar-nav .nav-item {
 			color: white;
 			font-size: 17px;
 			font-weight: 600;
@@ -174,7 +178,7 @@
 	.glyph-dots {
 			&.bottom-dots {
 					.home & {
-							top: 50%;
+							top: 380px;
 							left: 5%;
 							animation: fadeIn 3s ease-out;
 					}
@@ -223,11 +227,11 @@
         width: 95px;
         height: 80px;
         margin: 0;
-        background: url(assets/losango.svg) no-repeat;
+        background: url(assets/losango.png) no-repeat;
         background-size: contain;
         position: absolute;
-        right: -12px;
-        rotate: 180deg;
+        right: -17px;
+        /* rotate: 180deg; */
     }
 
 		& .subtitle {
@@ -237,12 +241,12 @@
         color: #b3b3b3;
         text-transform: uppercase;
         text-align: left;
-        width: 55%;
-        margin: 12px 0;
+        width: 170px;
+        margin: 24px 0;
     }
 
 		& .headline {
-        width: 98%;
+        width: 89%;
         margin: 0;
         color: var(--green);
         font-size: 14px;
@@ -269,6 +273,7 @@
 
 		& .container.h-100 {
 				height: unset !important;
+				padding: unset !important;
 		}
 
 		& .d-flex.justify-content-around.h-100 {
@@ -288,14 +293,14 @@
         width: 70px;
         height: 70px;
         margin: 0 24px;
-        background: url(assets/losango.svg) no-repeat;
+        background: url(assets/losango.png) no-repeat;
         background-size: contain;
 				rotate: 180deg;
     }
 
 		& .subtitle {
 				position: static;
-				width: 50%;
+				width: 110px;
 				rotate: unset;
 				font-size: 28px;
 				color: var(--green);
@@ -308,8 +313,10 @@
 		& .mobile.title-container {
 				display: flex;
 				align-items: center;
+				justify-content: center;
 				order: 2;
 				width: 100% !important;
+				padding: 10px 0;
 		}
 
 		& .title-container {
@@ -321,10 +328,11 @@
 		}
 
 		& .mobile.video-container {
-				order: 2;
-				min-height: unset;
 				display: block;
+				max-width: unset;
+				min-height: unset;
 				margin: 24px 0;
+				order: 2;
 		}
 
 		& #quemTabContent {
@@ -353,14 +361,29 @@
 				line-height: 1.2;
 				text-align: left;
 
+				&.limited {
+						height: 37vh;
+						overflow-y: auto;
+				}
+
 				& .green-text {
 						display: inline-block;
 						margin-bottom: 10px;
 				}
 		}
 
-		& .body-glyphs {
+		& .offhead {
+			width: 83%;
+    	margin-top: 20px;
+		}
+
+		& .body-glyphs:not(.triangles) {
 				display: none;
+		}
+
+		& .triangles {
+			left: 40%;
+			display: none;
 		}
 	}
 
@@ -373,7 +396,7 @@
 			justify-content: center;
 			align-items: center;
 			gap: 4px;
-			margin: 24px 0;
+			margin: 40px 0;
 		}
 
     & .headlines h2 {
@@ -396,6 +419,7 @@
 		& .headline p {
 			text-align: left;
 			margin-bottom: 10px;
+			line-height: 1.4;
 		}
 
 		& .logos-grid {
@@ -407,8 +431,18 @@
 	
 	#atuacao {
 
+		& .triangles {
+			left: 0;
+			right: 0;
+			width: 100%;
+			height: 24px;
+			background: var(--green) url(assets/triangulos_br.svg) no-repeat center;
+			background-size: 16%;
+			display: none;
+		}
+
 		& .container {
-			padding: 0 24px;
+			padding: 0;
 		}
 		
 		& .d-flex.justify-content-around {
@@ -418,7 +452,7 @@
 		& .mobile.title-container {
 			justify-content: center;
 			gap: 4px;
-			padding: 20px 0 10px;
+			padding: 40px 24px 20px;
 			border-top: solid 1px var(--green);
 
 			& .subtitle {
@@ -428,10 +462,10 @@
 			}
 
 			& .banner-glyph_2 {
-				flex: 1;
+				width: 44px;
 				height: 36px;
 				margin: 0;
-				rotate: unset;
+				/* rotate: unset; */
 			}
 		}
 
@@ -440,9 +474,8 @@
 			margin-bottom: 40px;
 
 			&.project-subpage {
-				flex: 1;
-				margin-top: 20px; 
-				margin-left: 0; 
+				width: 90%;
+				margin: 24px; 
 			}
 
 			& h2 {
@@ -450,7 +483,14 @@
 			}
 
 			& .headline {
-				width: 100%;
+				width: 80%;
+				margin-top: 40px;
+				line-height: 1.4;
+
+				&.limited {
+					height: 37vh;
+					overflow-y: auto;
+				}
 				
 				& p {
 					margin-bottom: 10px;
@@ -467,6 +507,7 @@
 			justify-content: flex-start;
 			margin-top: 0;
 			border: none;
+			padding: 0 24px;
 
 			& .nav-link {
 				font-size: 12px;
@@ -475,10 +516,9 @@
 		}
 
 		& .mobile.video-container {
-			width: 96%;
+			width: 90%;
 			height: unset;
 			margin-top: 8px;
-			margin-left: -12px !important;
 			aspect-ratio: 4 / 3;
 
 			&:before {
@@ -506,6 +546,16 @@
 
 		& .body-glyphs {
 			display: none;
+
+			&.triangles {
+				display: block;
+				left: 0;
+				right: 0;
+				width: 100%;
+				height: 40px;
+				background: var(--green) url(assets/triangulos_br.svg) no-repeat center;
+				background-size: 16%;
+			}
 		}
 
 		& .headline {
@@ -536,7 +586,7 @@
 
 			&:after {
 				top: 70px !important;
-				right: -16px !important;
+				right: 0 !important;
 				height: 24px !important;
 			}
 		}
@@ -600,14 +650,21 @@
 		}
 
 		& .img-container {
-				width: 200px !important;
-				aspect-ratio: 1 / 1;
-				height: auto !important;
-				background-size: cover !important;
-				top: 56% !important;
-				bottom: unset !important;
+				bottom: 100% !important;
 				left: unset !important;
 				right: 9px;
+				width: 200px !important;
+				height: auto !important;
+				aspect-ratio: 1 / 1;
+				background-size: cover !important;
+
+				&.desktop {
+					display: none !important;
+				}
+
+				&.mobile {
+					display: block !important;
+				}
 		}
 
 		& .form-container {
@@ -615,8 +672,9 @@
 				display: flex;
 				flex-direction: column;
 				width: 100% !important;
-				height: 100%;
-				padding: 30px !important;
+				height: auto;
+				padding: 30px 30px 0 !important;
+				background-size: cover;
 
 				&:after {
 					content: "";
@@ -625,15 +683,15 @@
 					width: 60px;
 					aspect-ratio: 4 / 1;
 					position: absolute;
-					bottom: 53px;
-					left: 10%;
+					bottom: 15%;
+					left: 15%;
 				}
 
 				& h2 {
 					order: 2;
-					width: 50% !important;
+					width: 110px !important;
 					text-align: left !important;
-					margin: 41px 0 !important;
+					margin: 46px 0 !important;
 					font-weight: 500 !important;
 				
 					&:after {
@@ -653,6 +711,7 @@
 				}
 
 				& .contacts {
+						position: relative;
 						order: 3;
 						background-color: white;
 						width: 119%;

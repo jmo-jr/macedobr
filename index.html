@@ -29,6 +29,24 @@
 
 		<router-view></router-view>
 
+		<footer>
+			<!-- Botão de mute -->
+			<button id="muteButton" style="
+					position: fixed;
+					bottom: 20px;
+					right: 20px;
+					z-index: 9999;
+					background-color: #999;
+					color: #fff;
+					padding: 10px 15px;
+					border: none;
+					border-radius: 5px;
+					cursor: pointer;
+			">
+				🔊 
+			</button>
+		</footer>
+
 	</div>
 
 	<!-- SCRIPTS -->
@@ -43,20 +61,56 @@
 	<script id="VueCDN" src="https://cdn.jsdelivr.net/npm/vue@3.5.13/dist/vue.global.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/vue-router@4/dist/vue-router.global.js"></script>
 	<script type="module" src="main.js"></script>
+	<!-- EXIBIR MENU -->
 	<script>
+		// Função para remover a classe 'show' no menu de navegação ao clicar num item do menu
 		document.addEventListener('DOMContentLoaded', () => {
 			const mainNav = document.querySelector('#mainNav');
 			if (mainNav) {
-					const links = mainNav.querySelectorAll('a');
+					const links = mainNav.querySelectorAll('a.nav-link');
+					const navbarToggler = document.querySelector('.navbar-toggler');
 					links.forEach(link => {
 							link.addEventListener('click', () => {
 									mainNav.classList.remove('show');
+									if (navbarToggler) {
+											navbarToggler.classList.add('collapsed');
+									}
 							});
 					});
 			} else {
 					console.warn('Elemento #mainNav não encontrado no DOM.');
 			}
 	});
+	</script>
+	<!-- BOTÃO DE MUTAR SOM -->
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+			const muteButton = document.getElementById("muteButton");
+
+			// Pega estado salvo (por padrão, mudo = true)
+			let isMuted = localStorage.getItem("isMuted") === "false" ? true : false;
+
+			// Função para aplicar mute em todos os vídeos
+			function setMuteState(muted) {
+				document.querySelectorAll("video").forEach(video => {
+					video.muted = muted;
+				});
+				muteButton.textContent = muted ? "🔇" : "🔊";
+				localStorage.setItem("isMuted", muted);
+			}
+
+			// Aplica estado inicial ao carregar
+			document.addEventListener("DOMContentLoaded", () => {
+				setMuteState(isMuted);
+			});
+
+			// Alterna mute ao clicar
+			muteButton.addEventListener("click", () => {
+				isMuted = !isMuted;
+				setMuteState(isMuted);
+				console.log(`Botão clicado`);
+			});
+		});
 	</script>
 </body>
 

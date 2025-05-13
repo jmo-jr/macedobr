@@ -16,7 +16,7 @@ export default {
 					<div class="headlines">
 
 						<div class="mobile_title-container">
-							<h2>Projetos</h2>
+							<h2>PROJETOS</h2>
 
 							<div class="banner-glyph"></div>
 						</div>

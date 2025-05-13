@@ -7,12 +7,14 @@ export default {
 	data() {
 		return {
 			isPageLoading: true,
-			currentVideo: "assets/videos/infraestrutura.mp4",
+			currentVideo: "assets/videos/infraestrutura.webm",
+			currentPoster: "assets/capas/infraestrutura.jpg"
 		}
 	},
 	methods: {
-    changeVideo(videoSrc) {
+    changeVideo(videoSrc, posterImg) {
       this.currentVideo = videoSrc;
+			this.currentPoster = posterImg;
     },
 		checkPageLoaded() {
 				this.isPageLoading = true; // Mantém o loading ativo
@@ -71,7 +73,8 @@ export default {
 								id="vidAtua" 
 								class="video-player" 
 								:src="currentVideo" 
-								autoplay muted loop
+								:poster="currentPoster" 
+								autoplay loop
 							>
 								<source :src="currentVideo" type="video/mp4">
 								Seu navegador não suporta vídeos.
@@ -84,20 +87,24 @@ export default {
 						<ul class="nav nav-tabs" id="atuacaoTabs" role="tablist">
 							<li class="nav-item" role="presentation">
 								<button class="nav-link active" id="infra-tab" data-bs-toggle="tab" data-bs-target="#infra"
-									@click="changeVideo('assets/videos/infraestrutura.mp4')" type="button" role="tab" aria-controls="infra"
+									@click="changeVideo('assets/videos/infraestrutura.webm')" type="button" role="tab" aria-controls="infra"
 									aria-selected="true">Infraestrutura</button>
 							</li>
 							<li class="nav-item" role="presentation">
-								<button class="nav-link" id="education-tab" data-bs-toggle="tab" data-bs-target="#education" @click="changeVideo('assets/videos/educacao.mp4')" type="button" role="tab" aria-controls="education"
+								<button class="nav-link" id="education-tab" data-bs-toggle="tab" data-bs-target="#education" @click="changeVideo('assets/videos/educacao.webm', 'assets/capas/educacao.jpg')" type="button" role="tab" aria-controls="education"
 									aria-selected="false">Educação</button>
 							</li>
 							<li class="nav-item" role="presentation">
-								<button class="nav-link" id="management-tab" data-bs-toggle="tab" data-bs-target="#management" @click="changeVideo('assets/videos/gestao.mp4')" type="button" role="tab" aria-controls="management"
+								<button class="nav-link" id="management-tab" data-bs-toggle="tab" data-bs-target="#management" @click="changeVideo('assets/videos/gestao.webm', 'assets/capas/gestao.jpg')" type="button" role="tab" aria-controls="management"
 									aria-selected="false">Gestão</button>
 							</li>
 							<li class="nav-item" role="presentation">
-								<button class="nav-link" id="ti-tab" data-bs-toggle="tab" data-bs-target="#ti" @click="changeVideo('assets/videos/tecnologia.mp4')" type="button" role="tab" aria-controls="ti"
+								<button class="nav-link" id="ti-tab" data-bs-toggle="tab" data-bs-target="#ti" @click="changeVideo('assets/videos/tecnologia.mp4', 'assets/capas/tecnologias.jpg')" type="button" role="tab" aria-controls="ti"
 									aria-selected="false">Tecnologias</button>
+							</li>
+							<li class="nav-item" role="presentation">
+								<button class="nav-link" id="ti-tab" data-bs-toggle="tab" data-bs-target="#environment" @click="changeVideo('assets/videos/meioambiente.webm', 'assets/capas/meioambiente.jpg')" type="button" role="tab" aria-controls="environment"
+									aria-selected="false">Meio Ambiente</button>
 							</li>
 						</ul>
 
@@ -113,7 +120,8 @@ export default {
 											id="vidAtua" 
 											class="video-player" 
 											:src="currentVideo" 
-											autoplay muted loop
+											:poster="currentPoster" 
+											autoplay loop
 										>
 											<source :src="currentVideo" type="video/mp4">
 											Seu navegador não suporta vídeos.
@@ -133,7 +141,8 @@ export default {
 											id="vidAtua" 
 											class="video-player" 
 											:src="currentVideo" 
-											autoplay muted loop
+											:poster="currentPoster" 
+											autoplay loop
 										>
 											<source :src="currentVideo" type="video/mp4">
 											Seu navegador não suporta vídeos.
@@ -152,7 +161,8 @@ export default {
 											id="vidAtua" 
 											class="video-player" 
 											:src="currentVideo" 
-											autoplay muted loop
+											:poster="currentPoster" 
+											autoplay loop
 										>
 											<source :src="currentVideo" type="video/mp4">
 											Seu navegador não suporta vídeos.
@@ -171,14 +181,15 @@ export default {
 											id="vidAtua" 
 											class="video-player" 
 											:src="currentVideo" 
-											autoplay muted loop
+											:poster="currentPoster" 
+											autoplay loop
 										>
 											<source :src="currentVideo" type="video/mp4">
 											Seu navegador não suporta vídeos.
 										</video>
 									</div>
 								</div>
-								<div class="headline text-justify">
+								<div class="headline limited text-justify">
 									<p>Desenvolvemos projetos integrando ações, metodologias e sistemas informatizados para maximizar a efetividade de suas operações e alcançar resultados significativos. Ao longo de nossa história, implementamos diversas soluções tecnológicas, incluindo:</p>
 									<ul>
 										<li>Sistema de Monitoramento, Controle e Avaliação;</li>
@@ -187,6 +198,32 @@ export default {
 									</ul>
 									<p class="green-text">Essas iniciativas refletem nosso compromisso com a inovação e a aplicação prática da tecnologia para aprimorar nossas operações e impactar positivamente as comunidades servidas por nós.</p>
 								</div>
+							</div>
+
+							<div class="tab-pane fade" id="environment" role="tabpanel" aria-labelledby="environment-tab">
+								<div class="banner-glyph"></div>
+
+								<div class="mobile video-container">
+									<div class="video-frame changes">
+										<video 
+											v-if="currentVideo" 
+											id="vidAtua" 
+											class="video-player" 
+											:src="currentVideo" 
+											:poster="currentPoster" 
+											autoplay loop
+										>
+											<source :src="currentVideo" type="video/mp4">
+											Seu navegador não suporta vídeos.
+										</video>
+									</div>
+								</div>
+
+								<div class="headline d-flex flex-column justify-content-between">
+									<p>Atuamos na gestão de resíduos sólidos, saneamento básico e preservação de recursos naturais. Por meio de Acordos de Cooperação Técnica, apoiamos municípios na estruturação de soluções sustentáveis e políticas públicas voltadas à sustentabilidade e à gestão democrática.</p>
+									<p><a class="green-text" href="https://planalto.gov.br/ccivil_03/_ato2007-2010/2010/lei/l12305.htm" target="_blank">Conheça o Código Brasileiro de Resíduos Sólidos</a></p>
+								</div>
+								
 							</div>
 
 						</div>

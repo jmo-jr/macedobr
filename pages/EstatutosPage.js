@@ -10,6 +10,7 @@ export default {
 
 			<glyphs-component></glyphs-component>
 
+				<div class="container">
 				<h2 class="page-title">Portal de Transparência</h2>
 
 				<h3 style="margin: 32px 0">
@@ -35,6 +36,7 @@ export default {
 						</div>
 					</div>
 
+				</div>
 				</div>
 
 			</section>

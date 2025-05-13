@@ -21,22 +21,22 @@ export default {
 								<router-link to="/projetos" class="nav-js nav-link" aria-current="page" data-panel="projetos">Projetos</router-link>
 								
 								<div class="dropdown">
-									<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside" href="#"
+									<a class="nav-item dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside" href="#"
 										role="button">Transparência</a>
 
 									<ul class="dropdown-menu">
 										
-										<li><router-link to="/transparencia" class="dropdown-item">Documentação</router-link></li>
+										<li><router-link to="/transparencia" class="dropdown-item nav-link">Documentação</router-link></li>
 
-										<li class="dropend">
+										<li class="dropend desktop">
 											<button class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" type="button">Contratos</button>
 
 											<ul class="dropdown-menu dropdown-submenu">
-												<li><router-link to="/contratos/coruripe" class="dropdown-item">Coruripe/AL</router-link></li>
+												<li><router-link to="/contratos/coruripe" class="dropdown-item nav-link">Coruripe/AL</router-link></li>
 											</ul>
 										</li>
 
-										<li class="mobile-dropend">
+										<li class="mobile-dropend  mobile">
 											<button class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" type="button">Contratos</button>
 
 											<ul class="dropdown-menu dropdown-submenu">

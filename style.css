@@ -21,6 +21,22 @@
   --default-transition: all 1s ease-out;
 }
 
+.mobile {
+	display: none !important;
+}
+.desktop {
+	display: block !important;
+}
+
+.green-text {
+	color: var(--green);
+}
+
+.placeholder-img {
+	width: 100%;
+	padding: 12px;
+}
+
 .d-flex {
   gap: 60px;
 }
@@ -191,7 +207,7 @@ body {
     animation: fadeIn 2s ease;
   }
 
-  .atuacao & { display: none }
+  .atuacao &, .parcerias & { display: none }
 
 	.projetos &, .transparencia & {
 		top: 0;
@@ -308,7 +324,7 @@ body {
 
   .parcerias & {
     bottom: 0;
-    left: 50%;
+    right: 10%;
   }
 
   .atuacao & {
@@ -347,6 +363,7 @@ body {
   }
 
   .navbar-nav {
+		align-items: center;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.9);
     font-family: vg;
@@ -359,12 +376,14 @@ body {
     	animation: fadeIn 2s, swipeRight 2s ease;
 		}
 
-    .nav-link {
+    .nav-link, .nav-item {
       padding-left: 20px !important;
       padding-right: 20px !important;
+			/* padding-top: 0 !important; */
       color: #999;
       font-size: 19px;
       text-transform: uppercase;
+			text-decoration: none;
 
       &.router-link-active {
         color: var(--green) !important;
@@ -376,6 +395,12 @@ body {
 				border-color: #f2f2f2;
 				border-radius: 4px;
 				padding: 0px;
+				font-size: 16px !important;
+
+				& a {
+					padding-top: 10px !important;
+					font-size: 16px !important;
+				}
 
 				& > li:hover > .dropdown-submenu {
 					display: block;
@@ -383,9 +408,10 @@ body {
 		}
 
 		.dropdown-item {
-				text-transform: uppercase;
 				padding: 10px 16px;
 				color: #999;
+				font-family: vg;
+				text-transform: uppercase;
 
 				&:hover {
 					background-color: var(--green);
@@ -406,7 +432,7 @@ body {
     flex-direction: column;
     justify-content: flex-end;
     width: 120px;
-    height: 128px;
+    height: 80px;
     padding: 10px;
     background-color: var(--green);
 
@@ -646,7 +672,7 @@ body:not(.home):not(.parcerias):not(.fale):not(.transp):not(.projetos) {
     width: 38px;
     height: 32px;
     margin: 24px auto;
-    background: url(assets/losango.svg) no-repeat;
+    background: url(assets/losango.png) no-repeat;
     background-size: contain;
   }
 
@@ -764,7 +790,7 @@ body:not(.home):not(.parcerias):not(.fale):not(.transp):not(.projetos) {
     width: 28px;
     height: 24px;
     margin: 16px auto;
-    background: url(assets/losango.svg) no-repeat;
+    background: url(assets/losango.png) no-repeat;
     background-size: contain;
   }
 
@@ -860,6 +886,14 @@ body:not(.home):not(.parcerias):not(.fale):not(.transp):not(.projetos) {
   padding-left: 140px;
   transition: all 2s ease;
 
+	.dt-flex-column {
+    flex-direction: column;
+
+		& .offhead {
+			margin-bottom: 40px !important;
+		}
+	}
+
   .headlines {
     flex: 1;
     text-align: center;
@@ -878,7 +912,7 @@ body:not(.home):not(.parcerias):not(.fale):not(.transp):not(.projetos) {
     width: 28px;
     height: 24px;
     margin: 32px auto;
-    background: url(assets/losango.svg) no-repeat;
+    background: url(assets/losango.png) no-repeat;
     background-size: contain;
   }
 
@@ -902,7 +936,7 @@ body:not(.home):not(.parcerias):not(.fale):not(.transp):not(.projetos) {
 		.logo-container {
 			background-color: white;
 			border-radius: 50%;
-			max-width: 200px;
+			max-width: 150px;
 			width: 100%;
 			aspect-ratio: 1 / 1;
 			overflow: hidden;
@@ -924,7 +958,7 @@ body:not(.home):not(.parcerias):not(.fale):not(.transp):not(.projetos) {
   transition: all 2s ease;
 
   .headlines {
-    width: 50%;
+    width: 60%;
     text-align: center;
     transition: all 1s ease;
 
@@ -941,12 +975,12 @@ body:not(.home):not(.parcerias):not(.fale):not(.transp):not(.projetos) {
 
   .title-container {
     position: relative;
-    width: 60px !important;
+    width: 30px !important;
   }
 
   .subtitle {
     margin-top: 316px;
-    margin-left: -94px;
+    margin-left: -120px;
     width: 305px;
     color: #aba9a9;
     font-family: "vg";
@@ -970,12 +1004,12 @@ body:not(.home):not(.parcerias):not(.fale):not(.transp):not(.projetos) {
     width: 28px;
     height: 24px;
     margin: 32px auto;
-    background: url(assets/losango.svg) no-repeat;
+    background: url(assets/losango.png) no-repeat;
     background-size: contain;
   }
 
   .headline {
-    width: 100%;
+    width: 80%;
     margin: 0 auto;
     color: #999;
     font-size: 18px;
@@ -989,16 +1023,17 @@ body:not(.home):not(.parcerias):not(.fale):not(.transp):not(.projetos) {
     & p,
     ul,
     li {
-      margin-bottom: 8px;
+			margin-bottom: 8px;
     }
   }
 
   .video-container {
 		position: relative;
     flex-grow: 0;
-    aspect-ratio: 2 / 3.23;
-		width: 36%;
-    height: 100vh;
+    aspect-ratio: 2 / 3.6;
+		max-width: 28%;
+    height: 85vh;
+		margin-top: 120px;
     background-color: white;
     transition: all 4s ease;
 
@@ -1069,13 +1104,20 @@ body:not(.home):not(.parcerias):not(.fale):not(.transp):not(.projetos) {
   .img-container {
     position: absolute;
     bottom: 0;
-    left: 10%;
+    left: 5%;
     width: 26%;
     height: calc(100vh - 128px);
-    background: url(assets/faleconosco.png) no-repeat;
+    background: url(assets/faleconosco.png) no-repeat right bottom;
     background-size: contain;
     z-index: 10;
     animation: fadeIn 1s ease, slideRight 2s ease;
+
+		&.mobile {
+			display: none !important;
+		}
+		&.desktop {
+			display: block !important;
+		}
 
     @media screen and (min-width: 1440px) {
       left: 10%;
@@ -1116,8 +1158,8 @@ body:not(.home):not(.parcerias):not(.fale):not(.transp):not(.projetos) {
 		}
 
     @media screen and (min-width: 1440px) {
-      width: calc(100% - 420px);
-      padding: 20px 240px 20px 140px;
+      width: 75%;
+      padding: 20px 13%;
     }
   }
 
@@ -1337,6 +1379,7 @@ body:not(.home):not(.parcerias):not(.fale):not(.transp):not(.projetos) {
 	}
 	.project-social {
     display: flex;
+		justify-content: flex-end;
     gap: 16px;
 
     .fa-facebook,

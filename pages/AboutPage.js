@@ -8,11 +8,13 @@ export default {
 		return {
 			isPageLoading: true,
 			currentVideo: "assets/videos/quemsomos.mp4",
+			currentPoster: "assets/capas/quemsomos.jpg"
 		}
 	},
 	methods: {
-    changeVideo(videoSrc) {
+    changeVideo(videoSrc, poster) {
       this.currentVideo = videoSrc;
+			this.currentPoster = poster;
     },
 		checkPageLoaded() {
 				this.isPageLoading = true; // Mantém o loading ativo
@@ -64,17 +66,17 @@ export default {
 						<ul class="nav nav-tabs" id="quemTabs" role="tablist">
 
 							<li class="nav-item" role="presentation">
-								<button class="nav-link active" id="who-tab" data-bs-toggle="tab" data-bs-target="#who" @click="changeVideo('assets/videos/quemsomos.mp4')" type="button" role="tab" aria-controls="who"
+								<button class="nav-link active" id="who-tab" data-bs-toggle="tab" data-bs-target="#who" @click="changeVideo('assets/videos/quemsomos.webm', 'assets/capas/quemsomos.jpg')" type="button" role="tab" aria-controls="who"
 									aria-selected="true">Quem Somos</button>
 							</li>
 
 							<li class="nav-item" role="presentation">
-								<button class="nav-link" id="vision-tab" data-bs-toggle="tab" data-bs-target="#vision" @click="changeVideo('assets/videos/visao.mp4')" type="button" role="tab" aria-controls="vision"
+								<button class="nav-link" id="vision-tab" data-bs-toggle="tab" data-bs-target="#vision" @click="changeVideo('assets/videos/visao.webm', 'assets/capas/visao.jpg')" type="button" role="tab" aria-controls="vision"
 									aria-selected="false">Nossa Visão</button>
 							</li>
 
 							<li class="nav-item" role="presentation">
-								<button class="nav-link" id="mission-tab" data-bs-toggle="tab" data-bs-target="#mission" @click="changeVideo('assets/videos/missao.mp4')" type="button" role="tab" aria-controls="mission"
+								<button class="nav-link" id="mission-tab" data-bs-toggle="tab" data-bs-target="#mission" @click="changeVideo('assets/videos/missao.webm', 'assets/capas/missao.jpg')" type="button" role="tab" aria-controls="mission"
 									aria-selected="false">Nossa Missão</button>
 							</li>
 							
@@ -97,7 +99,7 @@ export default {
 								<!-- Video -->
 								<div class="mobile video-container">
 									<div class="video-frame changes" style="background-color:white">
-										<video id="vidQuem" class="video-player" :src="currentVideo" autoplay muted loop>
+										<video id="vidQuem" class="video-player" :src="currentVideo" poster="assets/capas/quemsomos.jpg" autoplay loop>
 											<source :src="currentVideo" type="video/mp4">
 											Seu navegador não suporta vídeos.
 										</video>
@@ -128,7 +130,7 @@ export default {
 								<!-- Video -->
 								<div class="mobile video-container">
 									<div class="video-frame changes" style="background-color:white">
-										<video id="vidQuem" class="video-player" :src="currentVideo" autoplay muted loop>
+										<video id="vidQuem" class="video-player" :src="currentVideo" poster="assets/capas/visao.jpg" autoplay loop>
 											<source :src="currentVideo" type="video/mp4">
 											Seu navegador não suporta vídeos.
 										</video>
@@ -156,19 +158,19 @@ export default {
 								<!-- Video -->
 								<div class="mobile video-container">
 									<div class="video-frame changes" style="background-color:white">
-										<video id="vidQuem" class="video-player" :src="currentVideo" autoplay muted loop>
+										<video id="vidQuem" class="video-player" :src="currentVideo" poster="assets/capas/missao.jpg" autoplay loop>
 											<source :src="currentVideo" type="video/mp4">
 											Seu navegador não suporta vídeos.
 										</video>
 									</div>
 								</div>
 
-								<div class="headline">
+								<div class="headline limited">
 									<p>
 										Orientamos nossa missão com objetivos claros de fomentar o desenvolvimento humano e a sustentabilidade, fundamentados nos direitos consagrados pela Constituição Federal:
 									</p>
 
-									<ul>
+									<ul class="green-text">
 										<li>Assegurar o direito à vida, liberdade, igualdade, segurança e propriedade;</li>
 										<li>Atuar como agentes de promoção dos direitos sociais, incluindo educação, saúde, alimentação,
 											trabalho, moradia, transporte, lazer, segurança, proteção à maternidade, infância e assistência
@@ -186,7 +188,7 @@ export default {
 						<!-- Video -->
 						<div class="video-container">
 							<div class="video-frame changes" style="background-color:white">
-								<video id="vidQuem" class="video-player" :src="currentVideo" autoplay muted loop>
+								<video id="vidQuem" class="video-player" :src="currentVideo" :poster="currentPoster" autoplay loop>
 									<source :src="currentVideo" type="video/mp4">
 									Seu navegador não suporta vídeos.
 								</video>
