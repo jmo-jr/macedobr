@@ -11,6 +11,7 @@ import TransparencyPage from './pages/TransparencyPage.js';
 import CertidoesPage from './pages/CertidoesPage.js';
 import EstatutosPage from './pages/EstatutosPage.js';
 import RegulamentosPage from './pages/RegulamentosPage.js';
+import PrestacaoContasPage from './pages/PrestacaoContasPage.js';
 import ContactPage from './pages/ContactPage.js';
 import CoruripePage from './pages/CoruripePage.js';
 
@@ -30,6 +31,7 @@ const routes = [
 	{ path: '/transparencia/certidoes', component: CertidoesPage },
 	{ path: '/transparencia/estatutos', component: EstatutosPage },
 	{ path: '/transparencia/regulamentos', component: RegulamentosPage },
+	{ path: '/transparencia/prestacao-de-contas', component: PrestacaoContasPage },
 	{ path: '/contato', component: ContactPage },
 	{ path: '/contratos/coruripe', redirect: () => window.location.href = '/contratos/coruripe/' }
 ];
@@ -92,6 +94,16 @@ const docs = {
 		{
 			name: 'Regulamento de Contratação de Pessoal AMBR',
 			link: "https://drive.google.com/file/d/1EMETqM515GoJg4DrfxqOmOyzI_rG5z3R/preview"
+		},
+	],
+	prestacaoContas: [
+		{
+			name: "Balanço 2024",
+			link: "https://drive.google.com/file/d/1O9Cwy5cKZjpHziyU5ZvCsb0kZ9Xbmgf6/preview"
+		},
+		{
+			name: "D.R.E. 2024",
+			link: "https://drive.google.com/file/d/1vQAYFFklDIw0XDTOJLKBzVM352OPazBn/preview"
 		},
 	],
 	termos: [

@@ -26,6 +26,9 @@ export default {
 						<a href="#/transparencia/regulamentos">	
 							<img src="../assets/regulamentos.png" alt="Regulamentos" style="width: 140px">
 						</a>
+						<a href="#/transparencia/prestacao-de-contas">	
+							<img src="../assets/prestacao.png" alt="Prestação de Contas" style="width: 140px">
+						</a>
 					</div>
 
 				</div>
