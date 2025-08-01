@@ -49,23 +49,23 @@ const docs = {
 		},
 		{ 
 			name: 'Certidão Federal',
-			link: "https://drive.google.com/file/d/12tD0Xm8C7D704-jrWi8ilvBdwyvH39cD/preview"
+			link: "https://drive.google.com/file/d/16s2TTGg9v4bF0WS4XbcgEgp07BtlPrPF/preview"
 		},
 		{ 
 			name: 'Certidão Estadual',
-			link: "https://drive.google.com/file/d/1BUWrr9UeDwKPk6PEpED1jNzFp4kWlIN3/preview"
+			link: "https://drive.google.com/file/d/1KZs9TkBb9aRceMd5dO4id140_fxBFKPh/preview"
 		},
 		{ 
 			name: 'Certidão Municipal',
-			link: "https://drive.google.com/file/d/1SPccKMeGtxCQ4IrjkAgeL7E0kmVYejeN/preview"
+			link: "https://drive.google.com/file/d/1-TdZl9inA-kAF4DhHSE8zn5eO_A3ILKm/preview"
 		},
 		{ 
 			name: 'Certidão FGTS',
-			link: "https://drive.google.com/file/d/1kw6jgHSCHpFL3K8yIhtdYTLWWKfm3qJD/preview"
+			link: "https://drive.google.com/file/d/1lF8JE8iT0wg-4VxevqxvzYSBw3kHt8uP/preview"
 		},
 		{ 
 			name: 'Certidão Trabalhista',
-			link: "https://drive.google.com/file/d/1DVpDkacCu3cuwHBHil17eE5jIlQRzxpF/preview"
+			link: "https://drive.google.com/file/d/1J6l32AXkBbJ3tpRO5oGJN0LUNVp8rKLr/preview"
 		},
 	],
 	certificados: [
