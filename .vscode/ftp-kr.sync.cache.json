@@ -1,13 +1,6 @@
 {
   "ftp://macedobrasil1@ftp.macedobrasil.org.br:21": {
-    "public_html": {
-      "main.js": {
-        "type": "-",
-        "size": 4737,
-        "lmtime": 1751572590463.3108,
-        "modified": false
-      }
-    }
+    "public_html": {}
   },
   "$version": 1
 }
