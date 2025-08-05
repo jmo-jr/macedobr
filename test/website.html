@@ -64,12 +64,17 @@
 	<style>
 		.home-hero {
 			display: flex;
+			flex-direction: column;
 			justify-content: center;
 			align-items: center;
 		}
 
-		.video-home {
+		.video-home, .logo-image {
 			width: 100%;
+		}
+
+		.logo-container {
+			width: 90%;
 		}
 	</style>
 </head>
@@ -153,9 +158,14 @@
 																	<div class="video-wrapper">
 																		<video id="video-home" class="video-home"
 																			autoplay loop muted playsinline>
-																			<source src="assets/home.mp4" type="video/mp4">
+																			<source src="assets/videos/home.webm" type="video/mp4">
 																			Your browser does not support the video tag.
 																		</video>
+																	</div>
+																</div>
+																<div class="logo-container">
+																	<div class="logo-wrapper">
+																		<img src="assets/ambr.svg" alt="Macedo Brasil" class="logo-image">
 																	</div>
 																</div>
 															</div>
