@@ -10691,3 +10691,13 @@ wix-media-canvas {
     }
   }
 }
+
+@media screen and (min-width: 1440px) {
+  .text-box p {
+    font-size: 24px;
+  }
+
+  .text-box h3.green-text {
+    font-size: 20px;
+  }
+}
