@@ -10657,15 +10657,15 @@ wix-media-canvas {
   background-color: rgb(255, 255, 255);
   font-family: Montserrat, Arial, sans-serif;
 
-  & p {
-    font-size: 18px;
-    margin-top: 12px;
-  }
-
   & h3.green-text {
     font-size: 19px;
     font-weight: 500;
     color: #009742;
+  }
+
+  & p {
+    font-size: 18px;
+    margin-top: 12px;
   }
 }
 
@@ -10693,11 +10693,11 @@ wix-media-canvas {
 }
 
 @media screen and (min-width: 1440px) {
-  .text-box p {
+  .text-box h3.green-text {
     font-size: 24px;
   }
 
-  .text-box h3.green-text {
+  .text-box p {
     font-size: 20px;
   }
 }
